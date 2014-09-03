@@ -1,22 +1,30 @@
 library(gmp)
+library(Rmpfr)
 
-getnextp <- function(pr,d,k) {
-  p.values = as.bigz(1:50)
-  p.values = p.values[which((p.values+pr) %% k == 0, arr.ind=TRUE)]
-  p.tmp = abs(p.values*p.values-d)
-  p.values = p.values[which.min(p.tmp)]
-  return(p.values)
+update_p <- function(pr,d,k) {
+  s = .mpfr2bigz(round(sqrt(.bigz2mpfr(pr))))
+  diff = (pr + s) %% abs(k)
+  low = s-diff
+  high = low+abs(k)
+  if (low < 1) {
+      return(high)
+  } else {
+      p.values = c(low,high)
+      p.tmp = abs(p.values*p.values-d)
+      p.values = p.values[which.min(p.tmp)]
+      return(p.values)
+  }
 }
 
-updatek <- function(pr,d,k) {
+update_k <- function(pr,d,k) {
   return((pr*pr-d) %/% k)
 }
 
-getnextx <- function(pr,d,k,x,y) {
+update_x <- function(pr,d,k,x,y) {
   return((pr*x + d*y) %/% abs(k))
 }
 
-getnexty <- function(pr,d,k,x,y) {
+update_y <- function(pr,d,k,x,y) {
   return((pr*y + x) %/% abs(k))
 }
 
@@ -24,20 +32,26 @@ x.init = as.bigz(1)
 y.init = as.bigz(0)
 p.init = as.bigz(1)
 k.init = as.bigz(1)
-d = as.bigz(92)
 
-for(iter in 1:10) {
-  k = as.bigz(0)
-  while(k != 1) {
-    p = getnextp(p.init,d,k.init)
-    k = updatek(p,d,k.init)
-    cat(" P(i+1),k(r+1) = [",as.character(p),",",as.character(k),"]\n")
-    x = getnextx(p,d,k.init,x.init,y.init)
-    y = getnexty(p,d,k.init,x.init,y.init)
+# Archimedes cattle problem
+# Removing factor 2^2*4657^2
+
+d = as.bigz(609*7766)
+
+k = as.bigz(0)
+steps = 0
+
+while(k != 1) {
+    p = update_p(p.init, d, k.init)
+    k = update_k(p, d, k.init)
+    cat("[ p, k ] = [",as.character(p),",",as.character(k),"]\n")
+    x = update_x(p, d, k.init, x.init, y.init)
+    y = update_y(p, d, k.init, x.init, y.init)
     x.init = x
     y.init = y
     p.init = p
     k.init = k
-  }
-  cat("Solution (",as.character(x),",",as.character(y),")\n")
+    steps = steps+1
 }
+cat("Solution = [",as.character(x),",",as.character(y),"]\n")
+cat("Steps = ",steps,"\n")
