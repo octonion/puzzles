@@ -118,4 +118,4 @@ print
 println("full equation: $d*x^2 + 1 = y^2")
 println("full solution = [$x, $y, $v]")
 println("power = $i")
-println(iround(log(10, x)), " ", iround(log(10, y)))
+println(round(Integer,log(10, x)), " ", round(Integer,log(10, y)))
