@@ -1,3 +1,4 @@
+# Julia version
 
 function squarefree_part(x)
     sf = 1
@@ -118,4 +119,4 @@ print
 println("full equation: $d*x^2 + 1 = y^2")
 println("full solution = [$x, $y, $v]")
 println("power = $i")
-println(round(Integer,log(10, x)), " ", round(Integer,log(10, y)))
+println(round(Integer,log10(x)), " ", round(Integer,log10(y)))
