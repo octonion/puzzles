@@ -1,5 +1,17 @@
 # Julia version
 
+# Can import operators this way; not stylistically preferred
+
+#import Base: +
+#import Base: *
+#import Base: ^
+
+# To explictly import
+
+#Base.(:(+))
+#Base.(:(*))
+#Base.(:(^))
+
 type modular
     x
     d
@@ -9,14 +21,14 @@ type modular
     end
 end
 
-function +(a::modular, b::modular)
+function Base.(:(+))(a::modular, b::modular)
     if !(a.d == b.d)
         error("error: modulus must be the same")
     end
     modular(a.x+b.x, a.d)
 end
 
-function *(a::modular, b::modular)
+function Base.(:(*))(a::modular, b::modular)
     if !(a.d == b.d)
         error("error: modulus must be the same")
     end
@@ -29,14 +41,14 @@ type Pell
     D
 end
 
-function *(p1::Pell, p2::Pell)
+function Base.(:(*))(p1::Pell, p2::Pell)
     if !(p1.D == p2.D)
         error("error: D must be the same")
     end
     Pell(p1.x*p2.y+p1.y*p2.x, p1.D*p1.x*p2.x+p1.y*p2.y, p1.D)
 end
 
-function ^(p1::Pell, n::Integer)
+function Base.(:(^))(p1::Pell, n::Integer)
     P = Pell(0,1,p1.D)
     F = p1
     m = n
@@ -68,7 +80,10 @@ end
 
 #D = int64(609*7766)
 
-d = BigInt(ARGS[1])
+# Deprecated
+#d = BigInt(ARGS[1])
+
+d = parse(BigInt,ARGS[1])
 
 D = squarefree_part(d)
 S = div(d,D)
