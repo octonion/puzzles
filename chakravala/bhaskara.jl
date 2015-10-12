@@ -6,7 +6,7 @@
 
 #D = int64(609*7766)
 
-D = BigInt(ARGS[1])
+D = parse(BigInt,ARGS[1])
 
 sD = isqrt(D)
 
