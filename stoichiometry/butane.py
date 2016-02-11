@@ -18,7 +18,7 @@ B = np.matrix('1 0; 0 2; 2 1')
 
 C = np.linalg.pinv(A,1e-15)
 
-# A*A^+ has rank 2
+# A*A^+ has rank 1
 
 D = A.dot(C)
 print(np.linalg.matrix_rank(D))
