@@ -21,3 +21,6 @@ for i in range(0, sims):
     maxes.append(max(wins))
 
 print(numpy.mean(maxes))
+print(min(maxes))
+print(max(maxes))
+
