@@ -1,7 +1,6 @@
 #!/usr/bin/env python3
 
 import numpy.random
-import math
 
 n = 5
 intra = 19
