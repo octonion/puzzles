@@ -5,8 +5,11 @@ import math
 
 n = 5
 sigma = math.sqrt(162.0/4)
+
+sims = 1000000
+
 maxes = []
-for i in range(1,1000000):
+for i in range(0, sims):
     maxes.append(max(numpy.random.binomial(162,0.5,n)))
 
 print(numpy.mean(maxes))
