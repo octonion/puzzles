@@ -21,14 +21,14 @@ type modular
     end
 end
 
-function Base.(:(+))(a::modular, b::modular)
+function Base.:(+)(a::modular, b::modular)
     if !(a.d == b.d)
         error("error: modulus must be the same")
     end
     modular(a.x+b.x, a.d)
 end
 
-function Base.(:(*))(a::modular, b::modular)
+function Base.:(*)(a::modular, b::modular)
     if !(a.d == b.d)
         error("error: modulus must be the same")
     end
@@ -41,14 +41,14 @@ type Pell
     D
 end
 
-function Base.(:(*))(p1::Pell, p2::Pell)
+function Base.:(*)(p1::Pell, p2::Pell)
     if !(p1.D == p2.D)
         error("error: D must be the same")
     end
     Pell(p1.x*p2.y+p1.y*p2.x, p1.D*p1.x*p2.x+p1.y*p2.y, p1.D)
 end
 
-function Base.(:(^))(p1::Pell, n::Integer)
+function Base.:(^)(p1::Pell, n::Integer)
     P = Pell(0,1,p1.D)
     F = p1
     m = n
@@ -207,5 +207,5 @@ print
 println("full equation: $d*x^2 + 1 = y^2")
 println("full solution = [$x, $y, $v]")
 println("power = $e")
-#println(log10(x), " ", log10(y))
+
 println(floor(BigInt, log10(x)+1), " ", floor(BigInt, log10(y)+1))
