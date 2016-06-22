@@ -167,4 +167,4 @@ print
 print("full equation: %s*x^2 + 1 = y^2" % d)
 print("full solution = [%s, %s, %s]" % (x, y, v))
 print("power = %s" % e)
-print(round(log(x, 10)), round(log(y, 10)))
+print(floor(log(x, 10))+1, floor(log(y, 10))+1)
