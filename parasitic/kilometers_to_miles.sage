@@ -1,5 +1,7 @@
 #!/usr/bin/sage -python
 
+# I believe there are no solutions
+
 from sage.all import *
 
 # Autoconvert kilometers to miles by moving first digit to end
@@ -17,44 +19,64 @@ from sage.all import *
 
 # (1) C*(x*10^n + y) = 10*y + x
 
-# Let D = C*10^9 = 1609344 
+# Let D = C*10^6 = 1609344 
 
-# (1) equals D*(x*10^n + y) = (10*y + x)*10^9
+# (1) equals D*(x*10^n + y) = (10*y + x)*10^6
 
-# (1) ==> (2) x*(D*10^n) - x*10^9 = y*10^10 - D*y
-# ==> (3) x*(D*10^n - 10^9) = y*(10^10 - D)
-# ==> (4) x*(1609344*10^n - 10^9) = y*(10^10 - 1609344)
+# (1) ==> (2) x*(D*10^n) - x*10^6 = y*10^7 - D*y
+# ==> (3) x*(D*10^n - 10^6) = y*(10^7 - D)
+# ==> (4) x*(1609344*10^n - 10^6) = y*(10^7 - 1609344)
 
-# Let G = gcd(1609344,10^9) = 128
+# Let G = gcd(1609344,10^6) = 64
 
-# (4) ==> (5) x*(12573*10^n - 7812500) = y*(78125000 - 12573)
+# (4) ==> (5) x*(25146*10^n - 15625) = y*(156250 - 25146)
 
-#  ==> (6) x*(12573*10^n - 7812500) = y*78112427
-#  ==> 12573*10^n - 7812500 = 0 (mod 78112427)
-#  ==> 12573*10^n = 7812500 (mod 78112427)
-#  ==> 10^n = 7812500/12573 (mod 78112427)
+#  ==> (6) x*(25146*10^n - 15625) = y*131104
+#  ==> x*(25146*10^n - 15625) = 0 (mod 131104)
 
-# To solve: (7) y = x*(12573*10^n - 7812500)/78112427
+# NOT POSSIBLE
+
+# x = 32*x'
+
+#  ==> (32/10*x')*(25146*10^n - 15625) = 0 (mod 131104)
+#  ==> 251460*10^n = 156250 (mod 40970)
+#  ==> 10^n = 15625/25146 (mod 40970)
+
+# To solve: (7) y = x'*(25146*10^n - 15625)/40970
 
 D = 1609344
-A = 7812500
-B = 12573
-M = 78112427
+
+A = 15625
+B = 25146
+M = 40970
 
 a=Mod(A,M)
 b=Mod(B,M)
+print(a)
+print(b)
 c=a/b
 n=discrete_log(10,c)
 print(n)
 
-# For smallest solution x = 1
+# For smallest solution x' = 1
 
 x = 1
 
-y = x*(B*10**n - A)/M + 10**n
-print(Mod(y,10**10))
-print(floor(log(y,10))+1)
-print(Mod(y*D/10**9,10**10))
+#y = x*(B*10**n - A)/M + 10**n
+#print(Mod(y,10**10))
+#print(floor(log(y,10))+1)
+#print(Mod(y*D/10**9,10**10))
+
+s = x*(B*10**n - A)/M + 10**n
+
+print(s)
+#print(Mod(s,10**10))
+print(floor(log(s,10))+1)
+
+t = (s*D)/10**6
+print(t)
+#print(Mod(t,10**10))
+print(floor(log(t,10))+1)
 
 # Uncomment to print solution and the conversion to liters
 # Warning: they're enormous
