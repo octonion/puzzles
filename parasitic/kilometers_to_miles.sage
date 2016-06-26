@@ -2,44 +2,44 @@
 
 from sage.all import *
 
-# Autoconvert gallons to liters by moving first digit to end
+# Autoconvert kilometers to miles by moving first digit to end
 
 # Exact rational conversion:
-# gallons = 3.785411784*liters
+# miles = 1.609344*kilometers
 
-# Let C = 3.785411784
+# Let C = 1.609344
 
-# Let gallons = x*10^n + y, where 0 < x < 10, y < 10^n
+# Let kilometers = x*10^n + y, where 0 < x < 10, y < 10^n
 
-# The autoconversion condition is C*gallons = 10*y + x
+# The autoconversion condition is C*kilometers = 10*y + x
 
 # So:
 
 # (1) C*(x*10^n + y) = 10*y + x
 
-# Let D = C*10^9 = 3785411784
+# Let D = C*10^9 = 1609344 
 
 # (1) equals D*(x*10^n + y) = (10*y + x)*10^9
 
 # (1) ==> (2) x*(D*10^n) - x*10^9 = y*10^10 - D*y
 # ==> (3) x*(D*10^n - 10^9) = y*(10^10 - D)
-# ==> (4) x*(3785411784*10^n - 10^9) = y*(10^10 - 3785411784)
+# ==> (4) x*(1609344*10^n - 10^9) = y*(10^10 - 1609344)
 
-# Let G = gcd(3785411784,10^9) = 8
+# Let G = gcd(1609344,10^9) = 128
 
-# (4) ==> (5) x*(473176473*10^n - 125000000) = y*(1250000000 - 473176473)
+# (4) ==> (5) x*(12573*10^n - 7812500) = y*(78125000 - 12573)
 
-#  ==> (6) x*(473176473*10^n - 125000000) = y*776823527
-#  ==> 473176473*10^n - 125000000 = 0 (mod 776823527)
-#  ==> 473176473*10^n = 125000000 (mod 776823527)
-#  ==> 10^n = 125000000/473176473 (mod 776823527)
+#  ==> (6) x*(12573*10^n - 7812500) = y*78112427
+#  ==> 12573*10^n - 7812500 = 0 (mod 78112427)
+#  ==> 12573*10^n = 7812500 (mod 78112427)
+#  ==> 10^n = 7812500/12573 (mod 78112427)
 
-# To solve: (7) y = x*(473176473*10^n - 125000000)/776823527
+# To solve: (7) y = x*(12573*10^n - 7812500)/78112427
 
 D = 1609344
-A = 125000000
-B = 473176473
-M = 776823527
+A = 7812500
+B = 12573
+M = 78112427
 
 a=Mod(A,M)
 b=Mod(B,M)
