@@ -41,7 +41,7 @@ a=Mod(A,M)
 b=Mod(B,M)
 c=a/b
 n=discrete_log(10,c)
-print(n)
+print("Smallest power of n = {0}".format(n))
 
 # For smallest solution x = 1
 # For smallest solution with both numbers the same length, x = 3
@@ -49,12 +49,12 @@ print(n)
 x = 3
 
 s = x*((B*10**n - A)/M + 10**n)
-print(Mod(s,10**10))
-print(floor(log(s,10))+1)
+print("Last 10 digits of pounds are {0}".format(Mod(s,10**10)))
+print("Pounds has {0} digits".format(floor(log(s,10))+1))
 
 t = (s*D)/10**8
-print(Mod(t,10**10))
-print(floor(log(t,10))+1)
+print("Last 10 digits of kilograms are {0}".format(Mod(t,10**10)))
+print("Kilograms has {0} digits".format(floor(log(t,10))+1))
 
 # Uncomment to print solution and the conversion to liters
 # Warning: they're enormous

@@ -34,7 +34,7 @@ from sage.all import *
 #  ==> (6) x*(25146*10^n - 15625) = y*131104
 #  ==> x*(25146*10^n - 15625) = 0 (mod 131104)
 
-# NOT POSSIBLE
+# Not possible, as we must have 32|x
 
 # x = 32*x'
 

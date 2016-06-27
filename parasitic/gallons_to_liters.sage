@@ -46,20 +46,23 @@ a=Mod(A,M)
 b=Mod(B,M)
 c=a/b
 n=discrete_log(10,c)
-print(n)
+print("Smallest power of n = {0}".format(n))
 
 # For smallest solution x = 1
 
 x = 1
 
-y = x*(B*10**n - A)/M + 10**n
-print(Mod(y,10000000000000))
-print(floor(log(y,10)))
-print(Mod(y*D/1000000000,10000000000000))
+s = x*((B*10**n - A)/M + 10**n)
+print(Mod(s,10**10))
+print(floor(log(s,10))+1)
+
+t = (s*D)/10**9
+print(Mod(t,10**10))
+print(floor(log(t,10))+1)
 
 # Uncomment to print solution and the conversion to liters
 # Warning: they're enormous
 
-#print(y)
+#print(s)
 #print
-#print(y*D/1000000000)
+#print(t)

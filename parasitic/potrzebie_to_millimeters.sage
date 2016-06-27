@@ -47,17 +47,26 @@ print("Smallest power of n = {0}".format(n))
 
 x = 1
 
+# floor(log((B*10**n - A)/M + 10**n))+1 digits
+# floor(log((10**(n+22)-A)/M))+1
+# floor(log((10**(n+22)-A)/M))+1
+# log(10**(n+22)-10**21)-log(M)+1
+# log(10**21*(10**(n+1)-1))-log(M)+1
+
 #s = x*((B*10**n - A)/M + 10**n)
-#print("Last 10 digits of potrzebie are {0}".format(Mod(s,10**10)))
-#print("Potrzebie has {0} digits".format(floor(log(s,10))+1))
 
-#t = (s*D)/10**21
-#print("Last 10 digits of millimeters are {0}".format(Mod(t,10**10)))
-#print("Millimeters has {0} digits".format(floor(log(t,10))+1))
+d = 40
+e = 100
+m = 10**e
 
-# Uncomment to print solution and the conversion to liters
-# Warning: they're enormous
+s = -Mod(A,m)/Mod(M,m)
+sd = floor(n+22-log(M,10))+1
 
-#print(s)
-#print
-#print(t)
+print("Last {0} digits of potrzebie are {1}".format(d,Mod(s,10**d)))
+print("Potrzebie has {0} digits".format(sd))
+
+t = Mod(floor(s)/10**21,10**e)*Mod(D,10**e)
+td = floor(n+22-log(M,10)+log(D,10)-21)+1
+
+print("Last {0} digits of millimeters are {1}".format(d,Mod(t,10**d)))
+print("Millimeters has {0} digits".format(td))
