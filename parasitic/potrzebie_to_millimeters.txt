@@ -1,0 +1,1 @@
+Smallest power of n = 644718009732548755379
