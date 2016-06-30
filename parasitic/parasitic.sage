@@ -13,54 +13,52 @@ from sage.all import *
 
 # So:
 
-# m = implied power of C
-
 # (1) C*(x*10^n + y) = 10*y + x
 
-# Let D = C*10^m
+# Assume C = p/q
 
-# (1) equals D*(x*10^n + y) = (10*y + x)*10^m
+# (1) equals p*(x*10^n + y) = q*(10*y + x)
 
-# (1) ==> (2) x*(D*10^n) - x*10^m = y*10^{m+1} - D*y
-# ==> (3) x*(D*10^n - 10^m) = y*(10^{m+1} - D)
+# (1) ==> (2) x*(p*10^n) - x*q = y*10*q - p*y
+# ==> (3) x*(p*10^n - q) = y*(10*q - p)
 
-# For now assume gcd(D,10^m) = 1
+# For now assume gcd(p,q,10) = 1
 
-# Let M = 10^{m+1} - D
+# Let M = 10*q-p
 
-#  ==> D*10^n - 10^m = 0 (mod M)
-#  ==> D*10^n = 10^m (mod M)
-#  ==> 10^n = 10^m/D (mod M)
+#  ==> p*10^n - q = 0 (mod M)
+#  ==> p*10^n = q (mod M)
+#  ==> 10^n = q/p (mod M)
 
-# To solve: (5) y = x*(D*10^n - 10^m)/M
+# To solve: (5) y = x*(q*10^n - p)/M
 
-D = 2263348517438173216473
-m = 21
+# Gallons to liters
 
-# More generally, divide by gcd() here
+#p = 3785411784
+#q = 1000000000
 
-A = 10**m
-B = D
-M = 10**(m+1)-D
+p = 1
+q = 907
 
-#p = euler_phi(M)
+g = gcd(p,q)
+p = p/g
+q = q/g
 
-a=Mod(A,M)
-b=Mod(B,M)
+# Need to divide modulus by gcd(10*q-p,M)
+# For smallest solution
 
-c=a/b
+M = (10*q-p)
+x = gcd(M,10)
+M = M/x
+
+a=Mod(p,M)
+b=Mod(q,M)
+
+c=b/a
 
 n=discrete_log(10,c)
 
-#if (n==0):
-#   n += p
-#end
-
 print("Smallest power of n = {0}".format(n))
-
-# For smallest solution x = 1
-
-x = 1
 
 # floor(log((B*10**n - A)/M + 10**n))+1 digits
 # floor(log((10**(n+m+1)-A)/M))+1
@@ -70,22 +68,23 @@ x = 1
 
 #s = x*((B*10**n - A)/M + 10**n)
 
-d = 10
-e = 20
-w = 10**e
+#d = 10
+#e = 20
+#w = 10**e
 
 #s = -Mod(A,w)/Mod(M,w)
-#s = x*((B*10**n - A)/M + 10**n)
-sd = floor(n+m+1-log(M,10))+1
+s = x*((p*10**n - q)/M + 10**n)
+#sd = floor(n+m+1-log(M,10))+1
+sd = floor(log(s,10)+1)
 
 #print("Max {0} digits of number are {1}".format(d,Mod(s,10**d)))
-#print("Number = {0}".format(s))
+print("Number = {0}".format(s))
 print("Number has {0} digits".format(sd))
 
 #t = Mod(floor(s)/10**m,w)*Mod(D,w)
-#t = (s*D)/10**m
-td = floor(n+m+1-log(M,10)+log(D,10)-m)+1
+#t = s*p/q
+#td = floor(n+m+1-log(M,10)+log(D,10)-m)+1
 
 #print("Max {0} digits of result are {1}".format(d,Mod(t,10**d)))
-print("Result has {0} digits".format(td))
+#print("Result has {0} digits".format(td))
 #print("Result = {0}".format(t))
