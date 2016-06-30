@@ -45,11 +45,27 @@ g = gcd(p,q)
 p = p/g
 q = q/g
 
-# Need to divide modulus by gcd(10*q-p,M)
-# For smallest solution
+# Handle primes common to M and base
 
-M = (10*q-p)
-x = gcd(M,10)
+M = 10*q-p
+
+f = factor(M)
+d = dict(zip(zip(*f)[0],zip(*f)[1]))
+
+g=1
+if (2 in d):
+   g = g*2**d[2]
+
+if (5 in d):
+   g = g*5**d[5]
+
+# p/q*g < 10 or unsolvable
+
+if (p*g) >= 10*q:
+   print("No solution")
+   sys.exit(0)
+
+x = g
 M = M/x
 
 a=Mod(p,M)
@@ -57,24 +73,15 @@ b=Mod(q,M)
 
 c=b/a
 
+# Must be at least 2 digits?
+
 n=discrete_log(10,c)
 
 print("Smallest power of n = {0}".format(n))
 
-# floor(log((B*10**n - A)/M + 10**n))+1 digits
-# floor(log((10**(n+m+1)-A)/M))+1
-# floor(log((10**(n+m+1)-A)/M))+1
-# log(10**(n+m+1)-10**m)-log(M)+1
-# log(10**m*(10**(n+1)-1))-log(M)+1
-
 #s = x*((B*10**n - A)/M + 10**n)
 
-#d = 10
-#e = 20
-#w = 10**e
-
-#s = -Mod(A,w)/Mod(M,w)
-s = x*((p*10**n - q)/M + 10**n)
+s = (p*10**n - q)/M + x*10**n
 #sd = floor(n+m+1-log(M,10))+1
 sd = floor(log(s,10)+1)
 
