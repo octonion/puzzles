@@ -1,6 +1,7 @@
 #!/usr/bin/sage -python
 
 from sage.all import *
+import sys
 
 # Multiply A by C to get B by moving first digit of A to end
 
@@ -37,8 +38,8 @@ from sage.all import *
 #p = 3785411784
 #q = 1000000000
 
-p = 1
-q = 907
+p = floor(sys.argv[1])
+q = floor(sys.argv[2])
 
 g = gcd(p,q)
 p = p/g
