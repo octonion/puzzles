@@ -1,0 +1,3 @@
+Smallest power of n = 22
+Number = 10572620ae4c415c9882b93
+Number has 23 digits
