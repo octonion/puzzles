@@ -8,7 +8,7 @@ deck.append(16)
 p = numpy.array(deck)/sum(deck)
 
 # Dealer hits soft 17
-hit_soft_17 = False
+hit_soft_17 = True
 
 def dealer_p(total, ace, cards):
 
