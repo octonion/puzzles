@@ -130,6 +130,9 @@ d_card = 7
 d = dealer_p(d_card, False, 1)
 dealer = d
 
+# Dealer blackjack
+p_dbj = 0.0
+
 # Hard
 for i in range(4,22):
     e, s = player_p(i, False, False, d_card)
@@ -146,9 +149,15 @@ for i in range(0,10):
     es = 0.0
     for j in range(0,10):
         if (i==j):
+            # No resplitting; we adjust for resplitting later
             continue
-        e, s = player_p(i+j+2, ((i==0) or (j==0)), False, d_card)
-        es += p[j]*e
+        elif (i==0 and j==9) or (i==9 and j==0):
+            # Blackjack; no dealer blackjack
+            es += p[j]*1.5
+        else:
+            # Remaining cases
+            e, s = player_p(i+j+2, ((i==0) or (j==0)), False, d_card)
+            es += p[j]*e
 
     es = 2*es/(1-2*p[i])
     print('Dealer showing {}, holding {}/{} : {}, E = {:4.2f}'.format(d_card,i+1,i+1,'split',es))
