@@ -6,7 +6,7 @@ sd = sum(deck)
 p = [x/sd for x in deck]
 
 # Dealer hits soft 17
-hit_soft_17 = True
+hit_soft_17 = False
 
 def dealer_p(total, ace, cards):
 
@@ -152,8 +152,8 @@ for i in range(0,10):
             # No resplitting; we adjust for resplitting later
             continue
         elif (i==0 and j==9) or (i==9 and j==0):
-            # Blackjack; no dealer blackjack
-            es += p[j]*1.5
+            # Doesn't typically count as a blackjack
+            es += p[j]*1.0
         else:
             # Remaining cases
             e, s = player_p(i+j+2, ((i==0) or (j==0)), False, d_card)
