@@ -200,7 +200,7 @@ func main() {
 
 		for j := 0; j < 10; j++ {
 			deck[j] += -1
-			for k := 0; k < 10; k++ {
+			for k := j; k < 10; k++ {
             
 				deck[k] += -1
 				e_h,e_s,e_o := player_p(j+k+2,(j==0 || k==0),deck,i)
