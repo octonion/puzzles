@@ -1,5 +1,11 @@
 # Julia version
 
+# You will need to install Primes:
+# Pkg.add("Primes")
+# Primes was in base Julia in earlier versions
+
+using Primes
+
 # Can import operators this way; not stylistically preferred
 
 #import Base: +
