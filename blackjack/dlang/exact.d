@@ -98,12 +98,14 @@ void main()
   deck[9] = decks*16;
   p[9] = double(16)/double(52);
 
+  /* Dealer */
   for (int i = 1; i < 9; i++) {
     deck[i] += -1;
 
+    /* Player */
     for (int j = 0; j < 10; j++) {
       deck[j] += -1;
-      for (int k = 0; k < 10; k++) {
+      for (int k = j; k < 10; k++) {
             
 	deck[k] += -1;
 	double[3] e = memoize!player_p(j+k+2,(j==0 || k==0),deck,i+1,(decks*52-3));
