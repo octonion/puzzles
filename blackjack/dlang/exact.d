@@ -107,7 +107,9 @@ void main()
             
 	deck[k] += -1;
 	double[3] e = memoize!player_p(j+k+2,(j==0 || k==0),deck,i+1,(decks*52-3));
-	writeln(i+1," ",j+1," ",k+1," ",e[0]," ",e[1]," ",e[2]);
+	write(i+1," ",j+1," ",k+1);
+	writef(" %.16f",e[1]);
+	writefln(" %.16f",e[2]);
 	deck[k] += 1;
       }
       deck[j] += 1;
