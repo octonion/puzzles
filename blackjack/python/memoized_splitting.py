@@ -6,7 +6,7 @@ sd = sum(deck)
 p = [x/sd for x in deck]
 
 # Dealer hits soft 17
-hit_soft_17 = False
+hit_soft_17 = True
 
 def dealer_p(total, ace, cards):
 

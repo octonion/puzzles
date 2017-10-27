@@ -47,7 +47,7 @@ def give_fake_hash(obj):
 @memoize
 def dealer_p(total, ace, cards, n):
 
-    outcomes = [0.0]*22
+    outcomes = [0]*22
     
     if (total > 21):
         
@@ -90,37 +90,31 @@ def dealer_p(total, ace, cards, n):
 @memoize
 def player_p(total, ace, cards, dc, n):
 
-    # Bust
-    if (total > 21):
-        return(-1.0, 'bust')
-
     # Stand
     if (total <= 11 and ace):
         # Stand on total+10
-        d = dealer_p(dc, (dc==0), cards, n)
+        d = dealer_p(dc,(dc==0),cards,n)
         e_stand = sum(d[0:total+10])-sum(d[total+11:])
     else:
         # Stand on total
-        d = dealer_p(dc, (dc==0), cards, n)
+        d = dealer_p(dc,(dc==0),cards,n)
         e_stand = sum(d[0:total])-sum(d[total+1:])
 
     # Hit
-    e_hit = 0.0
+    e_hit = 0
     for i in range(0,10):
         if (cards[i]>0):
             p = cards[i]/n
-            cards[i] += -1
-            e_card, strategy = player_p(total+i+1,(ace or i==0),cards,dc,n-1)
-            e_hit += p*e_card
-            cards[i] += 1
+            if (total+i+1>21):
+            # Bust
+                e_hit += -p
+            else:
+                cards[i] += -1
+                e_o,e_s,e_h = player_p(total+i+1,(ace or i==0),cards,dc,n-1)
+                e_hit += p*e_o
+                cards[i] += 1
 
-    # If we haven't busted we can always stand
-    e_best = e_stand
-    strategy = 'stand'
-    if (e_hit > e_best):
-        e_best = e_hit
-        strategy = 'hit'
-    return(e_best, strategy)
+    return(max(e_hit,e_stand),e_hit,e_stand)
 
 for i in range(1, 9):
     # Dealer
@@ -131,8 +125,13 @@ for i in range(1, 9):
         for k in range(j,10):
             
             deck[k] += -1
-            e, s = player_p(j+k+2, (j==0 or k==0), deck, i+1, sum(deck))
-            print('Dealer showing {}, hand {}/{} : {}, E = {:4.2f}'.format(i+1,j+1,k+1,s,e))
+            e_o,e_h,e_s = player_p(j+k+2,(j==0 or k==0),deck,i+1,sum(deck))
+            if (e_h>e_s):
+                s = 'hit'
+            else:
+                s = 'stand'
+            print(i+1,j+1,k+1,e_h,e_s)   
+            #print('Dealer showing {}, hand {}/{} : {}, E = {:9.8f}'.format(i+1,j+1,k+1,s,e_o))
             deck[k] += 1
         deck[j] += 1
     deck[i] += 1
