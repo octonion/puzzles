@@ -1,0 +1,3 @@
+time rdmd --compiler=ldc2 -O3 -boundscheck=off exact.d
+dmd -O exact.d
+ldc2 -O3 exact.d
