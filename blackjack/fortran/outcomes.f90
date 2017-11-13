@@ -15,9 +15,9 @@ program outcomes
 
      p = 0
      do j = 1, 10
-	deck(j) = deck(j)-1
+        deck(j) = deck(j)-1
         n = partitions(deck, j)
-	deck(j) = deck(j)+1
+        deck(j) = deck(j)+1
         p = p+n
      end do
 
