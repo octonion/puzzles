@@ -24,5 +24,9 @@ for i in range(1,7):
 u = t.T-np.eye(8)
 n = null(u)
 
+s = sum(n)
+n = n/s
+print(n)
+
 w = (1/n[7])[0]
 print("Covfefe waiting time = {0}".format(w))
