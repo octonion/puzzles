@@ -1,0 +1,11 @@
+Dealer 0 417334 
+Dealer 1 560954 
+Dealer 2 658854 
+Dealer 3 679464 
+Dealer 4 680299 
+Dealer 5 680305 
+Dealer 6 680305 
+Dealer 7 680305 
+Dealer 8 680305 
+Dealer 9 680305 
+Total 6398430 
