@@ -1,7 +1,6 @@
 // Groovy
 
-def deck = [4]*9
-deck << new Integer(16)
+def deck = [4,4,4,4,4,4,4,4,4,16]
 
 def partitions
 
@@ -13,7 +12,7 @@ partitions = { ArrayList cards, int subtotal ->
         if (cards[i]>0) {
 
             cards[i] = cards[i]-1
-            total = subtotal+i+1
+            def total = subtotal+i+1
             
             if (total < 21) {
                 
@@ -38,7 +37,7 @@ partitions = { ArrayList cards, int subtotal ->
     return m
 }
 
-def d = 0
+d = 0
 
 for (i in 0..9) {
 
@@ -46,7 +45,7 @@ for (i in 0..9) {
 
     deck[i] = deck[i]-1
 
-    def p = 0
+    p = 0
     for (j in 0..9) {
         deck[j] = deck[j]-1
         n = partitions(deck, j+1)
