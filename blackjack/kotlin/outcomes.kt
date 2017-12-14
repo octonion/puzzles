@@ -20,7 +20,7 @@ fun partitions(cards: Array<Int>, subtotal: Int): Int {
 	return(m)
 }
 
-fun main(x: Array<String>) {
+fun main(args : Array<String>) {
 	var deck = arrayOf(4,4,4,4,4,4,4,4,4,16)
 	var d = 0
 
