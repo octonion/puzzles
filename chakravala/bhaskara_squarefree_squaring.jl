@@ -18,7 +18,7 @@ using Primes
 #Base.(:(*))
 #Base.(:(^))
 
-type modular
+mutable struct modular
     x
     d
     function modular(x, d)
@@ -41,7 +41,7 @@ function Base.:(*)(a::modular, b::modular)
     modular(a.x*b.x, a.d)
 end
 
-type Pell
+mutable struct Pell
     x
     y
     D
@@ -114,6 +114,10 @@ println("[h, m] = [$h, $m]")
 
 while !(h==1 || h==2 || h==4)
 
+    global x_init, y_init, h_init, m_init
+    global x, y, h, m
+    global i, steps
+
     x = div((m_init*x_init+y_init),h_init)
     y = div((D*x_init+m_init*y_init),h_init)
 
@@ -182,6 +186,8 @@ if (S>1)
     A = Pell(x, y, D)
 
     for factor in rS_f
+
+        local B
 
         M = factor[1]^factor[2]
         B = Pell(modular(A.x, M), modular(A.y, M), modular(A.D, M))
