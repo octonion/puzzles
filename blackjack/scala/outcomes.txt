@@ -10,6 +10,6 @@ Dealer showing 8 partitions = 680305
 Dealer showing 9 partitions = 680305
 Total partitions = 6398430
 
-real	0m0.852s
-user	0m0.648s
-sys	0m0.068s
+real	0m0.329s
+user	0m0.344s
+sys	0m0.040s
