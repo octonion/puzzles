@@ -1,0 +1,43 @@
+PROC partitions = (REF []INT cards, INT subtotal) INT:
+(
+  INT m;
+  m := 0;
+  FOR i FROM 0 TO 9
+  DO
+    IF (cards[i]>0) THEN
+      cards[i] +:= -1;
+      INT total := subtotal+i+1;
+      IF (total < 21) THEN
+        m +:= 1;
+        m +:= partitions(cards, total)
+      ELSE
+        IF ((subtotal+i+1)=21) THEN
+          m +:= 1
+        FI
+      FI;
+      cards[i] +:= 1
+    FI
+  OD;
+  m
+);
+
+[0:9]INT deck;
+deck[0:9] := (4,4,4,4,4,4,4,4,4,16);
+INT d, p, n;
+d := 0;
+FOR i FROM 0 TO 9
+DO
+  deck[i] +:= -1;
+  p := 0;
+  FOR j FROM 0 TO 9
+  DO
+    deck[j] +:= -1;
+    n := partitions(deck, j+1);
+    deck[j] +:= 1;
+    p +:= n
+  OD;
+  print(("Dealer showing ", i," partitions =",p,new line));
+  d +:= p;
+  deck[i] +:= 1
+OD;
+print(("Total partitions =",d,new line))
