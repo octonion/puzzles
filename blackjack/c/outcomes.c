@@ -47,4 +47,6 @@ int main(void)
     deck[i] = deck[i]+1;
   }
   printf("Total partitions = %i\n",d);
+
+  return 0;
 }
