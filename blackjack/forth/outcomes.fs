@@ -4,22 +4,25 @@ variable subtotal
 variable m
 variable d
 
-variable deck 9 cells allot
-\ deck 10 cells erase
+\ variable deck 9 cells allot
 
-: deck-init
-  9 0 do
-    4 i cells deck + !
-  loop
-  16 9 cells deck + !
-;
+\ : deck-init
+\  9 0 do
+\    4 i cells deck + !
+\  loop
+\  16 9 cells deck + !
+\ ;
+\ deck-init
+
+\ Can be done using "create"
+create deck 4 , 4 , 4 , 4 , 4 , 4 , 4 , 4 , 4 , 16 ,
 
 : print-deck
 10 0 do
   i cells deck + ?
 loop ;
 
-deck-init
+\ print-deck
 
 : cards cells deck + ;
 : inc cards 1 swap +! ;
