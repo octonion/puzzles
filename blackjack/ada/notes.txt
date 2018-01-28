@@ -1,0 +1,1 @@
+gnat compile -O3 -gnatn -gnatp outcomes.adb
