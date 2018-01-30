@@ -1,0 +1,1 @@
+crystal build -o outcomes --release outcomes.cr
