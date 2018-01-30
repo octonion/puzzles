@@ -15,7 +15,7 @@ def partitions(cards, subtotal)
         m += 1
         # Hit again
         m += partitions(cards, total)
-          elsif (subtotal+i+1==21) then
+      elsif (subtotal+i+1==21) then
         # Stand; hit again is an automatic bust
         m += 1
       end
