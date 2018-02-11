@@ -1,0 +1,15 @@
+Dealer showing  0  partitions = 417334
+Dealer showing  1  partitions = 560954
+Dealer showing  2  partitions = 658854
+Dealer showing  3  partitions = 679464
+Dealer showing  4  partitions = 680299
+Dealer showing  5  partitions = 680305
+Dealer showing  6  partitions = 680305
+Dealer showing  7  partitions = 680305
+Dealer showing  8  partitions = 680305
+Dealer showing  9  partitions = 680305
+Total partitions = 6398430
+
+real	0m0.072s
+user	0m0.069s
+sys	0m0.004s
