@@ -2,8 +2,8 @@ from ctypes import *
 import os
 
 lib = cdll.LoadLibrary(os.path.abspath("libpartitions.so"))
-#lib.partitions.argtypes = [POINTER(c_int), c_int]
-#lib.partitions.restype = c_long
+lib.partitions.argtypes = [POINTER(c_int), c_int]
+lib.partitions.restype = c_long
 
 deck = ([4]*9)
 deck.append(16)
