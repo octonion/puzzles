@@ -1,11 +1,5 @@
-import std.stdio: write, writeln, writef, writefln;
-
 extern (C) int partitions(int* cards, int subtotal)
 {
-  //writeln("0 = ",cards[0]);
-  //writeln("1 = ",cards[1]);
-  //writeln("2 = ",cards[2]);
-  //writeln("subtotal = ",subtotal);
   int m=0;
   int total;
   // Hit
