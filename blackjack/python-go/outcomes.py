@@ -6,8 +6,8 @@ class GoSlice(Structure):
                 ("len", c_longlong), ("cap", c_longlong)]
 
 lib = cdll.LoadLibrary(os.path.abspath("libpartitions.so"))
-#lib.partitions.argtypes = [POINTER(c_int), c_int]
-#lib.partitions.restype = c_int
+lib.partitions.argtypes = [GoSlice, c_int]
+lib.partitions.restype = c_int
 
 deck = ([4]*9)
 deck.append(16)
