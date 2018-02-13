@@ -1,9 +1,9 @@
 from ctypes import *
 import os
 
-test_lib = cdll.LoadLibrary(os.path.abspath("libpartitions.so"))
-test_lib.partitions.argtypes = [POINTER(c_int), c_int]
-test_lib.partitions.restype = c_int
+lib = cdll.LoadLibrary(os.path.abspath("libpartitions.so"))
+#lib.partitions.argtypes = [POINTER(c_int), c_int]
+#lib.partitions.restype = c_long
 
 deck = ([4]*9)
 deck.append(16)
@@ -20,10 +20,10 @@ for i in range(0, 10):
     for j in range(0, 10):
         deck[j] = deck[j]-1
 
-        nums_arr = (c_int*len(deck))(*deck)
-            
-        n = test_lib.partitions(nums_arr, c_int(j+1))
-        #print('Starting with ', j, n)
+        cards = (c_int*len(deck))(*deck)
+
+        n = lib.partitions(cards, c_int(j+1))
+        
         deck[j] = deck[j]+1
         p += n
 
