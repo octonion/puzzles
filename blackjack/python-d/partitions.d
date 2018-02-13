@@ -1,4 +1,5 @@
-extern (C) int partitions(int* cards, int subtotal)
+extern (C) int partitions(ref int[10] cards, int subtotal)
+// Replacing ref int[10] with *int also works
 {
   int m=0;
   int total;
