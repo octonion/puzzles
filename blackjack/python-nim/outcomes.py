@@ -1,6 +1,8 @@
 from ctypes import *
 import os
 
+# Nim int is 64-bit
+
 lib = cdll.LoadLibrary(os.path.abspath("libpartitions.so"))
 lib.partitions.argtypes = [POINTER(c_long), c_long]
 lib.partitions.restype = c_long
