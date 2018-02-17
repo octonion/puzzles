@@ -1,12 +1,8 @@
 # Nim
 var
   deck: array[0..9, int]
-  n, p : int
+  d, n, p : int
   
-for i in 0..8:
-  deck[i] = 4 
-deck[9] = 16
-
 proc partitions(cards: var array[0..9, int], subtotal: int): int =
   var total: int
   result = 0
@@ -15,7 +11,7 @@ proc partitions(cards: var array[0..9, int], subtotal: int): int =
   #echo "Aces = ",cards[0]
   
   # Hit
-  for i in countup(0, 9):
+  for i in 0..9:
     if (cards[i]>0):
       cards[i] = cards[i]-1
       total = subtotal+i+1
@@ -31,16 +27,20 @@ proc partitions(cards: var array[0..9, int], subtotal: int): int =
                 
   return result
 
-var d = 0
+for i in 0..8:
+  deck[i] = 4 
+deck[9] = 16
 
-for i in countup(0, 9):
+d = 0
+
+for i in 0..9:
 
     # Dealer showing
 
     deck[i] = deck[i]-1
 
-    var p = 0
-    for j in countup(0, 9):
+    p = 0
+    for j in 0..9:
         deck[j] = deck[j]-1
         n = partitions(deck, j+1)
         deck[j] = deck[j]+1
