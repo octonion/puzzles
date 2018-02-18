@@ -2,7 +2,7 @@
 
 require 'ffi'
 
-module C
+module D
   extend FFI::Library
   ffi_lib "./libpartitions.so"
   attach_function :partitions, [ :pointer, :int ], :int
@@ -21,7 +21,7 @@ for i in 0..9
     deck[j] = deck[j]-1
     pointer = FFI::MemoryPointer.new :int, deck.size
     pointer.put_array_of_int 0, deck
-    n = C.partitions(pointer, j+1)
+    n = D.partitions(pointer, j+1)
     deck[j] = deck[j]+1
     p += n
   end
