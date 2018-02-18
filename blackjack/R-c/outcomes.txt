@@ -1,0 +1,67 @@
+
+R version 3.4.2 (2017-09-28) -- "Short Summer"
+Copyright (C) 2017 The R Foundation for Statistical Computing
+Platform: x86_64-pc-linux-gnu (64-bit)
+
+R is free software and comes with ABSOLUTELY NO WARRANTY.
+You are welcome to redistribute it under certain conditions.
+Type 'license()' or 'licence()' for distribution details.
+
+  Natural language support but running in an English locale
+
+R is a collaborative project with many contributors.
+Type 'contributors()' for more information and
+'citation()' on how to cite R or R packages in publications.
+
+Type 'demo()' for some demos, 'help()' for on-line help, or
+'help.start()' for an HTML browser interface to help.
+Type 'q()' to quit R.
+
+> 
+> dyn.load("partitions.so")
+> 
+> partitions <- function(cards,subtotal,m) {
++     out <- .C("partitions",
++               cards=as.integer(cards),
++               subtotal=as.integer(subtotal),
++               m=as.integer(m))
++     return(out$m)
++ }
+> 
+> 
+> deck = c(4,4,4,4,4,4,4,4,4,16)
+> d=0
+> 
+> for (i in 1:10) {
++     # Dealer showing
++     deck[i] = deck[i]-1
++     p = 0
++     for (j in 1:10) {
++         deck[j] = deck[j]-1
++         m = 0
++         n = partitions(deck,j,m)
++         deck[j] = deck[j]+1
++         p = p+n
++     }
++ 
++     print(paste("Dealer showing ",i-1," partitions = ",p,sep=""))
++     d = d+p
++     deck[i] = deck[i]+1
++ }
+[1] "Dealer showing 0 partitions = 417334"
+[1] "Dealer showing 1 partitions = 560954"
+[1] "Dealer showing 2 partitions = 658854"
+[1] "Dealer showing 3 partitions = 679464"
+[1] "Dealer showing 4 partitions = 680299"
+[1] "Dealer showing 5 partitions = 680305"
+[1] "Dealer showing 6 partitions = 680305"
+[1] "Dealer showing 7 partitions = 680305"
+[1] "Dealer showing 8 partitions = 680305"
+[1] "Dealer showing 9 partitions = 680305"
+> print(paste("Total partitions = ",d,sep=""))
+[1] "Total partitions = 6398430"
+> 
+
+real	0m0.279s
+user	0m0.483s
+sys	0m0.660s
