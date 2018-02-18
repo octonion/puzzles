@@ -20,11 +20,11 @@ Type 'q()' to quit R.
 > 
 > dyn.load("partitions.so")
 > 
-> partitions <- function(cards,subtotal,m) {
+> partitions <- function(cards,subtotal) {
 +     out <- .C("partitions",
 +               cards=as.integer(cards),
 +               subtotal=as.integer(subtotal),
-+               m=as.integer(m))
++               m=as.integer(0))
 +     return(out$m)
 + }
 > 
@@ -38,8 +38,7 @@ Type 'q()' to quit R.
 +     p = 0
 +     for (j in 1:10) {
 +         deck[j] = deck[j]-1
-+         m = 0
-+         n = partitions(deck,j,m)
++         n = partitions(deck,j)
 +         deck[j] = deck[j]+1
 +         p = p+n
 +     }
@@ -62,6 +61,6 @@ Type 'q()' to quit R.
 [1] "Total partitions = 6398430"
 > 
 
-real	0m0.279s
-user	0m0.483s
-sys	0m0.660s
+real	0m0.278s
+user	0m0.561s
+sys	0m0.585s
