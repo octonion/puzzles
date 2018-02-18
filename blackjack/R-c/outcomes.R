@@ -1,11 +1,11 @@
 
 dyn.load("partitions.so")
 
-partitions <- function(cards,subtotal,m) {
+partitions <- function(cards,subtotal) {
     out <- .C("partitions",
               cards=as.integer(cards),
               subtotal=as.integer(subtotal),
-              m=as.integer(m))
+              m=as.integer(0))
     return(out$m)
 }
 
@@ -19,8 +19,7 @@ for (i in 1:10) {
     p = 0
     for (j in 1:10) {
         deck[j] = deck[j]-1
-        m = 0
-        n = partitions(deck,j,m)
+        n = partitions(deck,j)
         deck[j] = deck[j]+1
         p = p+n
     }
