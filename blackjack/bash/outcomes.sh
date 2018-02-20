@@ -3,7 +3,7 @@ partitions() {
     #echo ${cards[@]}
 
     # Hit
-    for (( i=0; (( i<10 )); $((i++)) )); do
+    for i in {0..9}; do
 	if (( cards[i]>0 )); then
 	    (( cards[i]+=-1 ))
 	    (( total=total+i+1 ))
@@ -26,12 +26,12 @@ declare -a cards=( 4 4 4 4 4 4 4 4 4 16 )
 
 d=0
   
-for (( i=0; (( i<10 )); $((i++)) )); do
+for i in {0..9}; do
     # Dealer showing
     (( cards[i]+=-1 ))
     p=0
     #echo ${cards[@]}
-    for (( j=0; (( j<10 )); $((j++)) )); do
+    for j in {0..9}; do
 	(( cards[j]+=-1 ))
 	(( total=j+1 ))
 	(( m=0 ))
