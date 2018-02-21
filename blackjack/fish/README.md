@@ -1,0 +1,3 @@
+```bash
+fish outcomes.sh
+```
