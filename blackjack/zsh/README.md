@@ -1,0 +1,3 @@
+```bash
+zsh outcomes.sh
+```
