@@ -1,0 +1,37 @@
+Larceny v1.3 "Grain Alcohol and Rainwater" (Aug  6 2017 01:16:30, precise:Linux:unified)
+larceny.heap, built on Sun Aug  6 01:16:56 EDT 2017
+
+> 
+> add1
+
+> sub1
+
+> partitions
+
+> deck
+
+> d
+
+> p
+
+> n
+
+> (0   417334)
+(1   560954)
+(2   658854)
+(3   679464)
+(4   680299)
+(5   680305)
+(6   680305)
+(7   680305)
+(8   680305)
+(9   680305)
+
+> 6398430
+> 
+
+> 
+
+real	0m1.928s
+user	0m1.898s
+sys	0m0.031s
