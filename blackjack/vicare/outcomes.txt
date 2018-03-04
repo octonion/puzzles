@@ -1,0 +1,67 @@
+Vicare Scheme version 0.4d1.2, 64-bit
+Build 2018-03-04
+
+Copyright (c) 2006-2010 Abdulaziz Ghuloum and contributors
+Copyright (c) 2011-2016 Marco Maggi and contributors
+
+vicare> (define (add1 n)
+  (+ n 1)
+  )
+vicare> 
+(define (sub1 n)
+  (+ n -1)
+  )
+vicare> 
+(define (partitions cards subtotal)
+  (define m 0)
+  (let player-card ((i 0))
+    (if (> (vector-ref cards i) 0)
+(cond
+ ((< (add1 (+ subtotal i)) 21)
+  (set! m (add1 m))
+  (vector-set! cards i (sub1 (vector-ref cards i)))
+  (set! m (+ m (partitions cards (add1 (+ subtotal i)))))
+  (vector-set! cards i (add1 (vector-ref cards i))))
+ ((= (add1 (+ subtotal i)) 21)
+  (set! m (add1 m)))))
+    (if (< i 9) (player-card (+ i 1))))
+  m)
+vicare> 
+(define deck (vector 4 4 4 4 4 4 4 4 4 16))
+vicare> 
+(define d 0)
+vicare> (define p 0)
+vicare> (define n 0)
+vicare> 
+(let dealer-card ((i 0))
+  (vector-set! deck i (sub1 (vector-ref deck i)))
+  (set! p 0)
+  (let player-card ((j 0))
+    (vector-set! deck j (sub1 (vector-ref deck j)))
+    (set! n (partitions deck (add1 j)))
+    (vector-set! deck j (add1 (vector-ref deck j)))
+    (set! p (+ p n))
+    (if (< j 9) (player-card (+ j 1))))
+  (display (list i " " p))
+  (newline)
+  (set! d (+ d p))
+  (vector-set! deck i (add1 (vector-ref deck i)))
+  (if (< i 9) (dealer-card (+ i 1))))
+(0   417334)
+(1   560954)
+(2   658854)
+(3   679464)
+(4   680299)
+(5   680305)
+(6   680305)
+(7   680305)
+(8   680305)
+(9   680305)
+vicare> 
+(display d)
+6398430vicare> (newline)
+
+vicare> 
+real	0m0.783s
+user	0m0.698s
+sys	0m0.084s
