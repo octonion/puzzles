@@ -48,10 +48,12 @@ begin
 	    deck[j] := deck[j]+1;
 	    p := p+n;
 	  end loop;
+	  raise notice 'Dealer showing % partitions = %',i-1,p;
 	  --return next;
           d := d+p;
           deck[i] := deck[i]+1;
         end loop;
+	raise notice 'Total partitions = %',d;
 	return d;
 end;
 $$ language plpgsql;

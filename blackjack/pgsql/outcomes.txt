@@ -1,9 +1,20 @@
+NOTICE:  Dealer showing 0 partitions = 417334
+NOTICE:  Dealer showing 1 partitions = 560954
+NOTICE:  Dealer showing 2 partitions = 658854
+NOTICE:  Dealer showing 3 partitions = 679464
+NOTICE:  Dealer showing 4 partitions = 680299
+NOTICE:  Dealer showing 5 partitions = 680305
+NOTICE:  Dealer showing 6 partitions = 680305
+NOTICE:  Dealer showing 7 partitions = 680305
+NOTICE:  Dealer showing 8 partitions = 680305
+NOTICE:  Dealer showing 9 partitions = 680305
+NOTICE:  Total partitions = 6398430
  outcomes 
 ----------
   6398430
 (1 row)
 
 
-real	1m4.819s
-user	0m0.044s
-sys	0m0.007s
+real	1m1.857s
+user	0m0.041s
+sys	0m0.000s
