@@ -13,7 +13,7 @@ int partitions(int cards[10], int subtotal)
 	// Hit again
 	m += partitions(cards, total);
 	cards[i] += 1;
-      } else if (subtotal+i+1==21) {
+      } else if (total==21) {
 	// Stand; hit again is an automatic bust
 	m += 1;
       }
