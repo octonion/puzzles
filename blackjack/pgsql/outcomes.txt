@@ -1,0 +1,9 @@
+ outcomes 
+----------
+  6398430
+(1 row)
+
+
+real	1m4.819s
+user	0m0.044s
+sys	0m0.007s
