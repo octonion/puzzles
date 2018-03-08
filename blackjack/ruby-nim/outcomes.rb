@@ -15,19 +15,19 @@ d = 0
 
 for i in 0..9
   # Dealer showing
-  deck[i] = deck[i]-1
+  deck[i] -= 1
   p = 0
   for j in 0..9
-    deck[j] = deck[j]-1
+    deck[j] -= 1
     pointer = FFI::MemoryPointer.new :long_long, deck.size
     pointer.put_array_of_long_long 0, deck
     n = Nim.partitions(pointer, j+1)
-    deck[j] = deck[j]+1
+    deck[j] += 1
     p += n
   end
   print("Dealer showing #{i} partitions = #{p}\n")
   d += p
-  deck[i] = deck[i]+1
+  deck[i] += 1
 end
 
 print("Total partitions = #{d}\n")

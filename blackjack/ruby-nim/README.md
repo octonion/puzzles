@@ -1,4 +1,4 @@
 ```bash
-nim c -d:release --app:lib partitions.nim
+nim compile -d:release --opt:speed --app:lib partitions.nim
 ruby outcomes.rb
 ```

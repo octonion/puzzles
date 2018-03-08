@@ -6,16 +6,16 @@ proc partitions*(cards: var array[0..9, int], subtotal: int): int {. exportc, dy
   # Hit
   for i in 0..9:
     if (cards[i]>0):
-      cards[i] = cards[i]-1
       total = subtotal+i+1
       if (total < 21):
+        cards[i] -= 1
         # Stand
         result += 1
         # Hit again
         result += partitions(cards, total)
-      elif (subtotal+i+1==21):
+        cards[i] += 1
+      elif (total==21):
         # Stand; hit again is an automatic bust
         result += 1
-      cards[i] = cards[i]+1
                 
   return result
