@@ -1,0 +1,3 @@
+```bash
+julia outcomes.jl
+```
