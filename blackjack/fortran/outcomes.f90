@@ -39,18 +39,18 @@ recursive integer function partitions(cards,subtotal) result(m)
   ! Hit
   do i = 1, 10
      if (cards(i)>0) then
-        cards(i) = cards(i)-1
         total = subtotal+i
         if (total < 21) then
            ! Stand
            m = m+1
            ! Hit again
+           cards(i) = cards(i)-1
            m = m+partitions(cards, total)
-        else if (subtotal+i==21) then
+           cards(i) = cards(i)+1
+        else if (total==21) then
            ! Stand; hit again is an automatic bust
            m = m+1
         end if
-        cards(i) = cards(i)+1
      end if
   end do
 end function partitions
