@@ -12,13 +12,13 @@ proc partitions(cards: var array[0..9, int], subtotal: int): int =
     if (cards[i]>0):
       total = subtotal+i+1
       if (total < 21):
-        cards[i] -= 1
         # Stand
         result += 1
         # Hit again
+        cards[i] -= 1
         result += partitions(cards, total)
         cards[i] += 1
-      elif (subtotal+i+1==21):
+      elif (total==21):
         # Stand; hit again is an automatic bust
         result += 1
                 
