@@ -4,18 +4,18 @@ function partitions(cards, subtotal) {
     // Hit
     for (var i = 0; i < 10; i++) {
 	if (cards[i]>0) {
-	    cards[i] += -1;
 	    total = subtotal+i+1;
 	    if (total < 21) {
 		// Stand
 		m += 1;
 		// Hit again
+		cards[i] += -1;
 		m += partitions(cards, total);
+		cards[i] += 1;
 	    } else if (total==21) {
 		// Stand; hit again is an automatic bust
 		m += 1;
 	    }
-	    cards[i] += 1;
 	}
     }
     return m;
