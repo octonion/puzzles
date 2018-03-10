@@ -1,8 +1,8 @@
 function partitions(cards, subtotal) {
-    var m=0;
-    var total;
+    let m=0;
+    let total;
     // Hit
-    for (var i = 0; i < 10; i++) {
+    for (let i = 0; i < 10; i++) {
 	if (cards[i]>0) {
 	    total = subtotal+i+1;
 	    if (total < 21) {
@@ -21,16 +21,16 @@ function partitions(cards, subtotal) {
     return m;
 }
 
-var deck = new Array(4,4,4,4,4,4,4,4,4,16);
-var d=0;
+let deck = new Array(4,4,4,4,4,4,4,4,4,16);
+let d=0;
   
-for (var i = 0; i < 10; i++) {
+for (let i = 0; i < 10; i++) {
     // Dealer showing
     deck[i] += -1;
-    var p = 0;
-    for (var j = 0; j < 10; j++) {
+    let p = 0;
+    for (let j = 0; j < 10; j++) {
 	deck[j] += -1;
-	var n = partitions(deck, j+1);
+	let n = partitions(deck, j+1);
 	deck[j] += 1;
 	p += n;
     }
