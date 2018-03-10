@@ -1,4 +1,4 @@
-Program outcomes;
+program outcomes;
 
 type
    stack = array[0..9] of integer;
