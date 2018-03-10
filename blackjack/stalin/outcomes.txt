@@ -10,6 +10,6 @@
 (9   680305)
 6398430
 
-real	0m0.044s
-user	0m0.046s
-sys	0m0.000s
+real    0m0.042s
+user    0m0.039s
+sys     0m0.004s
