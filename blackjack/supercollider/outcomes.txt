@@ -1,0 +1,51 @@
+init_OSC
+empty
+compiling class library (debug build)...
+initPassOne started
+	NumPrimitives = 711
+initPassOne done
+	compiling dir: '/usr/share/SuperCollider/SCClassLibrary'
+	compiling dir: '/usr/share/SuperCollider/Extensions'
+	pass 1 done
+ERROR: Class extension for nonexistent class 'Document'
+     In file:'/deprecated/3.7/deprecated-3.7.sc'
+	numentries = 812924 / 11116666 = 0.073
+	5003 method selectors, 2222 classes
+	method table size 12206696 bytes, big table size 88933328
+	Number of Symbols 11609
+	Byte Code Size 351706
+	compiled 310 files in 0.29 seconds
+
+Info: 3 methods are currently overwritten by extensions. To see which, execute:
+MethodOverride.printAll
+
+compile done
+Couldn't set realtime scheduling priority 1: Operation not permitted
+Class tree inited in 0.01 seconds
+Cleaning up temp synthdefs...
+WARNING: Extension in '/usr/share/SuperCollider/SCClassLibrary/Platform/linux/extMIDIOut.sc' overwrites Meta_MIDIClient:externalSources in main class library.
+WARNING: Extension in '/usr/share/SuperCollider/SCClassLibrary/Platform/linux/extMIDIOut.sc' overwrites Meta_MIDIClient:externalDestinations in main class library.
+WARNING: Extension in '/usr/share/SuperCollider/SCClassLibrary/Platform/linux/extMIDIOut.sc' overwrites Meta_MIDIIn:connectAll in main class library.
+Intentional overwrites must be put in a 'SystemOverwrites' subfolder.
+
+
+*** Welcome to SuperCollider 3.7.0. *** For help type ctrl-c ctrl-h (Emacs) or :SChelp (vim) or ctrl-U (sced/gedit).
+Couldn't set realtime scheduling priority 1: Operation not permitted
+Dealer showing 0 partitions = 417334
+Dealer showing 1 partitions = 560954
+Dealer showing 2 partitions = 658854
+Dealer showing 3 partitions = 679464
+Dealer showing 4 partitions = 680299
+Dealer showing 5 partitions = 680305
+Dealer showing 6 partitions = 680305
+Dealer showing 7 partitions = 680305
+Dealer showing 8 partitions = 680305
+Dealer showing 9 partitions = 680305
+Total partitions = 6398430
+empty
+cleaning up OSC
+terminate called without an active exception
+
+real	0m7.626s
+user	0m7.489s
+sys	0m0.171s

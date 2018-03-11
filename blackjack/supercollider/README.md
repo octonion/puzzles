@@ -1,0 +1,3 @@
+```bash
+sclang outcomes.scd
+```
