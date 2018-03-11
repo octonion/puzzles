@@ -1,3 +1,4 @@
+You'll need the gnat dev headers installed e.g. libgnatvsn7-dev.
 ```bash
 gnatmake -Ofast -gnatp -fPIC -c unit
 gnatbind -n unit
