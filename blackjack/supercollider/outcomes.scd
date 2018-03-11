@@ -6,14 +6,14 @@ var partitions = { arg cards, subtotal;
         if (cards[i]>0,{
             total = subtotal+i+1;
             if (total<21,{
-                cards[i] = cards[i]-1;
                 // Stand
                 m = m+1;
                 // Hit again
+		cards[i] = cards[i]-1;
                 m = m+partitions.value(cards, total);
                 cards[i] = cards[i]+1;
             });
-            if (subtotal+i+1==21,{
+            if (total==21,{
                 // Stand; hit again is an automatic bust
                 m = m+1;});
             });
