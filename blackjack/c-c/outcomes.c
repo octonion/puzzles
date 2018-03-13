@@ -2,14 +2,15 @@
 #include <stdlib.h>
 #include <dlfcn.h>
 
-
 int main(void)
 {
 
   void *lib;
-  lib = dlopen("./libpartitions.so", RTLD_LAZY);
+  lib = dlopen("./partitions.so", RTLD_LAZY);
   int (*partitions)(int[10], int);
-  *(void **)(&partitions) = dlsym(lib, "partitions");
+  //*(void **)(&partitions) = dlsym(lib, "partitions");
+  //int (*partitions)(int*, int);
+  partitions = dlsym(lib, "partitions");
 
   int deck[] = {4,4,4,4,4,4,4,4,4,16};
   int d=0;

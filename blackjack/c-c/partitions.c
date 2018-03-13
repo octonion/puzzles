@@ -1,4 +1,4 @@
-int partitions(int cards[10], int subtotal)
+int partitions(int *cards, int subtotal)
 {
   int m=0;
   int total;
