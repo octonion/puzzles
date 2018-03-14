@@ -1,0 +1,55 @@
+outcomes: procedure options(main);
+  declare deck(10) fixed bin(31,0) initial (4,4,4,4,4,4,4,4,4,16);
+  declare d,p fixed bin(31,0);
+  declare i,j fixed bin(15,0);
+
+  d = 0;
+
+  do i = 1 to 10;
+    /* Dealer showing */
+    deck(i) = deck(i)-1;
+    p = 0;
+    do j = 1 to 10;
+      deck(j) = deck(j)-1;
+      p = p+partitions(deck,j);
+      deck(j) = deck(j)+1;
+    end;
+    put skip list ('Dealer showing ',i-1,' partitions =',p);
+    d = d+p;
+    deck(i) = deck(i)+1;
+  end;
+  put skip list ('Total partitions =',d);
+
+partitions: procedure (cards, subtotal) returns (fixed bin(31,0));
+   declare cards(10) fixed bin(31,0);
+   declare i,subtotal,total fixed bin(15,0);
+   declare m fixed bin(31,0);
+   m = 0;
+   /* Hit */
+   do i = 1 to 10;
+     if (cards(i)>0) then
+     do;
+       total = subtotal+i;
+       select;
+          when (total < 21)
+	  do;
+            /* Stand */
+            m = m+1;
+            /* Hit again */
+	    cards(i) = cards(i)-1;
+            m = m+partitions(cards,total);
+            cards(i) = cards(i)+1;
+          end;
+          when (total=21)
+	  do;
+	    /* Can only stand, hit is automatic bust */
+	    m = m+1;
+          end;
+	  otherwise;
+        end;
+      end;
+    end;
+    return(m);
+end partitions;
+
+end outcomes;

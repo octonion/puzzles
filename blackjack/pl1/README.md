@@ -1,0 +1,4 @@
+```bash
+./outcomes.sh
+./outcomes
+```
