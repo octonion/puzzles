@@ -14,11 +14,11 @@ outcomes: procedure options(main);
       p = p+partitions(deck,j);
       deck(j) = deck(j)+1;
     end;
-    put skip list ('Dealer showing ',i-1,' partitions =',p);
+    put skip edit('Dealer showing ',i-1,' partitions = ',p)(a,f(1),a,f(6));
     d = d+p;
     deck(i) = deck(i)+1;
   end;
-  put skip list ('Total partitions =',d);
+  put skip edit('Total partitions = ',d)(a,f(7));
 
 partitions: procedure (cards, subtotal) returns (fixed bin(31,0));
    declare cards(10) fixed bin(31,0);
