@@ -37,9 +37,8 @@ int main(void)
     int p = 0;
     for (int j = 0; j < 10; j++) {
       deck[j] -= 1;
-      int n = partitions(deck, j+1);
+      p += partitions(deck, j+1);
       deck[j] += 1;
-      p += n;
     }
 
     printf("Dealer showing %i partitions = %i\n",i,p);
