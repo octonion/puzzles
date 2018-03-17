@@ -44,7 +44,12 @@ for i in xrange(10):
     for j in xrange(10):
         deck[j] -= 1
         pdeck = (c_size_t*len(deck))(*deck)
-        cards = FBArray(pdeck,pdeck,80,8,1,10,0,9)
+        cards = FBArray(pdeck,pdeck,
+                        sizeof(pdeck),
+                        sizeof(c_size_t),
+                        1,
+                        len(deck),
+                        0,len(deck)-1)
         p += lib.partitions(cards, c_size_t(j+1))
         deck[j] += 1
     print('Dealer showing ', i,' partitions =',p)
