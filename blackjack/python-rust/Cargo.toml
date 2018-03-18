@@ -1,0 +1,8 @@
+[package]
+name = "partitions"
+version = "0.0.1"
+authors = ["Christopher D. Long"]
+
+[lib]
+name = "partitions"
+crate-type = ["dylib"]
