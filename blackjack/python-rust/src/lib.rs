@@ -3,7 +3,7 @@
 use std::slice;
 
 #[no_mangle]
-pub extern fn partitions(ptr: *mut usize, len: usize, subtotal: usize) -> usize {
+pub extern fn partitions(ptr: *mut usize, len: usize, subtotal: usize) -> i32 {
     // assert!(!ptr.is_null());
     let cards = unsafe { slice::from_raw_parts_mut(ptr, len) };
 
