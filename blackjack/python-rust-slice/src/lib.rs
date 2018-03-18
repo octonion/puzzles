@@ -24,7 +24,7 @@ pub extern fn partitions(ptr: *mut usize, len: usize, subtotal: usize) -> i32 {
                 cards[i] -= 1;
 	        m += partitions(ptr, len, total);
                 cards[i] += 1;
-	    } else if subtotal+i+1==21 {
+	    } else if total==21 {
 	        // Stand; hit again is an automatic bust
 	        m += 1;
 	    }
