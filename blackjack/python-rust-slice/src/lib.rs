@@ -1,15 +1,18 @@
 // #![crate_type = "dylib"]
 
+use std::slice;
+
 #[no_mangle]
-pub extern fn partitions(mut cards: [usize; 10], subtotal: usize) -> u32 {
+pub extern fn partitions(ptr: *mut usize, len: usize, subtotal: usize) -> i32 {
+    // assert!(!ptr.is_null());
+    let cards = unsafe { slice::from_raw_parts_mut(ptr, len) };
 
     let mut m=0;
     let mut total;
 
     // Hit
+
     //println!("Subtotal = {}",subtotal);
-    //println!("Cards[0] = {}",cards[0]);
-    //println!("Cards[9] = {}",cards[9]);
 
     for i in 0..10 {
         if cards[i]>0 {
@@ -19,7 +22,7 @@ pub extern fn partitions(mut cards: [usize; 10], subtotal: usize) -> u32 {
 	        m += 1;
 	        // Hit again
                 cards[i] -= 1;
-	        m += partitions(cards, total);
+	        m += partitions(ptr, len, total);
                 cards[i] += 1;
 	    } else if subtotal+i+1==21 {
 	        // Stand; hit again is an automatic bust

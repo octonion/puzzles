@@ -13,7 +13,6 @@ deck.append(16)
 d = 0
 
 for i in xrange(10):
-    
     # Dealer showing
     deck[i] -= 1
     p = 0
