@@ -10,6 +10,6 @@ Dealer showing 009 partitions = 0000680305
 Dealer showing 010 partitions = 0000680305
 Total partitions = 0006398430
 
-real	0m6.126s
-user	0m6.054s
-sys	0m0.072s
+real    0m6.067s
+user    0m6.015s
+sys     0m0.052s
