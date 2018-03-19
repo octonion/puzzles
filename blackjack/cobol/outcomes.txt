@@ -1,0 +1,15 @@
+Dealer showing 001 partitions = 0000417334
+Dealer showing 002 partitions = 0000560954
+Dealer showing 003 partitions = 0000658854
+Dealer showing 004 partitions = 0000679464
+Dealer showing 005 partitions = 0000680299
+Dealer showing 006 partitions = 0000680305
+Dealer showing 007 partitions = 0000680305
+Dealer showing 008 partitions = 0000680305
+Dealer showing 009 partitions = 0000680305
+Dealer showing 010 partitions = 0000680305
+Total partitions = 0006398430
+
+real	0m6.126s
+user	0m6.054s
+sys	0m0.072s
