@@ -39,7 +39,7 @@ func main() {
 		}
 		fmt.Println("Dealer showing ", i," partitions =",p)
 		d += p
-		deck[i] = deck[i]+1
+		deck[i] += 1
 	}
 	fmt.Println("Total partitions =",d)
 }
