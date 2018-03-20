@@ -14,25 +14,16 @@ deck.append(16)
 
 d = 0
 
-for i in range(0, 10):
-
+for i in xrange(10):
     # Dealer showing
-
-    deck[i] = deck[i]-1
-
+    deck[i] -= 1
     p = 0
-    for j in range(0, 10):
-        deck[j] = deck[j]-1
-
+    for j in xrange(10):
+        deck[j] -= 1
         cards = GoSlice((c_void_p * 10)(*deck),10,10)
-        
-        n = lib.partitions(cards, c_int(j+1))
-        deck[j] = deck[j]+1
-        p += n
-
+        p += lib.partitions(cards, c_int(j+1))
+        deck[j] += 1
     print('Dealer showing ', i,' partitions =',p)
     d += p
-
-    deck[i] = deck[i]+1
-
+    deck[i] += 1
 print('Total partitions =',d)
