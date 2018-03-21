@@ -1,11 +1,9 @@
 import x10.io.Console;
-//import x10.array.*;
 
 public class outcomes {
 
-  public static def partitions(cards:Rail[Long], subtotal:Long)
+  public static def partitions(cards:Rail[Long], subtotal:Long) : Long
   {
-    if (subtotal>21) return 0;
     var m:Long = 0;
     var total:Long;
     // Hit
@@ -44,7 +42,6 @@ public static def main(args:Rail[String])
       p += partitions(deck, j+1);
       deck(j) += 1;
     }
-
     Console.OUT.println("Dealer showing "+i+" partitions = "+p);
     d += p;
     deck(i) += 1;
