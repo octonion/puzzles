@@ -1,0 +1,3 @@
+```bash
+math < outcomes.m
+```
