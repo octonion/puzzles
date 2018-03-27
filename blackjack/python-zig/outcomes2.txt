@@ -10,6 +10,6 @@
 ('Dealer showing ', 9, ' partitions =', 680305)
 ('Total partitions =', 6398430)
 
-real	0m4.912s
-user	0m4.904s
-sys	0m0.008s
+real    0m0.059s
+user    0m0.056s
+sys     0m0.004s
