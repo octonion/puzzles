@@ -1,4 +1,4 @@
 ```bash
-pbcompiler outcomes.bas
+pbcompiler outcomes.pb
 ./purebasic.out
 ```
