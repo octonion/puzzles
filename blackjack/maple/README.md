@@ -1,0 +1,3 @@
+```bash
+maple outcomes.mpl
+```
