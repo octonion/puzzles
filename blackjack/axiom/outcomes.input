@@ -9,16 +9,16 @@ partitions(cards,subtotal) ==
     if (cards.i>0) then
       total := subtotal+i
       if (total < 21) then
-        -- Stand
-        m := m+1
-        -- Hit again
-	cards.i := cards.i-1
-        m := m+partitions(cards,total)
-	cards.i := cards.i+1
-      else
-        if (total = 21) then
-          -- Stand; hit again is an automatic bust
+          -- Stand
           m := m+1
+          -- Hit again
+	  cards.i := cards.i-1
+          m := m+partitions(cards,total)
+	  cards.i := cards.i+1
+        else
+          if (total = 21) then
+            -- Stand; hit again is an automatic bust
+            m := m+1
   return(m)
 
 deck : List Integer
