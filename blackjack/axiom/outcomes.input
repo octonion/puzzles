@@ -1,0 +1,40 @@
+partitions : (List Integer, Integer) -> Integer
+partitions(cards,subtotal) ==
+  local m
+  local total
+  local i
+  m:=0
+  -- Hit
+  for i in 1..10 repeat
+    if (cards.i>0) then
+      total := subtotal+i
+      if (total < 21) then
+        -- Stand
+        m := m+1
+        -- Hit again
+	cards.i := cards.i-1
+        m := m+partitions(cards,total)
+	cards.i := cards.i+1
+      else
+        if (total = 21) then
+          -- Stand; hit again is an automatic bust
+          m := m+1
+  return(m)
+
+deck : List Integer
+deck := [4,4,4,4,4,4,4,4,4,16]
+d := 0
+
+for i in 1..10 repeat
+  -- Dealer showing
+  deck.i := deck.i-1
+  p := 0
+  for j in 1..10 repeat
+        deck.j := deck.j-1
+        p := p+partitions(deck,j)
+        deck.j := deck.j+1
+  output(concat(["Dealer showing ",string(i)," partitions = ",string(p)]))
+  d := d+p
+  deck.i := deck.i+1
+  
+output(concat(["Total partitions = ",string(d)]))
