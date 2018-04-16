@@ -1,0 +1,34 @@
+   Algebra output will be written to file 
+      /home/clong/github/puzzles/blackjack/fricas/outcomes.spout .
+                                                                   Type: Void
+                                                                  Time: 0 sec
+                                                                   Type: Void
+                                                                  Time: 0 sec
+                                                                   Type: Void
+                                                                  Time: 0 sec
+
+   (4)  [4, 4, 4, 4, 4, 4, 4, 4, 4, 16]
+                                                          Type: List(Integer)
+                                                   Time: 0.01 (OT) = 0.01 sec
+
+   (5)  0
+                                                     Type: NonNegativeInteger
+                                                                  Time: 0 sec
+   Compiling function partitions with type (List(Integer), Integer) -> 
+      Integer 
+   Compiling function G687 with type Integer -> Boolean 
+   Dealer showing 0 partitions = 417334
+   Dealer showing 1 partitions = 560954
+   Dealer showing 2 partitions = 658854
+   Dealer showing 3 partitions = 679464
+   Dealer showing 4 partitions = 680299
+   Dealer showing 5 partitions = 680305
+   Dealer showing 6 partitions = 680305
+   Dealer showing 7 partitions = 680305
+   Dealer showing 8 partitions = 680305
+   Dealer showing 9 partitions = 680305
+                                                                   Type: Void
+                           Time: 0.01 (IN) + 2.53 (EV) + 0.04 (OT) = 2.57 sec
+   Total partitions = 6398430
+                                                                   Type: Void
+                                                                  Time: 0 sec

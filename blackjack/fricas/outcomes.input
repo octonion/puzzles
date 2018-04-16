@@ -1,3 +1,6 @@
+)set messages time on
+)set output algebra outcomes
+
 partitions : (List Integer, Integer) -> Integer
 partitions(cards,subtotal) ==
   local m
@@ -33,8 +36,10 @@ for i in 1..10 repeat
         deck.j := deck.j-1
         p := p+partitions(deck,j)
         deck.j := deck.j+1
-  output(concat(["Dealer showing ",string(i)," partitions = ",string(p)]))
+  output(concat(["Dealer showing ",string(i-1)," partitions = ",string(p)]))
   d := d+p
   deck.i := deck.i+1
   
 output(concat(["Total partitions = ",string(d)]))
+
+)quit
