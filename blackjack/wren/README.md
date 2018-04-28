@@ -1,0 +1,3 @@
+```bash
+wren outcomes.wren
+```
