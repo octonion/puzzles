@@ -17,7 +17,7 @@ partitions: function [
                 m: m + (partitions cards total)
                 cards/(i): cards/(i) + 1
 	    ]
-            if (total == 21) [
+            if (total = 21) [
                 ; Stand; hit again is an automatic bust
                 m: m + 1
       	    ]
