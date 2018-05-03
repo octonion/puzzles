@@ -3,10 +3,12 @@ Red []
 partitions: function [
     cards[any-list!]
     subtotal[integer!]
+    /local total m i
 ][
     m: 0
+    i: 1
     ; Hit
-    repeat i 10 [
+    while [i < 11] [
         if cards/(i) > 0 [
             total: subtotal + i
             either total < 21 [
@@ -23,6 +25,7 @@ partitions: function [
                 ]
       	    ]
         ]
+        i: i + 1
     ]
     return m
 ]
