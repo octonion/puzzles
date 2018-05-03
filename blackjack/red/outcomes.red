@@ -3,25 +3,29 @@ Red []
 partitions: function [
     cards[any-list!]
     subtotal[integer!]
+    /local total m i
 ][
     m: 0
+    i: 1
     ; Hit
-    repeat i 10 [
+    while [i < 11] [
         if cards/(i) > 0 [
             total: subtotal + i
-            if total < 21 [
+            either total < 21 [
                 ; Stand
                 m: m + 1
                 ; Hit again
-		            cards/(i): cards/(i) - 1
-                m: m + (partitions cards total)
+                cards/(i): cards/(i) - 1
+                m: m + partitions cards total
                 cards/(i): cards/(i) + 1
-	          ]
-            if total = 21 [
-                ; Stand; hit again is an automatic bust
-                m: m + 1
+            ][
+                if total = 21 [
+                    ; Stand; hit again is an automatic bust
+                    m: m + 1
+                ]
       	    ]
         ]
+        i: i + 1
     ]
     return m
 ]
@@ -35,7 +39,7 @@ repeat i 10 [
     p: 0
     repeat j 10 [
         deck/(j): deck/(j) - 1
-        p: p + (partitions deck j)
+        p: p + partitions deck j
         deck/(j): deck/(j) + 1
     ]
     print ["Dealer showing" (i - 1) "partitions =" p]
