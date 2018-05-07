@@ -5,7 +5,6 @@ fn partitions(cards: &mut [Count; 10], subtotal: Count) -> Total {
     let mut m=0;
     let mut total;
     // Hit
-
     for i in 0..10 {
         if cards[i]>0 {
 	    total = subtotal+i as Count+1;
@@ -30,11 +29,11 @@ fn main() {
     let mut deck: [Count; 10] = [4; 10];
     deck[9] = 16;
     
-    let mut d=0;
+    let mut d=0 as u32;
     for i in 0..10 {
         // Dealer showing
         deck[i] -= 1;
-        let mut p = 0;
+        let mut p = 0 as u32;
         for j in 0..10 {
             deck[j] -= 1;
             let n = partitions(&mut deck, j as Count+1);
