@@ -1,11 +1,14 @@
-fn partitions(mut cards: [usize; 10], subtotal: usize) -> i32 {
+type Count = u32;
+type Total = u32;
+
+fn partitions(cards: &mut [Count; 10], subtotal: Count) -> Total {
     let mut m=0;
     let mut total;
     // Hit
 
     for i in 0..10 {
         if cards[i]>0 {
-	    total = subtotal+i+1;
+	    total = subtotal+i as Count+1;
 	    if total < 21 {
 	        // Stand
 	        m += 1;
@@ -24,7 +27,7 @@ fn partitions(mut cards: [usize; 10], subtotal: usize) -> i32 {
     
 fn main() {
     
-    let mut deck: [usize; 10] = [4; 10];
+    let mut deck: [Count; 10] = [4; 10];
     deck[9] = 16;
     
     let mut d=0;
@@ -34,7 +37,7 @@ fn main() {
         let mut p = 0;
         for j in 0..10 {
             deck[j] -= 1;
-            let n = partitions(deck, j+1);
+            let n = partitions(&mut deck, j as Count+1);
             deck[j] += 1;
             p += n;
         }
