@@ -7,7 +7,7 @@ class RSArray(Structure):
     _fields_ = [("values", c_ulonglong*10)]
 
 lib = cdll.LoadLibrary(os.path.abspath("libpartitions.so"))
-lib.partitions.argtypes = [RSArray, c_ulonglong]
+lib.partitions.argtypes = [POINTER(RSArray), c_ulonglong]
 lib.partitions.restype = c_int
 
 deck = ([4]*9)

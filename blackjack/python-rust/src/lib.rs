@@ -1,7 +1,7 @@
 // #![crate_type = "dylib"]
 
 #[no_mangle]
-pub extern fn partitions(mut cards: [usize; 10], subtotal: usize) -> u32 {
+pub extern fn partitions(cards: &mut [usize; 10], subtotal: usize) -> u32 {
 
     let mut m=0;
     let mut total;
