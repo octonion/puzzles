@@ -1,0 +1,3 @@
+```bash
+elixir outcomes.ex
+```
