@@ -12,15 +12,15 @@ void main()
       // Hit
       for (int i = 0; i < 10; i++) {
 	if (cards[i]>0) {
-	  	  total = subtotal+i+1;
+	  total = subtotal+i+1;
 	  if (total < 21) {
-	    cards[i] -= 1;
-	    // Stand
+	    	    // Stand
 	    m += 1;
 	    // Hit again
+	    cards[i] -= 1;
 	    m += partitions(cards, total);
 	    cards[i] += 1;
-	  } else if (subtotal+i+1==21) {
+	  } else if (total==21) {
 	    // Stand; hit again is an automatic bust
 	    m += 1;
 	  }
@@ -37,9 +37,8 @@ void main()
       int p = 0;
       for (int j = 0; j < 10; j++) {
 	deck[j] -= 1;
-	int n = partitions(deck, j+1);
+	p += partitions(deck, j+1);
 	deck[j] += 1;
-	p += n;
       }
 
       writeln("Dealer showing ",i," partitions =",p);
