@@ -1,9 +1,9 @@
 ```bash
-g++ -O3 outcomes.c
+g++ -O3 outcomes.cpp
 ./a.out
 ```
 
 ```bash
-g++ -Ofast outcomes.c
+g++ -Ofast outcomes.cpp
 ./a.out
 ```
