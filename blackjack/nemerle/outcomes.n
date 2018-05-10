@@ -1,5 +1,4 @@
 using System.Console; 
-using Nemerle;
 
 def partitions(cards: array[int], subtotal: int)
 {
