@@ -10,6 +10,6 @@ Dealer 8 680305
 Dealer 9 680305 
 6398430 
 
-real	0m11.080s
-user	0m11.080s
+real	0m6.627s
+user	0m6.626s
 sys	0m0.000s

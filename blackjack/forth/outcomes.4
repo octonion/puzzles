@@ -1,75 +1,71 @@
-variable total
-variable subtotal
-variable m
-variable d
+VARIABLE total
+VARIABLE subtotal
+VARIABLE m
+VARIABLE d
 
-variable deck 9 cells allot
+CREATE deck 4 , 4 , 4 , 4 , 4 , 4 , 4 , 4 , 4 , 16 ,
 
 : deck-init
-  9 0 do
-    4 i cells deck + !
-  loop
-  16 9 cells deck + !
+  9 0 DO
+    4 I CELLS deck + !
+  LOOP
+  16 9 CELLS deck + !
 ;
 
 : print-deck
-10 0 do
-  i cells deck + @ .
-loop
-cr
+10 0 DO
+  I CELLS deck + @ .
+LOOP
+CR
 ;
 
 deck-init
 
-: cards cells deck + ;
-: inc cards 1 swap +! ;
-: dec cards -1 swap +! ;
+: cards CELLS deck + ;
+: inc cards 1 SWAP +! ;
+: dec cards -1 SWAP +! ;
 
 : partitions
 
   subtotal !
 
-  10 0 do
-    i cells deck + @ 0 > if
+  10 0 DO
+    I CELLS deck + @ 0 > IF
 
-      i dec
-      i 1 subtotal @ + + total !
+      I 1 subtotal @ + + total !
       
-      total @ 21 < if
+      total @ 21 < IF
 	1 m +!
 	subtotal @ total @
+        I dec
 	partitions
+	I inc
 	subtotal !
-      else
-	total @ 21 = if
+      ELSE
+	total @ 21 = IF
 	  1 m +!
-	then
-      then
-      
-      i inc
-
-    then
-    
-  loop
-
+	THEN
+      THEN
+    THEN
+  LOOP
 ;
 
-variable n
+VARIABLE n
 0 n !
 
 : deal
-  10 0 do
-    i dec
+  10 0 DO
+    I dec
     0 m !
-    10 0 do
-      i dec
-      1 i + partitions
-      i inc
-    loop
+    10 0 DO
+      I dec
+      1 I + partitions
+      I inc
+    LOOP
     m @ n +!
-    ." Dealer " i . m @ . cr
-    i inc
-  loop ;
+    ." Dealer " I . m @ . CR
+    I inc
+  LOOP ;
   
 deal
-." Total " n @ . cr
+." Total " n @ . CR
