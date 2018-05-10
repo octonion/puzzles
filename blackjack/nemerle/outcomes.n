@@ -1,0 +1,50 @@
+using System.Console; 
+using Nemerle;
+
+def partitions(cards: array[int], subtotal: int)
+{
+    mutable m = 0;
+    // Hit
+    foreach (i in [0 .. 9])
+    {
+        when (cards[i] > 0)
+	{
+            def total = subtotal+i+1;
+            if (total < 21)
+	    {
+                // Stand
+                m += 1;
+                // Hit again
+                cards[i] -= 1;
+                m = m+partitions(cards, total);
+                cards[i] += 1;
+	    }
+            else when (total==21)
+	    {
+                // Stand; hit again is an automatic bust
+                m += 1;
+   	    }
+        }
+    }
+    m
+}
+
+mutable deck = array[4, 4, 4, 4, 4, 4, 4, 4, 4, 16];
+mutable d = 0;
+
+foreach (i in [0 .. 9])
+{
+    // Dealer showing
+    deck[i] -= 1;
+    mutable p = 0;
+    foreach (j in [0 .. 9])
+    {
+        deck[j] -= 1;
+        p += partitions(deck, j+1);
+        deck[j] += 1;
+    }
+    WriteLine("Dealer showing {0} partitions = {1}",i,p);
+    d = d+p;
+    deck[i] += 1;
+}
+WriteLine("Total partitions = {0}",d);
