@@ -1,5 +1,3 @@
-' Function partitions (cards() as integer, subtotal as integer) as integer
-
 module outcomes
 
 function partitions(cards() as integer, subtotal as integer) as integer
