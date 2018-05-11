@@ -1,0 +1,3 @@
+```bash
+clojure outcomes.clj
+```
