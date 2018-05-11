@@ -3,19 +3,19 @@ function partitions
     # Hit
     for i in (seq 10)
         if [ $cards[$i] -gt 0 ]
-	    set cards[$i] (math $cards[$i]-1)
 	    set total (math $total+$i)
 	    if [ $total -lt 21 ]
-		# Stand
-		set m (math $m+1)
-		# Hit again
-		partitions
+	       # Stand
+	       set m (math $m+1)
+	       # Hit again
+	       set cards[$i] (math $cards[$i]-1)
+	       partitions
+	       set cards[$i] (math $cards[$i]+1)
 	    else if [ $total -eq 21 ]
-		# Stand; hit again is an automatic bust
-		set m (math $m+1)
+	       # Stand; hit again is an automatic bust
+	       set m (math $m+1)
 	    end
 	    set total (math $total-$i)
-	    set cards[$i] (math $cards[$i]+1)
 	end
     end
 end
