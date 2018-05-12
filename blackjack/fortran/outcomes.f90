@@ -50,6 +50,7 @@ recursive integer function partitions(cards,subtotal) result(m)
         else if (total==21) then
            ! Stand; hit again is an automatic bust
            m = m+1
+           exit
         end if
      end if
   end do

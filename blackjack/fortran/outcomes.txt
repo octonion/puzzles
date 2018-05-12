@@ -10,6 +10,6 @@
  Dealer showing           10  partitions =      680305
  Total partitions =     6398430
 
-real	0m0.040s
-user	0m0.040s
-sys	0m0.000s
+real    0m0.022s
+user    0m0.022s
+sys     0m0.000s
