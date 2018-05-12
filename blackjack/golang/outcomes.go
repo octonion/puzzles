@@ -2,7 +2,7 @@ package main
 
 import "fmt"
 
-func partitions(cards [10]int, subtotal int) int {
+func partitions(cards *[10]int, subtotal int) int {
     var m = 0
     // Hit
     for i:=0; i < 10; i++ {
@@ -35,7 +35,7 @@ func main() {
 		var p = 0
 		for j:=0; j < 10; j++ {
 			deck[j] += -1
-			p += partitions(deck, j+1)
+			p += partitions(&deck, j+1)
 			deck[j] += 1
 		}
 		fmt.Println("Dealer showing ", i," partitions =",p)
