@@ -56,6 +56,7 @@ actor Main
         elseif total == 21 then
           // Stand; hit again is an automatic bust
           m = m+1
+	  break
         end
       end
     end        
