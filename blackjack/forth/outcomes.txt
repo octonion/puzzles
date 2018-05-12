@@ -11,6 +11,6 @@ Dealer 8 680305
 Dealer 9 680305 
 Total 6398430 
 
-real    0m0.457s
-user    0m0.457s
+real    0m0.226s
+user    0m0.225s
 sys     0m0.000s

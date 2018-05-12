@@ -29,6 +29,7 @@ create deck 4 , 4 , 4 , 4 , 4 , 4 , 4 , 4 , 4 , 16 ,
       else
 	total @ 21 = if
 	  1 m +!
+	  leave
 	then
       then
     then
