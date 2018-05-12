@@ -5,19 +5,22 @@ partitions() {
     # Hit
     for i in {0..9}; do
 	if (( cards[i]>0 )); then
-	    (( cards[i]+=-1 ))
+	    
 	    (( total=total+i+1 ))
 	    if (( total<21 )); then
 		# Stand
 		(( m=m+1 ))
 		# Hit again
+		(( cards[i]+=-1 ))
 		partitions
+		(( cards[i]+=1 ))
 	    elif (( total==21 )); then
 		# Stand; hit again is an automatic bust
 		(( m=m+1 ))
+		(( total=total-i-1 ))
+		break
 	    fi
 	    (( total=total-i-1 ))
-	    (( cards[i]+=1 ))
 	fi
     done
 }
