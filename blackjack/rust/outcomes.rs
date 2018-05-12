@@ -18,6 +18,7 @@ fn partitions(cards: &mut [Count; 10], subtotal: Count) -> Total {
 	    } else if total==21 {
 	        // Stand; hit again is an automatic bust
 	        m += 1;
+                break;
 	    }
         }
     }
