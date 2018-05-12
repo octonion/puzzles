@@ -4,7 +4,7 @@ void main()
     
     int[10] deck = [4,4,4,4,4,4,4,4,4,16];
 
-    int partitions(int[10] cards, int subtotal)
+    int partitions(ref int[10] cards, int subtotal)
     {
       //writeln(cards,subtotal);
       int m=0;
