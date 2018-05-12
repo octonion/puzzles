@@ -23,6 +23,7 @@ procedure outcomes is
             elsif (total=21) then
                -- Stand; hit again is an automatic bust
                m := M+1;
+	       exit;
 	    end if;
 	 end if;  
       end loop;
