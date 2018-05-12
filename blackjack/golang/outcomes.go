@@ -17,7 +17,8 @@ func partitions(cards [10]int, subtotal int) int {
 		cards[i] += 1
             } else if (total==21) {
                 // Stand; hit again is an automatic bust
-                m += 1
+		m += 1
+		break
             }
         }
     }        
