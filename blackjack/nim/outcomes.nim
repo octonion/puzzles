@@ -21,6 +21,7 @@ proc partitions(cards: var array[0..9, int], subtotal: int): int =
       elif (total==21):
         # Stand; hit again is an automatic bust
         result += 1
+        break
                 
   return result
 
