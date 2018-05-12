@@ -8,7 +8,7 @@ var
    i, j	   : integer;
    d, p    : longint;
 
-function partitions(cards: stack; subtotal: integer): longint;
+function partitions(var cards: stack; subtotal: integer): longint;
 var
   i, total : integer;
 begin
@@ -30,8 +30,11 @@ begin
 	    end
 	    else
 	       if (total=21) then
+   	       begin
 		  // Stand; hit again is an automatic bust
 		  partitions += 1;
+		  break;
+	       end;
 	 end;
       end;
 end;
