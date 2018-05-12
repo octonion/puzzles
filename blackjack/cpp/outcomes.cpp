@@ -18,6 +18,7 @@ int partitions(int cards[10], int subtotal) {
       } else if (total==21) {
 	// Stand; hit again is an automatic bust
 	m += 1;
+	break;
       }
     }
   }
