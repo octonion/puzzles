@@ -19,6 +19,7 @@ fn partitions(cards: &[10]i8, subtotal: u8) u32 {
       } else if (total==21) {
         // Stand; hit again is an automatic bust
         m += 1;
+        break;
       }
     }
   }
