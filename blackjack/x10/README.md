@@ -1,4 +1,4 @@
 ```bash
-x10c++ -O3 -o outcomes outcomes.x10
+x10c++ -O5 -o outcomes outcomes.x10
 ./outcomes
 ```
