@@ -68,6 +68,7 @@ procedure division using cards, subtotal returning m.
 	      add 1 to cards-values (i)
 	    when 21
               add 1 to m
+	      next sentence
 	  end-evaluate
       end-if
     end-perform
