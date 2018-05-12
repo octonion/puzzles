@@ -24,6 +24,7 @@ void main()
 	} else if (subtotal+i+1==21) {
 	  // Stand; hit again is an automatic bust
 	  m += 1;
+	  break;
 	}
       }
     }

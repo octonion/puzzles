@@ -23,6 +23,7 @@ void main()
 	  } else if (total==21) {
 	    // Stand; hit again is an automatic bust
 	    m += 1;
+	    break;
 	  }
 	}
       }
@@ -41,10 +42,10 @@ void main()
 	deck[j] += 1;
       }
 
-      writeln("Dealer showing ",i," partitions =",p);
+      writeln("Dealer showing ",i," partitions = ",p);
       d += p;
       deck[i] += 1;
     }
 
-    writeln("Total partitions =",d);
+    writeln("Total partitions = ",d);
 }
