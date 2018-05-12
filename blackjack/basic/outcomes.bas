@@ -43,6 +43,7 @@ function partitions (cards() as integer, subtotal as integer) as integer
             elseif (total=21) then
                 ' Stand; hit again is an automatic bust
                 m += 1
+		exit for
 	    end if
         end if
     next
