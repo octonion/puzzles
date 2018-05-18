@@ -1,0 +1,3 @@
+```bash
+dart outcomes.dart
+```
