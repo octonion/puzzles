@@ -1,0 +1,3 @@
+```bash
+hhvm outcomes.hh
+```
