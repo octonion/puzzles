@@ -1,0 +1,3 @@
+```bash
+luajit outcomes.lua
+```
