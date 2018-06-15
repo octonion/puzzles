@@ -1,0 +1,42 @@
+fun partitions(cards:&(int^10),subtotal:int) : int = {
+  var m : int = 0;
+  var tot : int;
+  // Hit
+  for i in 0..9 do
+    if (*cards.i > 0) do
+      tot = subtotal+i+1;
+      if (tot<21) do
+        // Stand
+        m += 1;
+	// Hit again
+	cards.i <- *cards.i - 1;
+	m += partitions(cards,tot);
+	cards.i <- *cards.i + 1;
+      elif (tot==21) do
+        // Stand; hit again is an automatic bust
+	m += 1;
+	//break;
+      done
+    done
+  done
+  return m;
+}
+
+var a : int^10 = 4,4,4,4,4,4,4,4,4,16;
+var deck : &(int^10) = &a;
+var d : int = 0;
+
+for i in 0..9 do
+  // Dealer showing
+  &a.i <- a.i - 1;
+  var p : int = 0;
+  for j in 0..9 do
+    &a.j <- a.j - 1;
+    p += partitions(deck,j+1);
+    &a.j <- a.j + 1;
+  done
+  println$ "Dealer showing " i " partitions = " p;
+  d += p;
+  &a.i <- a.i + 1;
+done
+println$ "Total partitions = " d;
