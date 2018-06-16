@@ -7,21 +7,20 @@ sub partitions(@$)
     for(my $i = 0; $i<10; $i++) {
 	if ($cards[$i]>0) {
             my $total = $subtotal+$i+1;
-            
             if ($total < 21) {
-                $cards[$i] = $cards[$i]-1;
                 # Stand
                 $m += 1;
                 # Hit again
+		$cards[$i] = $cards[$i]-1;
                 $m += partitions(\@cards,$total);
                 $cards[$i] = $cards[$i]+1;
-            } elsif ($subtotal+$i+1==21) {
+            } elsif ($total==21) {
                 # Stand; hit again is an automatic bust
                 $m += 1;
+		break;
             }
 	}
     }
-                
     return $m;
 }
 
