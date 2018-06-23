@@ -15,6 +15,7 @@ class partitions {
         } else if (total==21) {
            // Stand; hit again is an automatic bust
            m = m+1
+	   break
         }
       }
     }
