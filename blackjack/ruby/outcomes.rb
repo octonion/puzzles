@@ -13,7 +13,7 @@ def partitions(cards, subtotal)
         cards[i] += -1
         m += partitions(cards, total)
         cards[i] += 1
-      elsif (subtotal+i+1==21) then
+      elsif (total==21) then
         # Stand; hit again is an automatic bust
         m += 1
         break
@@ -29,17 +29,17 @@ d = 0
 
 for i in 0..9
   # Dealer showing
-  deck[i] = deck[i]-1
+  deck[i] -= 1
   p = 0
   for j in 0..9
-    deck[j] = deck[j]-1
+    deck[j] -= 1
     n = partitions(deck, j+1)
-    deck[j] = deck[j]+1
+    deck[j] += 1
     p += n
   end
   print("Dealer showing #{i} partitions = #{p}\n")
   d += p
-  deck[i] = deck[i]+1
+  deck[i] += 1
 end
 
 print("Total partitions = #{d}\n")
