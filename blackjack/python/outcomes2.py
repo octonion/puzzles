@@ -35,9 +35,9 @@ for i in xrange(10):
         p += partitions(deck, j+1)
         deck[j] += 1
 
-    print('Dealer showing ', i,' partitions =',p)
+    print "Dealer showing ",i," partitions =",p
     d += p
 
     deck[i] += 1
 
-print('Total partitions =',d)
+print "Total partitions =",d
