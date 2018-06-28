@@ -17,6 +17,7 @@ def partitions(cards, subtotal):
             elif (total==21):
                 # Stand; hit again is an automatic bust
                 m += 1
+                break
     return(m)
 
 deck = ([4]*9)
@@ -32,7 +33,6 @@ for i in range(0, 10):
         deck[j] -= 1
         p += partitions(deck, j+1)
         deck[j] += 1
-        p += n
     print('Dealer showing ', i,' partitions =',p)
     d += p
     deck[i] += 1
