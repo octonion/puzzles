@@ -14,6 +14,6 @@ Total partitions = 6398430
 7 s
 
 
-real	0m7.838s
-user	0m7.832s
-sys	0m0.004s
+real    0m6.927s
+user    0m6.890s
+sys     0m0.000s
