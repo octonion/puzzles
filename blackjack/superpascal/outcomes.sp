@@ -11,12 +11,14 @@ var
 function partitions(cards: stack; subtotal: integer): integer;
 var
   i, total, m : integer;
+  loop : boolean;
 begin
    m := 0;
+   loop := true;
    { Hit }
    for i := 0 to 9 do
       begin
-	 if (cards[i]>0) then
+	 if (loop) and (cards[i]>0) then
 	 begin
 	    total := subtotal+i+1;
 	    if (total < 21) then
@@ -33,6 +35,7 @@ begin
    	       begin
 		  { Stand; hit again is an automatic bust }
 		  m := m+1;
+		  loop := false;
 	       end;
 	 end;
       end;
