@@ -1,0 +1,61 @@
+ParaSail Interpreter and Virtual Machine Revision: 7.0 
+Copyright (C) 2011-2016, AdaCore, New York NY, USA
+This program is provided "as is" with no warranty.
+Report problems at http://groups.google.com/group/parasail-programming-language
+
+Parsing /home/clong/parasail_release_7_0/install/lib/aaa.psi
+Parsing outcomes.psl
+---- Beginning semantic analysis ----
+Starting up thread servers
+ 164 trees in library.
+Done with First pass.
+Done with Second pass.
+Done with Pre codegen pass.
+Done with Code gen.
+Filling in cur-inst-param info in op tables.
+Evaluating global constants.
+Finishing type descriptors.
+Command to execute: main
+Dealer showing 0 partitions = 417334
+Dealer showing 1 partitions = 560954
+Dealer showing 2 partitions = 658854
+Dealer showing 3 partitions = 679464
+Dealer showing 4 partitions = 680299
+Dealer showing 5 partitions = 680305
+Dealer showing 6 partitions = 680305
+Dealer showing 7 partitions = 680305
+Dealer showing 8 partitions = 680305
+Dealer showing 9 partitions = 680305
+Total partitions = 6398430
+Command to execute: quit
+Shutting down thread servers
+
+Stg_Rgn Statistics:
+ New allocations by owner:       40260512  = 58%
+ Re-allocations by owner:        28632079  = 41%
+ Total allocations by owner:     68892591  = 99%
+
+ New allocations by non-owner:   486  = 0%
+ Re-allocations by non-owner:    318  = 0%
+ Total allocations by non-owner: 804  = 0%
+
+ Total allocations:              68893395
+
+Threading Statistics:
+ Num_Initial_Thread_Servers : 1 + 1
+ Num_Dynamically_Allocated_Thread_Servers : 4
+ Max_Waiting_Shared_Threads (on all servers' queues): 1
+ Average waiting shared threads: 0.00
+ Max_Waiting_Unshared_Threads (on any one server's queue): 1
+ Average waiting unshared threads: 0.00
+ Max_Active (threads): 5
+ Average active threads: 2.13
+ Max_Active_Masters : 6
+ Max_Subthreads_Per_Master : 2
+ Max_Waiting_For_Subthreads : 3
+ Num_Thread_Steals : 509 out of 1 + 509 (U+S) thread initiations = 99%
+
+
+real	8m28.094s
+user	8m27.998s
+sys	0m0.072s

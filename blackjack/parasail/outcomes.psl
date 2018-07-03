@@ -1,0 +1,52 @@
+func partitions(var cards : Basic_Array<Integer>; subtotal : Integer) -> Result : Integer is
+
+     var m : Integer;
+     var total : Integer;
+
+     m := 0;
+     // Hit
+     for i in 1..10 forward loop
+     	 if (cards[i]>0) then
+     	    total := subtotal+i;
+     	    if total < 21 then
+     	       // Stand
+	       m += 1;
+	       // Hit again
+	       cards[i] -= 1;
+	       m += partitions(cards, total);
+	       cards[i] += 1;
+      	    elsif total == 21 then
+	       // Stand; hit again is an automatic bust
+	       m += 1;
+	       exit loop;
+	    end if;
+         end if;
+     end loop;
+     return m;
+end func partitions;
+  
+func main (Args: Basic_Array<Univ_String>) is
+
+  var deck : Basic_Array<Integer>;
+  var d : Integer;
+  var p : Integer;
+  
+  deck := [4,4,4,4,4,4,4,4,4,16];
+  d := 0;
+
+  for i in 1..10 forward loop
+    // Dealer showing
+    deck[i] -= 1;
+    p := 0;
+    for j in 1..10 forward loop
+      deck[j] -= 1;
+      p += partitions(deck, j);
+      deck[j] += 1;
+    end loop;
+    Println("Dealer showing " | i-1 | " partitions = " | p);
+    d += p;
+    deck[i] += 1;
+  end loop;
+  Println("Total partitions = " | d);
+
+end func main
