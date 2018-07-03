@@ -1,0 +1,55 @@
+begin
+
+integer procedure partitions(integer array cards(*); integer subtotal);
+begin
+  integer m, total;
+  boolean loop;
+  m := 0;
+  loop := true;
+  for i := 0 until 9 do
+  begin
+    if (loop) and (cards(i)>0) then
+    begin
+      total := subtotal+i+1;
+      if (total < 21) then
+      begin
+        m := m+1;
+	cards(i) := cards(i)-1;
+        m := m+partitions(cards, total);
+	cards(i) := cards(i)+1;
+      end
+      else
+      begin
+        if (total=21) then
+          m := m+1;
+      end;
+    end;
+  end;
+  m
+end partitions;
+
+integer array deck(0::9);
+integer d, p;
+
+for i := 0 until 8 do
+  deck(i) := 4;
+deck(9) := 16;
+
+d := 0;
+for i := 0 until 9 do
+begin
+  deck(i) := deck(i)-1;
+  p := 0;
+  for j := 0 until 9 do
+  begin
+    deck(j) := deck(j)-1;
+    p := p+partitions(deck, j+1);
+    deck(j) := deck(j)+1;
+  end;
+  write(i_w := 1,"Dealer showing ", i," partitions = ",p);
+  d := d+p;
+  deck(i) := deck(i)+1
+end;
+write(i_w := 1,"Total partitions = ",d);
+
+end.
