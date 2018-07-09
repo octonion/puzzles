@@ -1,0 +1,3 @@
+```bash
+gosu outcomes.gsp
+```
