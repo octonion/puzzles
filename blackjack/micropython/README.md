@@ -1,0 +1,3 @@
+```bash
+micropython outcomes.py
+```
