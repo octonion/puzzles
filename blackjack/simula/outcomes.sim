@@ -1,0 +1,65 @@
+begin
+   INTEGER PROCEDURE partitions(cards, subtotal);
+   INTEGER ARRAY cards;
+   INTEGER subtotal;
+   begin
+      INTEGER m, i, total;
+      m := 0;
+      ! Hit;
+      for i := 0 STEP 1 until 9 do
+      begin
+	 if (cards(i)>0) then
+	 begin
+	    total := subtotal+i+1;
+	    if (total < 21) then
+	    begin
+	       ! Stand;
+	       m := m+1;
+	       ! Hit again;
+	       cards(i) := cards(i)-1;
+	       m := m+partitions(cards, total);
+	       cards(i) := cards(i)+1;
+	    end
+	    else
+	       if (total=21) then
+   	       begin
+		  ! Stand - hit again is an automatic bust;
+		  m := m+1;
+	       end;
+	 end;
+      end;
+      partitions := m
+   end;
+
+   INTEGER ARRAY deck(0:9);
+   INTEGER i, j, d, p;
+
+   for i := 0 STEP 1 until 8 DO
+      deck(i) := 4;
+   deck(9) := 16;
+
+   d := 0;
+   
+   for i := 0 STEP 1 until 9 do
+   begin
+      ! Dealer showing;
+      deck(i) := deck(i)-1;
+      p := 0;
+      for j := 0 STEP 1 until 9 do
+      begin
+	 deck(j) := deck(j)-1;
+	 p := p+partitions(deck, j+1);
+	 deck(j) := deck(j)+1;
+      end;
+      OutText("Dealer showing ");
+      OutInt(i,0);
+      OutText(" partitions = ");
+      OutInt(p,0);
+      OutImage;
+      d := d+p;
+      deck(i) := deck(i)+1;
+   end;
+   OutText("Total partitions = ");
+   OutInt(d,0);
+   OutImage
+END;
