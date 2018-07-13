@@ -1,0 +1,3 @@
+```bash
+rebol outcomes.reb
+```
