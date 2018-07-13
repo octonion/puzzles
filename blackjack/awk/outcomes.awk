@@ -1,3 +1,5 @@
+#!/usr/bin/awk -f
+
  function partitions(cards, subtotal,     i,m,total)
  {
      m = 0
