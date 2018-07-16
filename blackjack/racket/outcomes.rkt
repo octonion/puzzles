@@ -28,11 +28,14 @@
     (define n (partitions deck (add1 j)))
     (vector-set! deck j (add1 (vector-ref deck j)))
     (set! p (+ p n)))
-  (writeln (list i p))
+  (display "Dealer showing")
+  (display i)
+  (display " partitions = ")
+  (displayln p)
   (set! d (+ d p))
   (vector-set! deck i (add1 (vector-ref deck i)))
   ; (writeln deck)
   )
-
-(writeln d)
+(display "Total partitions = ")
+(displayln d)
 
