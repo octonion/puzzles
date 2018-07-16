@@ -1,0 +1,3 @@
+```bash
+axi outcomes.als
+```
