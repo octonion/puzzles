@@ -1,52 +1,53 @@
-with Ada.Text_IO;
+with ada.text_io;
 
 procedure outcomes is
-   type stack is array (0..9) of Integer;
+   type stack is array (0..9) of integer;
    deck : stack;
-   D, P, N : Integer;
+   d, p, n : integer;
 
-   function partitions (cards: out Stack; subtotal: Integer) return Integer is
-      M, total : Integer;
+   function partitions(cards: in out stack; subtotal: integer) return integer is
+      m, total : integer;
    begin
       m := 0;
-      -- Hit
-      for I in Integer range 0 .. 9 loop
+      -- hit
+      for i in integer range 0 .. 9 loop
 	 if (cards(i)>0) then
             total := subtotal+i+1;
             if (total < 21) then
-               -- Stand
-               m := M+1;
-               -- Hit again
-	       Cards(I) := Cards(I)-1;
-               m := M+partitions(cards, total);
-	       Cards(I) := Cards(I)+1;
+               -- stand
+               m := m+1;
+               -- hit again
+	       cards(i) := cards(i)-1;
+               m := m+partitions(cards, total);
+	       cards(i) := cards(i)+1;
             elsif (total=21) then
-               -- Stand; hit again is an automatic bust
-               m := M+1;
+               -- stand; hit again is an automatic bust
+               m := m+1;
 	       exit;
 	    end if;
 	 end if;  
       end loop;
       return(m);
-   end Partitions;
+   end partitions;
     
 begin
     
    deck := (4,4,4,4,4,4,4,4,4,16);
    d := 0;
-   for I in Integer range 0 .. 9 loop
+   for i in integer range 0 .. 9 loop
       -- Dealer showing
-      Deck(I) := Deck(I)-1;
+      deck(i) := deck(i)-1;
       p := 0;
-      for j in Integer range 0 .. 9 loop
-	 Deck(J) := Deck(J)-1;
+      for j in integer range 0 .. 9 loop
+	 deck(j) := deck(j)-1;
 	 n := partitions(deck, j+1);
-	 Deck(J) := Deck(J)+1;
-	 p := P+N;
+	 deck(j) := deck(j)+1;
+	 p := p+n;
       end loop;
-      Ada.Text_IO.Put_Line ("Dealer showing " & Integer'Image(I) & " partitions =" & Integer'Image(P));
-      d := D+P;
-      Deck(I) := Deck(I)+1;
+      ada.text_io.put_line ("Dealer showing " & integer'image(i) & " Partitions =" & integer'image(p));
+      d := d+p;
+      deck(i) := deck(i)+1;
    end loop;
-   Ada.Text_IO.Put_Line ("Total partitions =" & Integer'Image(D));
-end Outcomes;
+   ada.text_io.put_line ("Total partitions =" & integer'image(d));
+   
+end outcomes;
