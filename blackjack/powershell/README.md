@@ -1,0 +1,3 @@
+```bash
+pwsh outcomes.pwsh
+```
