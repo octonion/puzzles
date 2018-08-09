@@ -1,7 +1,7 @@
-# Julia version
+# Julia version 1.0
 
 # You will need to install Primes:
-# Pkg.add("Primes")
+# pkg> add Primes
 # Primes was in base Julia in earlier versions
 
 using Primes
