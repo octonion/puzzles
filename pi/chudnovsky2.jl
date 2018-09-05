@@ -12,6 +12,8 @@ for i in 1:800
     global q = p
     global p += term(i)
 end
-println((426880*sqrt(10005))/p)
-println("Diff = ",(426880*sqrt(10005))/p-(426880*sqrt(10005))/q)
+println((426880*sqrt(BigFloat(10005)))/p)
+println("self diff = ",(426880*sqrt(BigFloat(10005)))/p-(426880*sqrt(BigFloat(10005)))/q)
+println("pi diff = ",BigFloat(pi)-(426880*sqrt(BigFloat(10005)))/p)
+
 
