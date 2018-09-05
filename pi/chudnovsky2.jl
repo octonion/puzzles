@@ -12,6 +12,6 @@ for i in 1:800
     global q = p
     global p += term(i)
 end
-println(1/((426880*sqrt(10005)*p)))
-println("Diff = ",1/((426880*sqrt(10005)*p))-1/((426880*sqrt(10005)*q)))
+println((426880*sqrt(10005))/p)
+println("Diff = ",(426880*sqrt(10005))/p-(426880*sqrt(10005))/q)
 
