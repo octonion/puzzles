@@ -1,25 +1,26 @@
 const std = @import("std");
 const io = std.io;
 
-fn partitions(cards: &[10]i8, subtotal: u8) u32 {
+fn partitions(cards: *[10]i8, subtotal: u8) u32 {
   var m: u32 = 0;
 
   // Hit
   var i: u8 = 0;
   while (i < 10) : (i += 1) {
-    if ((*cards)[i]>0) {
+    if (cards[i]>0) {
       var total: u8 = subtotal+i+1;
       if (total < 21) {
         // Stand
         m += 1;
         // Hit again
-        (*cards)[i] -= 1;
+        cards[i] -= 1;
         m += partitions(cards, total);
-        (*cards)[i] += 1;
+        cards[i] += 1;
       } else if (total==21) {
         // Stand; hit again is an automatic bust
         m += 1;
-        break;
+        return m;
+        // break;
       }
     }
   }
@@ -29,7 +30,7 @@ fn partitions(cards: &[10]i8, subtotal: u8) u32 {
 pub fn main() !void
 {
   var stdout_file = try io.getStdOut();
-  var stdout_file_stream = io.FileOutStream.init(&stdout_file);
+  var stdout_file_stream = io.FileOutStream.init(stdout_file);
   const stdout = &stdout_file_stream.stream;
 
   var deck: [10]i8 = []i8{4,4,4,4,4,4,4,4,4,16};
