@@ -1,0 +1,1 @@
+Counting the numbers of ways for a player to have <= 21 using many, many different languages and implementations. Some of these implementations demonstrate how to call a function built in one language from another, most commonly I've looked at called dynamic libraries from Python.
