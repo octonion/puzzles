@@ -156,18 +156,25 @@ elsif h==4
   a, b = Rational(x,2), Rational(y,2)
   
   if a.is_a?(Integer) && b.is_a?(Integer)
-      x, y = a, b
+    
+    x, y = a.to_i, b.to_i
+    
   else
+
     a_1, b_1 = 2*a*b, d*a**2+b**2
     
-    if (a_1.is_a?(Integer) && b_1.is_a?(Integer))
-      x, y = a_1, b_1
+    if a_1.is_a?(Integer) && b_1.is_a?(Integer)
+      x, y = a_1.to_i, b_1.to_i
     else
+      
       x, y = a*b_1+a_1*b, b*b_1+d*a*a_1
       if (steps % 2)==0
         x, y = 2*x*y, d*x**2+y**2
       end
+      x, y = x.to_i, y.to_i
+      
     end
+    
   end
 end
 
