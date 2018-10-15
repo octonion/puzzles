@@ -79,7 +79,7 @@ while (h not in [1,2,4]):
 
     h = (D-m_init**2)/h_init
 
-    i = (-y/x) % h
+    #i = (-y/x) % h
 
     i = (-y/x) % h
     m = h*floor(sD/h)+i
