@@ -214,7 +214,7 @@ end
 
 v = y**2-arg*x**2
 print("\n")
-print("full equation: #{arg}*x^2 + 1 = y^2]\n")
+print("full equation: #{arg}*x^2 + 1 = y^2\n")
 print("full solution = [#{x}, #{y}, #{v}]\n")
 print("power = #{e}\n")
 print("#{Math.log(x, 10).floor+1}, #{Math.log(y, 10).floor+1}\n")
