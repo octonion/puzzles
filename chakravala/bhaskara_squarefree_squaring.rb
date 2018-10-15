@@ -113,7 +113,7 @@ print("[h, m] = [#{h}, #{m}]\n")
 
 while not([1,2,4].include?(h))
 
-  #print("[x, y, h, m] = [#{x}, #{y}, #{h}, #{m}]\n")
+  print("[x, y, h, m] = [#{x}, #{y}, #{h}, #{m}]\n")
 
   x = (m_init*x_init+y_init)/h_init
   y = (d*x_init+m_init*y_init)/h_init
@@ -141,6 +141,9 @@ while not([1,2,4].include?(h))
 
   print("[h, m] = [#{h}, #{m}]\n")
 end
+
+print("\n")
+print("h = #{h}\n")
 
 if h==1 && (steps % 2)==0
 
@@ -225,3 +228,4 @@ print("full equation: #{arg}*x^2 + 1 = y^2\n")
 print("full solution = [#{x}, #{y}, #{v}]\n")
 print("power = #{e}\n")
 print("#{Math.log(x, 10).floor+1}, #{Math.log(y, 10).floor+1}\n")
+print("#{x.to_s.length}, #{y.to_s.length}\n")
