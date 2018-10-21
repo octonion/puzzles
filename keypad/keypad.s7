@@ -1,0 +1,114 @@
+$ include "seed7_05.s7i";
+  include "bigint.s7i";
+
+const type: matrix is array array bigInteger;
+
+const func string: str (in matrix: mat) is func
+  result
+    var string: stri is "";
+  local
+    var integer: row is 0;
+    var integer: column is 0;
+  begin
+    for row range 1 to length(mat) do
+      for column range 1 to length(mat[row]) do
+        stri &:= str(mat[row][column]);
+        if column < length(mat[row]) then
+          stri &:= ", ";
+        end if;
+      end for;
+      if row < length(mat) then
+        stri &:= "\n";
+      end if;
+    end for;
+  end func;
+ 
+enable_output(matrix);
+
+const func matrix: (in matrix: left) * (in matrix: right) is func
+  result
+    var matrix: result is matrix.value;
+  local
+    var integer: i is 0;
+    var integer: j is 0;
+    var integer: k is 0;
+    var bigInteger: accumulator is 0_;
+  begin
+    if length(left[1]) <> length(right) then
+      raise RANGE_ERROR;
+    else
+      result := length(left) times length(right[1]) times 0_;
+      for i range 1 to length(left) do
+        for j range 1 to length(right[1]) do
+          accumulator := 0_;
+          for k range 1 to length(left) do
+            accumulator +:= left[i][k] * right[k][j];
+          end for;
+          result[i][j] := accumulator;
+        end for;
+      end for;
+    end if;
+  end func;
+  
+const func matrix: (in var matrix: base) ** (in var integer: exponent) is func
+  result
+    var matrix: power is matrix.value;
+  local
+    var integer: row is 0;
+    var integer: column is 0;
+  begin
+    if exponent < 0 then
+      raise NUMERIC_ERROR;
+    else
+      if odd(exponent) then
+        power := base;
+      else
+        # Create identity matrix
+        power := length(base) times length(base) times 0_;
+        for row range 1 to length(base) do
+          for column range 1 to length(base) do
+            if row = column then
+              power[row][column] := 1_;
+            end if;
+          end for;
+        end for;
+      end if;
+      exponent := exponent div 2;
+      while exponent > 0 do
+        base := base * base;
+        if odd(exponent) then
+          power := power * base;
+        end if;
+        exponent := exponent div 2;
+      end while;
+    end if;
+  end func;
+ 
+const proc: main is func
+  local
+    var matrix: Q is [] ([] (0_,0_,1_,0_,2_,0_),
+                         [] (0_,0_,0_,1_,0_,0_),
+			 [] (1_,0_,0_,1_,0_,2_),
+			 [] (0_,2_,1_,0_,0_,0_),
+			 [] (1_,0_,0_,0_,0_,0_),
+			 [] (0_,0_,1_,0_,0_,0_));
+    var matrix: r is [] ([] (1_),
+                         [] (0_),
+			 [] (0_),
+			 [] (0_),
+			 [] (0_),
+			 [] (0_));
+    var matrix: p is 6 times ([] 0_);
+    var bigInteger: sum is 0_;
+    var bigInteger: value is 0_;
+    var integer: i is 0;
+    var integer: j is 0;
+  begin
+    p := Q**1000000*r;
+    for i range 1 to length(p) do
+      for j range 1 to length(p[i]) do
+        sum +:= p[i][j];
+      end for;
+    end for;
+    writeln(sum);
+  end func;
