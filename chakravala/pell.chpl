@@ -287,7 +287,6 @@ writeln();
 writeln("squarefree equation: ",d,"*x^2 + 1 = y^2");
 writeln("squarefree solution = [",x,",",y,",",v,"]");
 writeln("steps = ",steps);
-writeln();
 
 // Find power for each p^k factor, take LCM
 
