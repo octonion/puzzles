@@ -5,9 +5,7 @@ record Pell {
 }
 
 proc *(a: Pell, b: Pell) {
-	return new Pell(a.x*b.y+a.y*b.x,
-									a.D*a.x*b.x+a.y*b.y,
-									a.D);
+	return new Pell(a.x*b.y+a.y*b.x,a.D*a.x*b.x+a.y*b.y,a.D);
 }
 
 proc **(a: Pell, n: int) {
