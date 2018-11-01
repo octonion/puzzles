@@ -118,7 +118,7 @@ proc factor(q) {
 	}
 	p = 3;
 	(d, e) = check(t,p);
-	f !(e==0) {
+	if !(e==0) {
 		t = d;
 		factors[p] = e;
 	}
