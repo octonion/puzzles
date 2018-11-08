@@ -219,10 +219,10 @@ if (s>1)
 
     fo.each do |factor|
       #print(factor,"\n")
-      #if (factor==fo[-1])
-      #  i = factor
-      #  break
-      #end
+      if (factor==fo[-1])
+        i = factor
+        break
+      end
       r = (b**factor).x % m
       if (r==0)
         i = factor
