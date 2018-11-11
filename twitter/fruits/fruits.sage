@@ -28,12 +28,15 @@ print("generators = %s" %(generators))
 print(E.torsion_points())
 print
 
-if (len(generators) > 0):
+if (rank > 1):
+	 print("Associated elliptic curve has rank > 1")
+	 exit()
+elif (rank == 0):
+		 print("Associated elliptic curve has rank 0")
+		 exit()
+else:
 	 p = generators[0]
 	 q = finv(p)
-else:
-	print("Associated elliptic curve has rank 0")
-	exit()
 
 i = 1
 while not((q[0] > 0) and (q[1] > 0)):
