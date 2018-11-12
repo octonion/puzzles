@@ -76,6 +76,9 @@ while not((q[0] > 0) and (q[1] > 0)):
         break
     m += 1
     q = finv(g*m)
+    #print(q[0] > 0, q[1] > 0)
+    #qn = finv(-g*m)
+    #print(qn[0] > 0, qn[1] > 0)
 
 print
 print("m = %s" %m)
