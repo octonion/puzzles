@@ -102,5 +102,3 @@ print("max %s digits" %ml)
 sum = sa/(sb+sc) + sb/(sa+sc) + sc/(sa+sb)
 print
 print("a/(b+c) + b/(a+c) + c/(a+b) = %s" %sum)
-
-
