@@ -1,0 +1,6 @@
+torsion order = 6
+rank = 2
+generators = [(914187 : -149679900 : 1), (1187787 : -617665500 : 1)]
+
+Associated elliptic curve has rank > 1
+No generators lie on the egg, not solvable
