@@ -74,6 +74,7 @@ while not((s[0] > 0) and (s[1] > 0)):
         if (r[0] > 0) and (r[1] > 0):
             tu = t
             found = True
+            s = r
             break
     if found:
         break
@@ -91,10 +92,10 @@ sc = s[2]*g
 
 print
 print("Smallest solution:")
-#print
-#print("a = %s" %sa)
-#print("b = %s" %sb)
-#print("c = %s" %sc)
+print
+print("a = %s" %sa)
+print("b = %s" %sb)
+print("c = %s" %sc)
 print
 ml = max(len(str(sa)),len(str(sb)),len(str(sc)))
 print("max %s digits" %ml)
