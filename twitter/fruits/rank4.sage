@@ -1,4 +1,4 @@
-import numpy
+#import numpy
 import sys
 
 def inner(x,y):
@@ -60,6 +60,8 @@ print("torsion order = %s" %(torsion_order))
 
 print
 
+number=0
+
 if (rank > 1):
     print("Associated elliptic curve has rank > 1")
     good = []
@@ -108,6 +110,10 @@ M = ip_matrix([b0,b1,b2,g0])
 dgg0 = 2*gg0
 
 tu = None
+dM = M.det()
+mp = float((max_h)^2*(pi^2/2.0)/sqrt(dM))/(32.0)
+
+print('Points to search = %s' %(mp))
 
 C = matrix(ZZ,[0,0,0,1])
 while True: # i-loop
@@ -147,6 +153,8 @@ while True: # i-loop
 
             while not(found) and (h < max_h):
 
+                number += 1
+
                 if (p1[0]>l1 and p1[0]<u1) or (p1[0]>l2 and p1[0]<u2):
                     p = p1
                     tu = tp[0]
@@ -167,20 +175,21 @@ while True: # i-loop
                         bj = C[0,1]
                         bk = C[0,2]
                         bl = C[0,3]
-                        bh = h
-                        max_h = h
+                        bh = h[0,0]
+                        max_h = h[0,0]
                     #print(C,h,(C[0,0]*bad[0]+C[0,1]*bad[1]+C[0,2]*bad[2]+C[0,3]*good[0]).height())
-                    print("i = %s, j = %s, k = %s, l = %s, h = %s" %(C[0,0],C[0,1],C[0,2],C[0,3],h))
+                    print("i = %s, j = %s, k = %s, l = %s, h = %s" %(C[0,0],C[0,1],C[0,2],C[0,3],h[0,0]))
 
             C[0,2] += 1
-        C[0,1] -= 1
+        C[0,1] += 1
     C[0,0] += 1
 
 print
 #print(bh,(bi*bad[0]+bj*bad[1]+bk*bad[2]+bl*good[0]).height())
 print("lowest height solution has i = %s, j = %s, k = %s, l = %s" %(bi,bj,bk,bl))
 print("h = %s, lower bound %s digits" %(bh,(3/2*bh-6*log(N*1.0)-10)/log(10.0)))
-
+print(number)
+exit()
 q = bi*b0+bj*b1+bk*b2+bl*g0+F(tu)
 s = finv(winv(q))
 
