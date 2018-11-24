@@ -1,3 +1,4 @@
+import numpy
 import sys
 
 def inner(x,y):
@@ -12,7 +13,7 @@ def ip_matrix(P):
         for j in range(0,i):
             M[i,j] = inner(P[i],P[j])
             M[j,i] = M[i,j]
-    return(M.numpy(dtype=float))
+    return(M)
 
 N = int(sys.argv[1])
 
@@ -108,7 +109,7 @@ dgg0 = 2*gg0
 
 tu = None
 
-C = matrix(ZZ,[0,0,0,1]).numpy(dtype=int)
+C = matrix(ZZ,[0,0,0,1])
 while True: # i-loop
 
     C[0,1] = 0
@@ -116,7 +117,7 @@ while True: # i-loop
     C[0,3] = 1
 
     h = C*M*C.transpose()
-    print(h)
+
     if (h > max_h):
         break
     
