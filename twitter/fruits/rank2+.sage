@@ -133,7 +133,7 @@ for pair in pairs:
     if (p1[0]>l1 and p1[0]<u1) or (p1[0]>l2 and p1[0]<u2):
         tu = tp[0]
         s = v
-        print("Solution found - %s, h = %s" %(v,h))
+        print("Solution found: %s, h = %s" %(v,h))
         found = True
         break
 
