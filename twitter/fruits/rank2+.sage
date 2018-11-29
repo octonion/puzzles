@@ -98,10 +98,9 @@ mp = float((max_h)^(rank/2.0)*S/sqrt(dM))/(2.0)
 print
 print('Points to search ~ volume of ellipsoid = %s' %(round(mp)))
 
-A = M
-B = pari(A)
+PM = pari(M)
 
-points = gp('qfminim(%s,%s,,2)' %(B,max_h))
+points = gp('qfminim(%s,%s,,2)' %(PM,max_h))
 pari_vectors = points[3]
 sage_vectors = gen_to_sage(pari(pari_vectors))
 
@@ -163,13 +162,12 @@ sc = s[2]*g
 print
 print("Smallest solution:")
 print
-print("a > 0? = %s" %(sa>0))
-print("b > 0? = %s" %(sb>0))
-print("c > 0? = %s" %(sc>0))
-
 print("a = %s" %sa)
 print("b = %s" %sb)
 print("c = %s" %sc)
+print("a > 0? = %s" %(sa>0))
+print("b > 0? = %s" %(sb>0))
+print("c > 0? = %s" %(sc>0))
 print
 ml = max(len(str(sa)),len(str(sb)),len(str(sc)))
 print("max %s digits" %ml)
