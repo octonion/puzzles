@@ -1,0 +1,23 @@
+Elliptic curve has rank 3
+Torsion order is 6
+
+1 of 3 generators lie on the non-identity component
+
+Points to search ~ volume of ellipsoid = 16463
+Points returned = 16454
+
+Solution found - (1, 2, 1), h = 65.1221070359963
+h = 65.1221070359963, lower bound 22.3161176448803 digits
+
+Smallest solution:
+
+a = 6383088000457968550863626020707964592827
+b = 86901761472912010754925122912564100123
+c = 2743260400516683056616306684496286550899825
+a > 0? = True
+b > 0? = True
+c > 0? = True
+
+max 43 digits
+
+a/(b+c) + b/(a+c) + c/(a+b) = 424
