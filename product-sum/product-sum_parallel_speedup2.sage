@@ -30,12 +30,12 @@ def solve(lv):
         term = sum*product + 1
         
         factors = divisors(term)
-        nf = (len(factors)+1)/2
+        nf = (len(factors)+1)//2
         #nf = floor((len(factors)+1)/2)
 
         for div in xrange(0, nf):
-            a = (factors[div]+1)/product
-            b = (term/factors[div]+1)/product
+            a = (factors[div]+1)//product
+            b = (term//factors[div]+1)//product
             solution = [b, a]
             print(solution)
             s += 1
@@ -66,10 +66,10 @@ def solve(lv):
                     values[j] = small
         else:
             #x = floor(sum/product)+1 # a*b
-            x = sum/product+1 # a*b
+            x = sum//product+1 # a*b
             y = sum-x*product # -(a+b)
             
-            up = (sum-large**2+2*large)/(product-1)-x
+            up = (sum-large**2+2*large)//(product-1)-x
             #up2 = floor((sum-large**2+2*large)/product)
             #print("large = %s, x=%s, y=%s, x+y+1=%s, up=%s" % (large,x,y,x+y+1,up))
             #if (x+y+1 <= (large*large-2*large)):
@@ -103,7 +103,7 @@ def solve(lv):
             factors = divisors(term)
 
             #nf = floor((len(factors)+1)/2)
-            nf = (len(factors)+1)/2
+            nf = (len(factors)+1)//2
 
             pl = product*large-1
             rf = filter(lambda x: ((x >= pl) and ((x+1)%product)==0), factors[0:nf])
@@ -112,8 +112,8 @@ def solve(lv):
             if (counts>0):
 
                 for factor in rf:
-                    a = (factor+1)/product
-                    b = (term/factor+1)/product
+                    a = (factor+1)//product
+                    b = (term//factor+1)//product
                     solution = [b,a]+values
                     print(solution)
                     s += 1
@@ -127,7 +127,7 @@ def solve(lv):
 top = round(log(n, 2))
 
 num_cores = multiprocessing.cpu_count()
-use_cores = num_cores/2 #floor(num_cores/2)
+use_cores = num_cores//2 #floor(num_cores/2)
 print
 print("Using %s CPU cores" % use_cores)
 print
