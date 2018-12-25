@@ -1,5 +1,9 @@
 M/D/2 expected waiting time = 0.222625621502552
 M/D/2 expected system time = 14.5083399072168
+M/D/2 people per second = 0.449918326471902
 
 Split queue expected waiting time = 1.67045454545454
 Split queue expected system time = 14.0514069264069
+Split queue people per second = 0.318361247488067
+
+Ratio of M/D/2 pps to split queue pps = 1.41323207526621

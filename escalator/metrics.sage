@@ -36,6 +36,11 @@ W = 1/(1-m) + 1/2*(c*p+1/(1-p)-c)
 t = W/y-D
 print("M/D/2 expected waiting time = %s" %(t))
 print("M/D/2 expected system time = %s" %(t+L/s))
+
+# People per second
+ps_2 = 1/(1/y+t)
+
+print("M/D/2 people per second = %s" %(ps_2))
 print
 
 # fast/slow splits
@@ -59,3 +64,10 @@ s_t = f_f*(t_f+L/(s+w)) + f_s*(t_s+L/s)
 
 print("Split queue expected system time = %s" %(s_t))
 
+# People per second
+ps_s = 1/(1/y_f+t_f) + 1/(1/y_s+t_s)
+
+print("Split queue people per second = %s" %(ps_s))
+
+print
+print("Ratio of M/D/2 pps to split queue pps = %s" %(ps_2/ps_s))
