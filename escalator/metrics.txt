@@ -1,0 +1,5 @@
+M/D/2 expected waiting time = 0.222625621502552
+M/D/2 expected system time = 14.5083399072168
+
+Split queue expected waiting time = 1.67045454545454
+Split queue expected system time = 14.0514069264069
