@@ -1,5 +1,5 @@
 
-for n in range(1,1001):
+for n in range(1,2001):
 
     list = []
     for i in range(0,n):
