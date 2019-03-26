@@ -1,6 +1,6 @@
 
 sizes = [4,10,10^3,10^6]
-digits = 100
+digits = 1000
 d = 10^digits
 
 for size in sizes:
