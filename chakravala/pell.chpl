@@ -170,7 +170,8 @@ proc factor(q) {
 
 //arg = 609*7766*2**2*4657**2
 // BigInt.new(ARGV[0])
-config var arg = 61;
+// config var arg = 61
+config var arg = 609*7766*2**2*4657**2;
 var D = new bigint(arg);
 
 // Squarefree part
