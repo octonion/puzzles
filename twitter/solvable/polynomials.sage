@@ -20,4 +20,3 @@ print(g)
 # Is g solvable?
 
 print(g.is_solvable())
-
