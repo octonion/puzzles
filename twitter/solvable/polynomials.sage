@@ -7,5 +7,17 @@ print(factor(p))
 
 p = x^8-2*x^6+2*x^5+x^4-4*x^3+x^2-2
 K.<z> = NumberField(p)
+
+# Galois group
+
 G = K.galois_group(type='gap')
-print(G)
+
+# Underlying group
+
+g = G.group()
+print(g)
+
+# Is g solvable?
+
+print(g.is_solvable())
+
