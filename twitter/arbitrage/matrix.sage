@@ -1,4 +1,5 @@
 def idot(x, y):
+    #print(x,y)
     m = len(x)
     n = len(y)
     # Needs error checking
@@ -27,7 +28,20 @@ class Exchange:
 
 m = [[1,95/100,8/10],[8/10,1,12/10],[95/100,8/10,1]]
 c = Exchange(m)
+print "Arbitrage exists:"
+print ""
+print "c^2 = ",c^2
+print "c^3 = ",c^3
+print "c^4 = ",c^4
+print "c^5 = ",c^5
+print "c^6 = ",c^6
 
+print ""
+m = [[1,9/10,7/10],[9/10,1,9/10],[11/10,7/10,1]]
+c = Exchange(m)
+print "No arbitrage exists:"
+print ""
+print "c = ",c
 print "c^2 = ",c^2
 print "c^3 = ",c^3
 print "c^4 = ",c^4
