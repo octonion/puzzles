@@ -25,10 +25,6 @@ class Exchange:
             A = A*A
         return P
 
-#x = [1,0.95,0.8]
-#y = [0.8,1,1.1]
-#print(idot(x,y))
-
 m = [[1,95/100,8/10],[8/10,1,12/10],[95/100,8/10,1]]
 c = Exchange(m)
 
