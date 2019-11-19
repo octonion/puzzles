@@ -1,6 +1,6 @@
 We can define a pseudo-inner product for two equal length vectors by
 
-x*y = < max(x_i*y_i).
+x\* y = < max(x_i\* y_i).
 
 In turn, we can use this to define a matrix product, taking the dot product of the ith row in A and jth column in B for the ij-th entry in the product A*B.
 
