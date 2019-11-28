@@ -1,0 +1,3 @@
+M rows = 1344 , M cols = 1344
+Determinant of M = 1
+M^ 2019 = I( 1344 ) is True
