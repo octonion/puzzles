@@ -13,7 +13,7 @@ def kelly_analyze(count, offer):
         except:
             print "Mean(cases) > Offer, Kelly neutral bankroll = infinite"
     else:
-        print "Mean(cases) < Offer, Kelly neutral bankroll = infinite"
+        print "Kelly neutral bankroll < 1"
 
 id = None
 with open("data/US.csv") as f:

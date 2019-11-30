@@ -45,14 +45,14 @@ Karen
 19/12/05
 Round = 7
 Mean(cases) = 137644 , Offer = 138000
-Mean(cases) < Offer, Kelly neutral bankroll = infinite
+Kelly neutral bankroll < 1
 Player chose ND
 
 Karen
 19/12/05
 Round = 8
 Mean(cases) = 16858 , Offer = 17000
-Mean(cases) < Offer, Kelly neutral bankroll = infinite
+Kelly neutral bankroll < 1
 Player chose ND
 
 Karen
@@ -220,7 +220,7 @@ Daryl
 21/12/05
 Round = 8
 Mean(cases) = 66685 , Offer = 67000
-Mean(cases) < Offer, Kelly neutral bankroll = infinite
+Kelly neutral bankroll < 1
 Player chose ND
 
 Daryl
@@ -591,7 +591,7 @@ Patrick ("Monty")
 06/03/06
 Round = 9
 Mean(cases) = 37500 , Offer = 38000
-Mean(cases) < Offer, Kelly neutral bankroll = infinite
+Kelly neutral bankroll < 1
 Player chose ND
 
 Kim
@@ -689,14 +689,14 @@ Eric
 10/03/06
 Round = 7
 Mean(cases) = 12706 , Offer = 14000
-Mean(cases) < Offer, Kelly neutral bankroll = infinite
+Kelly neutral bankroll < 1
 Player chose ND
 
 Eric
 10/03/06
 Round = 8
 Mean(cases) = 16917 , Offer = 19000
-Mean(cases) < Offer, Kelly neutral bankroll = infinite
+Kelly neutral bankroll < 1
 Player chose D
 
 Brian
@@ -745,14 +745,14 @@ Brian
 13/03/06
 Round = 7
 Mean(cases) = 137675 , Offer = 139000
-Mean(cases) < Offer, Kelly neutral bankroll = infinite
+Kelly neutral bankroll < 1
 Player chose ND
 
 Brian
 13/03/06
 Round = 8
 Mean(cases) = 183500 , Offer = 202000
-Mean(cases) < Offer, Kelly neutral bankroll = infinite
+Kelly neutral bankroll < 1
 Player chose D
 
 Cathy
@@ -815,7 +815,7 @@ Cathy
 13/03/06
 Round = 9
 Mean(cases) = 2500 , Offer = 2800
-Mean(cases) < Offer, Kelly neutral bankroll = infinite
+Kelly neutral bankroll < 1
 Player chose ND
 
 Horsten
@@ -969,14 +969,14 @@ Janie
 22/03/06
 Round = 8
 Mean(cases) = 442 , Offer = 450
-Mean(cases) < Offer, Kelly neutral bankroll = infinite
+Kelly neutral bankroll < 1
 Player chose ND
 
 Janie
 22/03/06
 Round = 9
 Mean(cases) = 625 , Offer = 650
-Mean(cases) < Offer, Kelly neutral bankroll = infinite
+Kelly neutral bankroll < 1
 Player chose ND
 
 Brett
@@ -1025,7 +1025,7 @@ Brett
 22/03/06
 Round = 7
 Mean(cases) = 75054 , Offer = 76000
-Mean(cases) < Offer, Kelly neutral bankroll = infinite
+Kelly neutral bankroll < 1
 Player chose ND
 
 Brett
@@ -1039,7 +1039,7 @@ Brett
 22/03/06
 Round = 9
 Mean(cases) = 8 , Offer = 8
-Mean(cases) < Offer, Kelly neutral bankroll = infinite
+Kelly neutral bankroll < 1
 Player chose D
 
 Lisa
@@ -1235,7 +1235,7 @@ Michelle
 29/03/06
 Round = 8
 Mean(cases) = 18667 , Offer = 21000
-Mean(cases) < Offer, Kelly neutral bankroll = infinite
+Kelly neutral bankroll < 1
 Player chose D
 
 Michael
@@ -1851,7 +1851,7 @@ Randy
 01/05/06
 Round = 7
 Mean(cases) = 93875 , Offer = 100000
-Mean(cases) < Offer, Kelly neutral bankroll = infinite
+Kelly neutral bankroll < 1
 Player chose D
 
 Rebecca
@@ -1907,7 +1907,7 @@ Rebecca
 03/05/06
 Round = 8
 Mean(cases) = 8368 , Offer = 9000
-Mean(cases) < Offer, Kelly neutral bankroll = infinite
+Kelly neutral bankroll < 1
 Player chose D
 
 Anca
@@ -2019,7 +2019,7 @@ Gary
 08/05/06
 Round = 7
 Mean(cases) = 325350 , Offer = 340000
-Mean(cases) < Offer, Kelly neutral bankroll = infinite
+Kelly neutral bankroll < 1
 Player chose D
 
 Shirley
@@ -2117,7 +2117,7 @@ Chad
 10/05/06
 Round = 7
 Mean(cases) = 12706 , Offer = 14000
-Mean(cases) < Offer, Kelly neutral bankroll = infinite
+Kelly neutral bankroll < 1
 Player chose D
 
 Lauren
@@ -2222,7 +2222,7 @@ Renee
 15/05/06
 Round = 8
 Mean(cases) = 25012 , Offer = 28000
-Mean(cases) < Offer, Kelly neutral bankroll = infinite
+Kelly neutral bankroll < 1
 Player chose D
 
 Jim
@@ -2327,7 +2327,7 @@ Dana
 17/05/06
 Round = 9
 Mean(cases) = 175 , Offer = 175
-Mean(cases) < Offer, Kelly neutral bankroll = infinite
+Kelly neutral bankroll < 1
 Player chose ND
 
 Jeff
@@ -2481,5 +2481,5 @@ Oscar
 29/05/06
 Round = 8
 Mean(cases) = 133360 , Offer = 137000
-Mean(cases) < Offer, Kelly neutral bankroll = infinite
+Kelly neutral bankroll < 1
 Player chose D
