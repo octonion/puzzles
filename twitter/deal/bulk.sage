@@ -62,4 +62,4 @@ with open("data/US.csv") as f:
 
         offer = int(row["Bank Offer"])
         kelly_analyze(count,offer)
-        print "Player's chose", row["Deal / No Deal"]
+        print "Player chose", row["Deal / No Deal"]
