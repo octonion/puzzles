@@ -1,3 +1,5 @@
+February 27, 2006
+Contestant Peter Montesanti
 
 Round 1
 Mean(cases) = 145883 , Offer = 17000
@@ -30,3 +32,42 @@ Kelly neutral bankroll = 1237638
 Round 8
 Mean(cases) = 416675 , Offer = 359000
 Kelly neutral bankroll = 551706
+
+September 1, 2008
+Contestant Jessica Robinson
+
+Round 1
+Mean(cases) = 269631 , Offer = 99000
+Kelly neutral bankroll = 81153
+
+Round 2
+Mean(cases) = 225833 , Offer = 78000
+Kelly neutral bankroll = 65495
+
+Round 3
+Mean(cases) = 216095 , Offer = 78000
+Kelly neutral bankroll = 59532
+
+Round 4
+Mean(cases) = 168981 , Offer = 56000
+Kelly neutral bankroll = 36332
+
+Round 5
+Mean(cases) = 216963 , Offer = 85000
+Kelly neutral bankroll = 57305
+
+Round 6
+Mean(cases) = 260155 , Offer = 108000
+Kelly neutral bankroll = 49242
+
+Round 7
+Mean(cases) = 325188 , Offer = 173000
+Kelly neutral bankroll = 70424
+
+Round 8
+Mean(cases) = 433333 , Offer = 294000
+Kelly neutral bankroll = 62377
+
+Round 9
+Mean(cases) = 600000 , Offer = 561000
+Kelly neutral bankroll = 1470782
