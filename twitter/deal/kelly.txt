@@ -1,5 +1,32 @@
-7098.45549685
-10787.922501
-56158.8974951
-66951.2500000000
-551705.505607
+
+Round 1
+Mean(cases) = 145883.250000000 , Offer = 17000
+Kelly neutral bankroll = 4429.15867283
+
+Round 2
+Mean(cases) = 127807.333333333 , Offer = 22000
+Kelly neutral bankroll = 5219.81896605
+
+Round 3
+Mean(cases) = 146464.545454545 , Offer = 35000
+Kelly neutral bankroll = 18353.7558733
+
+Round 4
+Mean(cases) = 157576.250000000 , Offer = 68000
+Kelly neutral bankroll = 109013.426349
+
+Round 5
+Mean(cases) = 208368.333333333 , Offer = 125000
+Kelly neutral bankroll = 229611.238397
+
+Round 6
+Mean(cases) = 250027.000000000 , Offer = 199000
+Kelly neutral bankroll = 641844.104056
+
+Round 7
+Mean(cases) = 312531.250000000 , Offer = 279000
+Kelly neutral bankroll = 1237638.15848
+
+Round 8
+Mean(cases) = 416675.000000000 , Offer = 359000
+Kelly neutral bankroll = 551705.505607
