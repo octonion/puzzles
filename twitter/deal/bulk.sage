@@ -11,9 +11,9 @@ def kelly_analyze(count, offer):
             r = find_root(p(B), 1, 10000000000, maxiter=10000)
             print "Kelly neutral bankroll =", int(round(r))
         except:
-            print "Mean(cases) > Offer, Kelly neutral bankroll = infinite"
+            print "Kelly neutral bankroll < 1"
     else:
-        print "Kelly neutral bankroll < 1"
+        print "Mean(cases) < Offer, Kelly neutral bankroll = infinite"
 
 id = None
 with open("data/US.csv") as f:
