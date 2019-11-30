@@ -1,0 +1,2485 @@
+
+Karen
+19/12/05
+Round = 1
+Mean(cases) = 170639 , Offer = 21000
+Kelly neutral bankroll = 1941
+Player's chose ND
+
+Karen
+19/12/05
+Round = 2
+Mean(cases) = 84129 , Offer = 37000
+Kelly neutral bankroll = 31019
+Player's chose ND
+
+Karen
+19/12/05
+Round = 3
+Mean(cases) = 98807 , Offer = 53000
+Kelly neutral bankroll = 74229
+Player's chose ND
+
+Karen
+19/12/05
+Round = 4
+Mean(cases) = 110734 , Offer = 77000
+Kelly neutral bankroll = 217301
+Player's chose ND
+
+Karen
+19/12/05
+Round = 5
+Mean(cases) = 95979 , Offer = 63000
+Kelly neutral bankroll = 225786
+Player's chose ND
+
+Karen
+19/12/05
+Round = 6
+Mean(cases) = 110175 , Offer = 90000
+Kelly neutral bankroll = 666069
+Player's chose ND
+
+Karen
+19/12/05
+Round = 7
+Mean(cases) = 137644 , Offer = 138000
+Mean(cases) < Offer, Kelly neutral bankroll = infinite
+Player's chose ND
+
+Karen
+19/12/05
+Round = 8
+Mean(cases) = 16858 , Offer = 17000
+Mean(cases) < Offer, Kelly neutral bankroll = infinite
+Player's chose ND
+
+Karen
+19/12/05
+Round = 9
+Mean(cases) = 25250 , Offer = 25000
+Kelly neutral bankroll = 1200000
+Player's chose D
+
+Jason
+19/12/05
+Round = 1
+Mean(cases) = 119660 , Offer = 7000
+Kelly neutral bankroll = 1158
+Player's chose ND
+
+Jason
+19/12/05
+Round = 2
+Mean(cases) = 81186 , Offer = 19000
+Kelly neutral bankroll = 20973
+Player's chose ND
+
+Jason
+19/12/05
+Round = 3
+Mean(cases) = 110597 , Offer = 36000
+Kelly neutral bankroll = 32909
+Player's chose ND
+
+Jason
+19/12/05
+Round = 4
+Mean(cases) = 152006 , Offer = 63000
+Kelly neutral bankroll = 41324
+Player's chose ND
+
+Jason
+19/12/05
+Round = 5
+Mean(cases) = 201842 , Offer = 99000
+Kelly neutral bankroll = 42651
+Player's chose ND
+
+Jason
+19/12/05
+Round = 6
+Mean(cases) = 242150 , Offer = 162000
+Kelly neutral bankroll = 89098
+Player's chose ND
+
+Jason
+19/12/05
+Round = 7
+Mean(cases) = 302500 , Offer = 240000
+Kelly neutral bankroll = 103634
+Player's chose ND
+
+Jason
+19/12/05
+Round = 8
+Mean(cases) = 236667 , Offer = 189000
+Kelly neutral bankroll = 139520
+Player's chose D
+
+Amy
+20/12/05
+Round = 1
+Mean(cases) = 152868 , Offer = 13000
+Kelly neutral bankroll = 3118
+Player's chose ND
+
+Amy
+20/12/05
+Round = 2
+Mean(cases) = 147088 , Offer = 27000
+Kelly neutral bankroll = 18056
+Player's chose ND
+
+Amy
+20/12/05
+Round = 3
+Mean(cases) = 164201 , Offer = 48000
+Kelly neutral bankroll = 48014
+Player's chose ND
+
+Amy
+20/12/05
+Round = 4
+Mean(cases) = 188224 , Offer = 76000
+Kelly neutral bankroll = 120157
+Player's chose ND
+
+Amy
+20/12/05
+Round = 5
+Mean(cases) = 250931 , Offer = 124000
+Kelly neutral bankroll = 161728
+Player's chose ND
+
+Amy
+20/12/05
+Round = 6
+Mean(cases) = 201117 , Offer = 121000
+Kelly neutral bankroll = 460769
+Player's chose ND
+
+Amy
+20/12/05
+Round = 7
+Mean(cases) = 251271 , Offer = 201000
+Kelly neutral bankroll = 1308401
+Player's chose D
+
+Daryl
+21/12/05
+Round = 1
+Mean(cases) = 118375 , Offer = 11000
+Kelly neutral bankroll = 1535
+Player's chose ND
+
+Daryl
+21/12/05
+Round = 2
+Mean(cases) = 84449 , Offer = 19000
+Kelly neutral bankroll = 7361
+Player's chose ND
+
+Daryl
+21/12/05
+Round = 3
+Mean(cases) = 105969 , Offer = 37000
+Kelly neutral bankroll = 27834
+Player's chose ND
+
+Daryl
+21/12/05
+Round = 4
+Mean(cases) = 89419 , Offer = 32000
+Kelly neutral bankroll = 38895
+Player's chose ND
+
+Daryl
+21/12/05
+Round = 5
+Mean(cases) = 35876 , Offer = 25000
+Kelly neutral bankroll = 135478
+Player's chose ND
+
+Daryl
+21/12/05
+Round = 6
+Mean(cases) = 41051 , Offer = 37000
+Kelly neutral bankroll = 662712
+Player's chose ND
+
+Daryl
+21/12/05
+Round = 7
+Mean(cases) = 50064 , Offer = 50000
+Kelly neutral bankroll = 58656920
+Player's chose ND
+
+Daryl
+21/12/05
+Round = 8
+Mean(cases) = 66685 , Offer = 67000
+Mean(cases) < Offer, Kelly neutral bankroll = infinite
+Player's chose ND
+
+Daryl
+21/12/05
+Round = 9
+Mean(cases) = 100025 , Offer = 99000
+Kelly neutral bankroll = 4776098
+Player's chose D
+
+Traci
+22/12/05
+Round = 1
+Mean(cases) = 151608 , Offer = 9000
+Kelly neutral bankroll = 960
+Player's chose ND
+
+Traci
+22/12/05
+Round = 2
+Mean(cases) = 178784 , Offer = 28000
+Kelly neutral bankroll = 13345
+Player's chose ND
+
+Traci
+22/12/05
+Round = 3
+Mean(cases) = 206977 , Offer = 58000
+Kelly neutral bankroll = 46836
+Player's chose ND
+
+Traci
+22/12/05
+Round = 4
+Mean(cases) = 190709 , Offer = 75000
+Kelly neutral bankroll = 104042
+Player's chose ND
+
+Traci
+22/12/05
+Round = 5
+Mean(cases) = 250096 , Offer = 113000
+Kelly neutral bankroll = 130961
+Player's chose ND
+
+Traci
+22/12/05
+Round = 6
+Mean(cases) = 300110 , Offer = 199000
+Kelly neutral bankroll = 359018
+Player's chose ND
+
+Traci
+22/12/05
+Round = 7
+Mean(cases) = 375063 , Offer = 275000
+Kelly neutral bankroll = 435449
+Player's chose ND
+
+Traci
+22/12/05
+Round = 8
+Mean(cases) = 333417 , Offer = 267000
+Kelly neutral bankroll = 1154827
+Player's chose D
+
+Venus
+22/12/05
+Round = 1
+Mean(cases) = 120916 , Offer = 9000
+Kelly neutral bankroll = 1657
+Player's chose ND
+
+Venus
+22/12/05
+Round = 2
+Mean(cases) = 126137 , Offer = 19000
+Kelly neutral bankroll = 14769
+Player's chose ND
+
+Venus
+22/12/05
+Round = 3
+Mean(cases) = 12817 , Offer = 12000
+Kelly neutral bankroll = 318024
+Player's chose ND
+
+Venus
+22/12/05
+Round = 4
+Mean(cases) = 16317 , Offer = 15000
+Kelly neutral bankroll = 246522
+Player's chose ND
+
+Venus
+22/12/05
+Round = 5
+Mean(cases) = 20873 , Offer = 19000
+Kelly neutral bankroll = 208035
+Player's chose ND
+
+Venus
+22/12/05
+Round = 6
+Mean(cases) = 25047 , Offer = 23000
+Kelly neutral bankroll = 207663
+Player's chose ND
+
+Venus
+22/12/05
+Round = 7
+Mean(cases) = 31306 , Offer = 28000
+Kelly neutral bankroll = 125402
+Player's chose ND
+
+Venus
+22/12/05
+Round = 8
+Mean(cases) = 41733 , Offer = 35000
+Kelly neutral bankroll = 43258
+Player's chose ND
+
+Venus
+22/12/05
+Round = 9
+Mean(cases) = 25100 , Offer = 23000
+Kelly neutral bankroll = 123571
+Player's chose D
+
+Janette
+23/12/05
+Round = 1
+Mean(cases) = 79669 , Offer = 4000
+Kelly neutral bankroll = 432
+Player's chose ND
+
+Janette
+23/12/05
+Round = 2
+Mean(cases) = 65792 , Offer = 13000
+Kelly neutral bankroll = 12845
+Player's chose ND
+
+Janette
+23/12/05
+Round = 3
+Mean(cases) = 21499 , Offer = 9000
+Kelly neutral bankroll = 9477
+Player's chose ND
+
+Janette
+23/12/05
+Round = 4
+Mean(cases) = 28280 , Offer = 18000
+Kelly neutral bankroll = 30700
+Player's chose ND
+
+Janette
+23/12/05
+Round = 5
+Mean(cases) = 37579 , Offer = 26000
+Kelly neutral bankroll = 31397
+Player's chose ND
+
+Janette
+23/12/05
+Round = 6
+Mean(cases) = 35095 , Offer = 22000
+Kelly neutral bankroll = 30770
+Player's chose ND
+
+Janette
+23/12/05
+Round = 7
+Mean(cases) = 43869 , Offer = 40000
+Kelly neutral bankroll = 211253
+Player's chose ND
+
+Janette
+23/12/05
+Round = 8
+Mean(cases) = 58358 , Offer = 55000
+Kelly neutral bankroll = 227399
+Player's chose ND
+
+Janette
+23/12/05
+Round = 9
+Mean(cases) = 87500 , Offer = 85000
+Mean(cases) > Offer, Kelly neutral bankroll = infinite
+Player's chose ND
+
+Peter
+27/02/06
+Round = 1
+Mean(cases) = 145883 , Offer = 17000
+Kelly neutral bankroll = 4429
+Player's chose ND
+
+Peter
+27/02/06
+Round = 2
+Mean(cases) = 127807 , Offer = 22000
+Kelly neutral bankroll = 5220
+Player's chose ND
+
+Peter
+27/02/06
+Round = 3
+Mean(cases) = 146465 , Offer = 35000
+Kelly neutral bankroll = 18354
+Player's chose ND
+
+Peter
+27/02/06
+Round = 4
+Mean(cases) = 157576 , Offer = 68000
+Kelly neutral bankroll = 109013
+Player's chose ND
+
+Peter
+27/02/06
+Round = 5
+Mean(cases) = 208368 , Offer = 125000
+Kelly neutral bankroll = 229611
+Player's chose ND
+
+Peter
+27/02/06
+Round = 6
+Mean(cases) = 250027 , Offer = 199000
+Kelly neutral bankroll = 641844
+Player's chose ND
+
+Peter
+27/02/06
+Round = 7
+Mean(cases) = 312531 , Offer = 279000
+Kelly neutral bankroll = 1237638
+Player's chose ND
+
+Peter
+27/02/06
+Round = 8
+Mean(cases) = 416675 , Offer = 359000
+Kelly neutral bankroll = 551706
+Player's chose D
+
+Cheryl
+27/02/06
+Round = 1
+Mean(cases) = 149147 , Offer = 10000
+Kelly neutral bankroll = 1035
+Player's chose ND
+
+Cheryl
+27/02/06
+Round = 2
+Mean(cases) = 173860 , Offer = 31000
+Kelly neutral bankroll = 15423
+Player's chose ND
+
+Cheryl
+27/02/06
+Round = 3
+Mean(cases) = 191532 , Offer = 48000
+Kelly neutral bankroll = 31223
+Player's chose ND
+
+Cheryl
+27/02/06
+Round = 4
+Mean(cases) = 132045 , Offer = 39000
+Kelly neutral bankroll = 43749
+Player's chose ND
+
+Cheryl
+27/02/06
+Round = 5
+Mean(cases) = 175159 , Offer = 66000
+Kelly neutral bankroll = 61867
+Player's chose ND
+
+Cheryl
+27/02/06
+Round = 6
+Mean(cases) = 210041 , Offer = 97000
+Kelly neutral bankroll = 85782
+Player's chose ND
+
+Cheryl
+27/02/06
+Round = 7
+Mean(cases) = 262502 , Offer = 172000
+Kelly neutral bankroll = 203477
+Player's chose ND
+
+Cheryl
+27/02/06
+Round = 8
+Mean(cases) = 100002 , Offer = 80000
+Kelly neutral bankroll = 344692
+Player's chose ND
+
+Cheryl
+27/02/06
+Round = 9
+Mean(cases) = 3 , Offer = 2
+Mean(cases) > Offer, Kelly neutral bankroll = infinite
+Player's chose ND
+
+Patrick ("Monty")
+06/03/06
+Round = 1
+Mean(cases) = 150894 , Offer = 25000
+Kelly neutral bankroll = 5615
+Player's chose ND
+
+Patrick ("Monty")
+06/03/06
+Round = 2
+Mean(cases) = 104500 , Offer = 15000
+Kelly neutral bankroll = 4046
+Player's chose ND
+
+Patrick ("Monty")
+06/03/06
+Round = 3
+Mean(cases) = 51486 , Offer = 21000
+Kelly neutral bankroll = 10988
+Player's chose ND
+
+Patrick ("Monty")
+06/03/06
+Round = 4
+Mean(cases) = 31919 , Offer = 13000
+Kelly neutral bankroll = 3689
+Player's chose ND
+
+Patrick ("Monty")
+06/03/06
+Round = 5
+Mean(cases) = 42517 , Offer = 30000
+Kelly neutral bankroll = 15515
+Player's chose ND
+
+Patrick ("Monty")
+06/03/06
+Round = 6
+Mean(cases) = 31020 , Offer = 16000
+Kelly neutral bankroll = 2478
+Player's chose ND
+
+Patrick ("Monty")
+06/03/06
+Round = 7
+Mean(cases) = 20025 , Offer = 12000
+Kelly neutral bankroll = 4934
+Player's chose ND
+
+Patrick ("Monty")
+06/03/06
+Round = 8
+Mean(cases) = 26667 , Offer = 24000
+Kelly neutral bankroll = 37873
+Player's chose ND
+
+Patrick ("Monty")
+06/03/06
+Round = 9
+Mean(cases) = 37500 , Offer = 38000
+Mean(cases) < Offer, Kelly neutral bankroll = infinite
+Player's chose ND
+
+Kim
+06/03/06
+Round = 1
+Mean(cases) = 145850 , Offer = 21000
+Kelly neutral bankroll = 3789
+Player's chose ND
+
+Kim
+06/03/06
+Round = 2
+Mean(cases) = 101107 , Offer = 17000
+Kelly neutral bankroll = 6820
+Player's chose ND
+
+Kim
+06/03/06
+Round = 3
+Mean(cases) = 128711 , Offer = 33000
+Kelly neutral bankroll = 18014
+Player's chose ND
+
+Kim
+06/03/06
+Round = 4
+Mean(cases) = 125725 , Offer = 56000
+Kelly neutral bankroll = 86912
+Player's chose ND
+
+Kim
+06/03/06
+Round = 5
+Mean(cases) = 159300 , Offer = 82000
+Kelly neutral bankroll = 137882
+Player's chose ND
+
+Kim
+06/03/06
+Round = 6
+Mean(cases) = 41160 , Offer = 37000
+Kelly neutral bankroll = 641196
+Player's chose ND
+
+Kim
+06/03/06
+Round = 7
+Mean(cases) = 51450 , Offer = 50000
+Kelly neutral bankroll = 2421241
+Player's chose D
+
+Eric
+10/03/06
+Round = 1
+Mean(cases) = 145370 , Offer = 19000
+Kelly neutral bankroll = 3540
+Player's chose ND
+
+Eric
+10/03/06
+Round = 2
+Mean(cases) = 186812 , Offer = 35000
+Kelly neutral bankroll = 8238
+Player's chose ND
+
+Eric
+10/03/06
+Round = 3
+Mean(cases) = 254625 , Offer = 126000
+Kelly neutral bankroll = 62291
+Player's chose ND
+
+Eric
+10/03/06
+Round = 4
+Mean(cases) = 212603 , Offer = 98000
+Kelly neutral bankroll = 34500
+Player's chose ND
+
+Eric
+10/03/06
+Round = 5
+Mean(cases) = 166804 , Offer = 60000
+Kelly neutral bankroll = 36755
+Player's chose ND
+
+Eric
+10/03/06
+Round = 6
+Mean(cases) = 160165 , Offer = 48000
+Kelly neutral bankroll = 44697
+Player's chose ND
+
+Eric
+10/03/06
+Round = 7
+Mean(cases) = 12706 , Offer = 14000
+Mean(cases) < Offer, Kelly neutral bankroll = infinite
+Player's chose ND
+
+Eric
+10/03/06
+Round = 8
+Mean(cases) = 16917 , Offer = 19000
+Mean(cases) < Offer, Kelly neutral bankroll = infinite
+Player's chose D
+
+Brian
+13/03/06
+Round = 1
+Mean(cases) = 142145 , Offer = 15000
+Kelly neutral bankroll = 3991
+Player's chose ND
+
+Brian
+13/03/06
+Round = 2
+Mean(cases) = 167839 , Offer = 37000
+Kelly neutral bankroll = 22216
+Player's chose ND
+
+Brian
+13/03/06
+Round = 3
+Mean(cases) = 159712 , Offer = 66000
+Kelly neutral bankroll = 89487
+Player's chose ND
+
+Brian
+13/03/06
+Round = 4
+Mean(cases) = 194478 , Offer = 110000
+Kelly neutral bankroll = 251172
+Player's chose ND
+
+Brian
+13/03/06
+Round = 5
+Mean(cases) = 258463 , Offer = 198000
+Kelly neutral bankroll = 694851
+Player's chose ND
+
+Brian
+13/03/06
+Round = 6
+Mean(cases) = 110155 , Offer = 85000
+Kelly neutral bankroll = 482407
+Player's chose ND
+
+Brian
+13/03/06
+Round = 7
+Mean(cases) = 137675 , Offer = 139000
+Mean(cases) < Offer, Kelly neutral bankroll = infinite
+Player's chose ND
+
+Brian
+13/03/06
+Round = 8
+Mean(cases) = 183500 , Offer = 202000
+Mean(cases) < Offer, Kelly neutral bankroll = infinite
+Player's chose D
+
+Cathy
+13/03/06
+Round = 1
+Mean(cases) = 169644 , Offer = 22000
+Kelly neutral bankroll = 2674
+Player's chose ND
+
+Cathy
+13/03/06
+Round = 2
+Mean(cases) = 212183 , Offer = 71000
+Kelly neutral bankroll = 26400
+Player's chose ND
+
+Cathy
+13/03/06
+Round = 3
+Mean(cases) = 252886 , Offer = 187000
+Kelly neutral bankroll = 406251
+Player's chose ND
+
+Cathy
+13/03/06
+Round = 4
+Mean(cases) = 178969 , Offer = 107000
+Kelly neutral bankroll = 242647
+Player's chose ND
+
+Cathy
+13/03/06
+Round = 5
+Mean(cases) = 180292 , Offer = 95000
+Kelly neutral bankroll = 265314
+Player's chose ND
+
+Cathy
+13/03/06
+Round = 6
+Mean(cases) = 216200 , Offer = 123000
+Kelly neutral bankroll = 305685
+Player's chose ND
+
+Cathy
+13/03/06
+Round = 7
+Mean(cases) = 20250 , Offer = 19000
+Kelly neutral bankroll = 357540
+Player's chose ND
+
+Cathy
+13/03/06
+Round = 8
+Mean(cases) = 2000 , Offer = 2000
+Kelly neutral bankroll = 700023230
+Player's chose ND
+
+Cathy
+13/03/06
+Round = 9
+Mean(cases) = 2500 , Offer = 2800
+Mean(cases) < Offer, Kelly neutral bankroll = infinite
+Player's chose ND
+
+Horsten
+17/03/06
+Round = 1
+Mean(cases) = 114592 , Offer = 13000
+Kelly neutral bankroll = 3129
+Player's chose ND
+
+Horsten
+17/03/06
+Round = 2
+Mean(cases) = 151706 , Offer = 37000
+Kelly neutral bankroll = 12314
+Player's chose ND
+
+Horsten
+17/03/06
+Round = 3
+Mean(cases) = 136381 , Offer = 52000
+Kelly neutral bankroll = 26041
+Player's chose ND
+
+Horsten
+17/03/06
+Round = 4
+Mean(cases) = 125011 , Offer = 88000
+Kelly neutral bankroll = 135842
+Player's chose ND
+
+Horsten
+17/03/06
+Round = 5
+Mean(cases) = 150013 , Offer = 109000
+Kelly neutral bankroll = 159065
+Player's chose ND
+
+Horsten
+17/03/06
+Round = 6
+Mean(cases) = 180010 , Offer = 164000
+Kelly neutral bankroll = 629784
+Player's chose ND
+
+Horsten
+17/03/06
+Round = 7
+Mean(cases) = 225000 , Offer = 221000
+Kelly neutral bankroll = 2556713
+Player's chose D
+
+Brett
+20/03/06
+Round = 1
+Mean(cases) = 169581 , Offer = 26000
+Kelly neutral bankroll = 4318
+Player's chose ND
+
+Brett
+20/03/06
+Round = 2
+Mean(cases) = 187107 , Offer = 48000
+Kelly neutral bankroll = 23734
+Player's chose ND
+
+Brett
+20/03/06
+Round = 3
+Mean(cases) = 186934 , Offer = 39000
+Kelly neutral bankroll = 10384
+Player's chose ND
+
+Brett
+20/03/06
+Round = 4
+Mean(cases) = 250713 , Offer = 90000
+Kelly neutral bankroll = 31012
+Player's chose ND
+
+Brett
+20/03/06
+Round = 5
+Mean(cases) = 333400 , Offer = 179000
+Kelly neutral bankroll = 55825
+Player's chose ND
+
+Brett
+20/03/06
+Round = 6
+Mean(cases) = 340080 , Offer = 199000
+Kelly neutral bankroll = 124475
+Player's chose ND
+
+Brett
+20/03/06
+Round = 7
+Mean(cases) = 175100 , Offer = 109000
+Kelly neutral bankroll = 110352
+Player's chose D
+
+Janie
+22/03/06
+Round = 1
+Mean(cases) = 144171 , Offer = 9000
+Kelly neutral bankroll = 2298
+Player's chose ND
+
+Janie
+22/03/06
+Round = 2
+Mean(cases) = 65227 , Offer = 7000
+Kelly neutral bankroll = 7592
+Player's chose ND
+
+Janie
+22/03/06
+Round = 3
+Mean(cases) = 70671 , Offer = 16000
+Kelly neutral bankroll = 44429
+Player's chose ND
+
+Janie
+22/03/06
+Round = 4
+Mean(cases) = 291 , Offer = 250
+Kelly neutral bankroll = 348
+Player's chose ND
+
+Janie
+22/03/06
+Round = 5
+Mean(cases) = 354 , Offer = 300
+Kelly neutral bankroll = 161
+Player's chose ND
+
+Janie
+22/03/06
+Round = 6
+Mean(cases) = 365 , Offer = 350
+Kelly neutral bankroll = 1764
+Player's chose ND
+
+Janie
+22/03/06
+Round = 7
+Mean(cases) = 431 , Offer = 400
+Kelly neutral bankroll = 583
+Player's chose ND
+
+Janie
+22/03/06
+Round = 8
+Mean(cases) = 442 , Offer = 450
+Mean(cases) < Offer, Kelly neutral bankroll = infinite
+Player's chose ND
+
+Janie
+22/03/06
+Round = 9
+Mean(cases) = 625 , Offer = 650
+Mean(cases) < Offer, Kelly neutral bankroll = infinite
+Player's chose ND
+
+Brett
+22/03/06
+Round = 1
+Mean(cases) = 150361 , Offer = 19000
+Kelly neutral bankroll = 3450
+Player's chose ND
+
+Brett
+22/03/06
+Round = 2
+Mean(cases) = 120446 , Offer = 28000
+Kelly neutral bankroll = 10426
+Player's chose ND
+
+Brett
+22/03/06
+Round = 3
+Mean(cases) = 89154 , Offer = 34000
+Kelly neutral bankroll = 32321
+Player's chose ND
+
+Brett
+22/03/06
+Round = 4
+Mean(cases) = 100702 , Offer = 55000
+Kelly neutral bankroll = 130879
+Player's chose ND
+
+Brett
+22/03/06
+Round = 5
+Mean(cases) = 50919 , Offer = 34000
+Kelly neutral bankroll = 198758
+Player's chose ND
+
+Brett
+22/03/06
+Round = 6
+Mean(cases) = 60103 , Offer = 52000
+Kelly neutral bankroll = 713994
+Player's chose ND
+
+Brett
+22/03/06
+Round = 7
+Mean(cases) = 75054 , Offer = 76000
+Mean(cases) < Offer, Kelly neutral bankroll = infinite
+Player's chose ND
+
+Brett
+22/03/06
+Round = 8
+Mean(cases) = 72 , Offer = 50
+Kelly neutral bankroll = 88
+Player's chose ND
+
+Brett
+22/03/06
+Round = 9
+Mean(cases) = 8 , Offer = 8
+Mean(cases) < Offer, Kelly neutral bankroll = infinite
+Player's chose D
+
+Lisa
+24/03/06
+Round = 1
+Mean(cases) = 169604 , Offer = 26000
+Kelly neutral bankroll = 4260
+Player's chose ND
+
+Lisa
+24/03/06
+Round = 2
+Mean(cases) = 131135 , Offer = 19000
+Kelly neutral bankroll = 6565
+Player's chose ND
+
+Lisa
+24/03/06
+Round = 3
+Mean(cases) = 47000 , Offer = 15000
+Kelly neutral bankroll = 22600
+Player's chose ND
+
+Lisa
+24/03/06
+Round = 4
+Mean(cases) = 62751 , Offer = 38000
+Kelly neutral bankroll = 110658
+Player's chose ND
+
+Lisa
+24/03/06
+Round = 5
+Mean(cases) = 33501 , Offer = 20000
+Kelly neutral bankroll = 95722
+Player's chose ND
+
+Lisa
+24/03/06
+Round = 6
+Mean(cases) = 201 , Offer = 100
+Mean(cases) > Offer, Kelly neutral bankroll = infinite
+Player's chose ND
+
+Lisa
+24/03/06
+Round = 7
+Mean(cases) = 201 , Offer = 150
+Kelly neutral bankroll = 81
+Player's chose ND
+
+Lisa
+24/03/06
+Round = 8
+Mean(cases) = 168 , Offer = 125
+Kelly neutral bankroll = 134
+Player's chose ND
+
+Lisa
+24/03/06
+Round = 9
+Mean(cases) = 53 , Offer = 50
+Kelly neutral bankroll = 400
+Player's chose D
+
+Stephanie
+27/03/06
+Round = 1
+Mean(cases) = 114654 , Offer = 9000
+Kelly neutral bankroll = 1202
+Player's chose ND
+
+Stephanie
+27/03/06
+Round = 2
+Mean(cases) = 152756 , Offer = 21000
+Kelly neutral bankroll = 1880
+Player's chose ND
+
+Stephanie
+27/03/06
+Round = 3
+Mean(cases) = 151485 , Offer = 74000
+Kelly neutral bankroll = 83000
+Player's chose ND
+
+Stephanie
+27/03/06
+Round = 4
+Mean(cases) = 77042 , Offer = 48000
+Kelly neutral bankroll = 141787
+Player's chose ND
+
+Stephanie
+27/03/06
+Round = 5
+Mean(cases) = 69388 , Offer = 35000
+Kelly neutral bankroll = 106023
+Player's chose ND
+
+Stephanie
+27/03/06
+Round = 6
+Mean(cases) = 82265 , Offer = 69000
+Kelly neutral bankroll = 721230
+Player's chose D
+
+Daniel
+27/03/06
+Round = 1
+Mean(cases) = 110913 , Offer = 13000
+Kelly neutral bankroll = 2194
+Player's chose ND
+
+Daniel
+27/03/06
+Round = 2
+Mean(cases) = 61212 , Offer = 17000
+Kelly neutral bankroll = 11622
+Player's chose ND
+
+Daniel
+27/03/06
+Round = 3
+Mean(cases) = 73766 , Offer = 31000
+Kelly neutral bankroll = 39403
+Player's chose ND
+
+Daniel
+27/03/06
+Round = 4
+Mean(cases) = 98263 , Offer = 60000
+Kelly neutral bankroll = 112238
+Player's chose ND
+
+Daniel
+27/03/06
+Round = 5
+Mean(cases) = 118517 , Offer = 94000
+Kelly neutral bankroll = 373405
+Player's chose D
+
+Michelle
+29/03/06
+Round = 1
+Mean(cases) = 169644 , Offer = 22000
+Kelly neutral bankroll = 2675
+Player's chose ND
+
+Michelle
+29/03/06
+Round = 2
+Mean(cases) = 192138 , Offer = 67000
+Kelly neutral bankroll = 28224
+Player's chose ND
+
+Michelle
+29/03/06
+Round = 3
+Mean(cases) = 171043 , Offer = 130000
+Kelly neutral bankroll = 283877
+Player's chose ND
+
+Michelle
+29/03/06
+Round = 4
+Mean(cases) = 116425 , Offer = 91000
+Kelly neutral bankroll = 203291
+Player's chose ND
+
+Michelle
+29/03/06
+Round = 5
+Mean(cases) = 138500 , Offer = 103000
+Kelly neutral bankroll = 152163
+Player's chose ND
+
+Michelle
+29/03/06
+Round = 6
+Mean(cases) = 86200 , Offer = 55000
+Kelly neutral bankroll = 53828
+Player's chose ND
+
+Michelle
+29/03/06
+Round = 7
+Mean(cases) = 89000 , Offer = 80000
+Kelly neutral bankroll = 674578
+Player's chose ND
+
+Michelle
+29/03/06
+Round = 8
+Mean(cases) = 18667 , Offer = 21000
+Mean(cases) < Offer, Kelly neutral bankroll = infinite
+Player's chose D
+
+Michael
+31/03/06
+Round = 1
+Mean(cases) = 154146 , Offer = 12000
+Kelly neutral bankroll = 1530
+Player's chose ND
+
+Michael
+31/03/06
+Round = 2
+Mean(cases) = 133744 , Offer = 21000
+Kelly neutral bankroll = 5608
+Player's chose ND
+
+Michael
+31/03/06
+Round = 3
+Mean(cases) = 100514 , Offer = 17000
+Kelly neutral bankroll = 7056
+Player's chose ND
+
+Michael
+31/03/06
+Round = 4
+Mean(cases) = 137519 , Offer = 46500
+Kelly neutral bankroll = 25839
+Player's chose ND
+
+Michael
+31/03/06
+Round = 5
+Mean(cases) = 183338 , Offer = 99000
+Kelly neutral bankroll = 74418
+Player's chose ND
+
+Michael
+31/03/06
+Round = 6
+Mean(cases) = 220005 , Offer = 148990
+Kelly neutral bankroll = 153929
+Player's chose ND
+
+Michael
+31/03/06
+Round = 7
+Mean(cases) = 225006 , Offer = 126000
+Kelly neutral bankroll = 104563
+Player's chose ND
+
+Michael
+31/03/06
+Round = 8
+Mean(cases) = 300000 , Offer = 252000
+Kelly neutral bankroll = 639985
+Player's chose D
+
+Sheetal
+31/03/06
+Round = 1
+Mean(cases) = 108167 , Offer = 9000
+Kelly neutral bankroll = 1724
+Player's chose ND
+
+Sheetal
+31/03/06
+Round = 2
+Mean(cases) = 90794 , Offer = 16000
+Kelly neutral bankroll = 9131
+Player's chose ND
+
+Sheetal
+31/03/06
+Round = 3
+Mean(cases) = 114665 , Offer = 31000
+Kelly neutral bankroll = 31039
+Player's chose ND
+
+Sheetal
+31/03/06
+Round = 4
+Mean(cases) = 156408 , Offer = 73000
+Kelly neutral bankroll = 94414
+Player's chose ND
+
+Sheetal
+31/03/06
+Round = 5
+Mean(cases) = 208385 , Offer = 145000
+Kelly neutral bankroll = 284585
+Player's chose ND
+
+Sheetal
+31/03/06
+Round = 6
+Mean(cases) = 230062 , Offer = 172000
+Kelly neutral bankroll = 451509
+Player's chose ND
+
+Sheetal
+31/03/06
+Round = 7
+Mean(cases) = 287503 , Offer = 199000
+Kelly neutral bankroll = 250247
+Player's chose ND
+
+Sheetal
+31/03/06
+Round = 8
+Mean(cases) = 383333 , Offer = 375000
+Kelly neutral bankroll = 5274887
+Player's chose D
+
+Laura
+03/04/06
+Round = 1
+Mean(cases) = 94421 , Offer = 6000
+Kelly neutral bankroll = 1303
+Player's chose ND
+
+Laura
+03/04/06
+Round = 2
+Mean(cases) = 97444 , Offer = 11000
+Kelly neutral bankroll = 8000
+Player's chose ND
+
+Laura
+03/04/06
+Round = 3
+Mean(cases) = 114619 , Offer = 26000
+Kelly neutral bankroll = 34988
+Player's chose ND
+
+Laura
+03/04/06
+Round = 4
+Mean(cases) = 95097 , Offer = 21000
+Kelly neutral bankroll = 44194
+Player's chose ND
+
+Laura
+03/04/06
+Round = 5
+Mean(cases) = 126783 , Offer = 63000
+Kelly neutral bankroll = 211725
+Player's chose ND
+
+Laura
+03/04/06
+Round = 6
+Mean(cases) = 150140 , Offer = 96000
+Kelly neutral bankroll = 424583
+Player's chose D
+
+Hans
+05/04/06
+Round = 1
+Mean(cases) = 163141 , Offer = 21000
+Kelly neutral bankroll = 4753
+Player's chose ND
+
+Hans
+05/04/06
+Round = 2
+Mean(cases) = 121854 , Offer = 18000
+Kelly neutral bankroll = 7149
+Player's chose ND
+
+Hans
+05/04/06
+Round = 3
+Mean(cases) = 70694 , Offer = 26000
+Kelly neutral bankroll = 39846
+Player's chose ND
+
+Hans
+05/04/06
+Round = 4
+Mean(cases) = 34610 , Offer = 9000
+Kelly neutral bankroll = 8843
+Player's chose ND
+
+Hans
+05/04/06
+Round = 5
+Mean(cases) = 46142 , Offer = 29000
+Kelly neutral bankroll = 66579
+Player's chose ND
+
+Hans
+05/04/06
+Round = 6
+Mean(cases) = 55310 , Offer = 45000
+Kelly neutral bankroll = 193616
+Player's chose D
+
+Tia
+05/04/06
+Round = 1
+Mean(cases) = 150863 , Offer = 22000
+Kelly neutral bankroll = 4100
+Player's chose ND
+
+Tia
+05/04/06
+Round = 2
+Mean(cases) = 167797 , Offer = 50000
+Kelly neutral bankroll = 19424
+Player's chose ND
+
+Tia
+05/04/06
+Round = 3
+Mean(cases) = 133323 , Offer = 44000
+Kelly neutral bankroll = 23625
+Player's chose ND
+
+Tia
+05/04/06
+Round = 4
+Mean(cases) = 181938 , Offer = 87000
+Kelly neutral bankroll = 59771
+Player's chose ND
+
+Tia
+05/04/06
+Round = 5
+Mean(cases) = 233417 , Offer = 131000
+Kelly neutral bankroll = 107057
+Player's chose ND
+
+Tia
+05/04/06
+Round = 6
+Mean(cases) = 275100 , Offer = 211000
+Kelly neutral bankroll = 504671
+Player's chose D
+
+Mary
+10/04/06
+Round = 1
+Mean(cases) = 118357 , Offer = 14000
+Kelly neutral bankroll = 2843
+Player's chose ND
+
+Mary
+10/04/06
+Round = 2
+Mean(cases) = 126109 , Offer = 36000
+Kelly neutral bankroll = 31511
+Player's chose ND
+
+Mary
+10/04/06
+Round = 3
+Mean(cases) = 171398 , Offer = 61000
+Kelly neutral bankroll = 39909
+Player's chose ND
+
+Mary
+10/04/06
+Round = 4
+Mean(cases) = 223166 , Offer = 88000
+Kelly neutral bankroll = 48963
+Player's chose ND
+
+Mary
+10/04/06
+Round = 5
+Mean(cases) = 285054 , Offer = 127000
+Kelly neutral bankroll = 64302
+Player's chose ND
+
+Mary
+10/04/06
+Round = 6
+Mean(cases) = 242065 , Offer = 119000
+Kelly neutral bankroll = 143807
+Player's chose D
+
+Brian
+12/04/06
+Round = 1
+Mean(cases) = 134351 , Offer = 14000
+Kelly neutral bankroll = 3895
+Player's chose ND
+
+Brian
+12/04/06
+Round = 2
+Mean(cases) = 175710 , Offer = 31000
+Kelly neutral bankroll = 9570
+Player's chose ND
+
+Brian
+12/04/06
+Round = 3
+Mean(cases) = 161396 , Offer = 27000
+Kelly neutral bankroll = 11181
+Player's chose ND
+
+Brian
+12/04/06
+Round = 4
+Mean(cases) = 212544 , Offer = 83000
+Kelly neutral bankroll = 68208
+Player's chose ND
+
+Brian
+12/04/06
+Round = 5
+Mean(cases) = 283379 , Offer = 160000
+Kelly neutral bankroll = 136757
+Player's chose ND
+
+Brian
+12/04/06
+Round = 6
+Mean(cases) = 280055 , Offer = 148000
+Kelly neutral bankroll = 168003
+Player's chose ND
+
+Brian
+12/04/06
+Round = 7
+Mean(cases) = 350019 , Offer = 301000
+Kelly neutral bankroll = 1217102
+Player's chose D
+
+Erin
+17/04/06
+Round = 1
+Mean(cases) = 134171 , Offer = 8000
+Kelly neutral bankroll = 2055
+Player's chose ND
+
+Erin
+17/04/06
+Round = 2
+Mean(cases) = 112134 , Offer = 13000
+Kelly neutral bankroll = 4606
+Player's chose ND
+
+Erin
+17/04/06
+Round = 3
+Mean(cases) = 77456 , Offer = 19000
+Kelly neutral bankroll = 39771
+Player's chose ND
+
+Erin
+17/04/06
+Round = 4
+Mean(cases) = 106453 , Offer = 71000
+Kelly neutral bankroll = 430300
+Player's chose ND
+
+Erin
+17/04/06
+Round = 5
+Mean(cases) = 141850 , Offer = 99000
+Kelly neutral bankroll = 465882
+Player's chose ND
+
+Erin
+17/04/06
+Round = 6
+Mean(cases) = 170200 , Offer = 167000
+Kelly neutral bankroll = 12915608
+Player's chose D
+
+Thorpe
+17/04/06
+Round = 1
+Mean(cases) = 117853 , Offer = 15000
+Kelly neutral bankroll = 4079
+Player's chose ND
+
+Thorpe
+17/04/06
+Round = 2
+Mean(cases) = 137104 , Offer = 33000
+Kelly neutral bankroll = 25513
+Player's chose ND
+
+Thorpe
+17/04/06
+Round = 3
+Mean(cases) = 186940 , Offer = 102000
+Kelly neutral bankroll = 157258
+Player's chose ND
+
+Thorpe
+17/04/06
+Round = 4
+Mean(cases) = 250667 , Offer = 185000
+Kelly neutral bankroll = 439629
+Player's chose ND
+
+Thorpe
+17/04/06
+Round = 5
+Mean(cases) = 334217 , Offer = 303000
+Kelly neutral bankroll = 1517920
+Player's chose ND
+
+Thorpe
+17/04/06
+Round = 6
+Mean(cases) = 381060 , Offer = 349000
+Kelly neutral bankroll = 1665800
+Player's chose ND
+
+Thorpe
+17/04/06
+Round = 7
+Mean(cases) = 476250 , Offer = 464000
+Kelly neutral bankroll = 4620533
+Player's chose D
+
+LaKissa
+24/04/06
+Round = 1
+Mean(cases) = 138420 , Offer = 11000
+Kelly neutral bankroll = 3199
+Player's chose ND
+
+LaKissa
+24/04/06
+Round = 2
+Mean(cases) = 179456 , Offer = 37000
+Kelly neutral bankroll = 21321
+Player's chose ND
+
+LaKissa
+24/04/06
+Round = 3
+Mean(cases) = 206069 , Offer = 48000
+Kelly neutral bankroll = 33273
+Player's chose ND
+
+LaKissa
+24/04/06
+Round = 4
+Mean(cases) = 282682 , Offer = 175000
+Kelly neutral bankroll = 279034
+Player's chose ND
+
+LaKissa
+24/04/06
+Round = 5
+Mean(cases) = 251908 , Offer = 149000
+Kelly neutral bankroll = 269444
+Player's chose ND
+
+LaKissa
+24/04/06
+Round = 6
+Mean(cases) = 302280 , Offer = 263000
+Kelly neutral bankroll = 1529334
+Player's chose ND
+
+LaKissa
+24/04/06
+Round = 7
+Mean(cases) = 375350 , Offer = 357000
+Kelly neutral bankroll = 4180993
+Player's chose ND
+
+LaKissa
+24/04/06
+Round = 8
+Mean(cases) = 333800 , Offer = 215000
+Kelly neutral bankroll = 447484
+Player's chose D
+
+Allyson
+26/04/06
+Round = 1
+Mean(cases) = 170336 , Offer = 29000
+Kelly neutral bankroll = 5119
+Player's chose ND
+
+Allyson
+26/04/06
+Round = 2
+Mean(cases) = 200418 , Offer = 66000
+Kelly neutral bankroll = 20970
+Player's chose ND
+
+Allyson
+26/04/06
+Round = 3
+Mean(cases) = 132361 , Offer = 43000
+Kelly neutral bankroll = 15442
+Player's chose ND
+
+Allyson
+26/04/06
+Round = 4
+Mean(cases) = 78778 , Offer = 37000
+Kelly neutral bankroll = 25169
+Player's chose ND
+
+Allyson
+26/04/06
+Round = 5
+Mean(cases) = 88354 , Offer = 50000
+Kelly neutral bankroll = 56157
+Player's chose ND
+
+Allyson
+26/04/06
+Round = 6
+Mean(cases) = 106015 , Offer = 81000
+Kelly neutral bankroll = 162507
+Player's chose ND
+
+Allyson
+26/04/06
+Round = 7
+Mean(cases) = 126269 , Offer = 124000
+Kelly neutral bankroll = 3506906
+Player's chose D
+
+Josie
+28/04/06
+Round = 1
+Mean(cases) = 73380 , Offer = 5000
+Kelly neutral bankroll = 966
+Player's chose ND
+
+Josie
+28/04/06
+Round = 2
+Mean(cases) = 79143 , Offer = 16000
+Kelly neutral bankroll = 16030
+Player's chose ND
+
+Josie
+28/04/06
+Round = 3
+Mean(cases) = 107891 , Offer = 60000
+Kelly neutral bankroll = 161052
+Player's chose ND
+
+Josie
+28/04/06
+Round = 4
+Mean(cases) = 54563 , Offer = 42000
+Kelly neutral bankroll = 223700
+Player's chose ND
+
+Josie
+28/04/06
+Round = 5
+Mean(cases) = 22750 , Offer = 19000
+Kelly neutral bankroll = 113658
+Player's chose ND
+
+Josie
+28/04/06
+Round = 6
+Mean(cases) = 27100 , Offer = 25000
+Kelly neutral bankroll = 278325
+Player's chose D
+
+Randy
+01/05/06
+Round = 1
+Mean(cases) = 122871 , Offer = 9000
+Kelly neutral bankroll = 1947
+Player's chose ND
+
+Randy
+01/05/06
+Round = 2
+Mean(cases) = 77154 , Offer = 9000
+Kelly neutral bankroll = 3202
+Player's chose ND
+
+Randy
+01/05/06
+Round = 3
+Mean(cases) = 36560 , Offer = 15000
+Kelly neutral bankroll = 15081
+Player's chose ND
+
+Randy
+01/05/06
+Round = 4
+Mean(cases) = 47119 , Offer = 40000
+Kelly neutral bankroll = 237943
+Player's chose ND
+
+Randy
+01/05/06
+Round = 5
+Mean(cases) = 62650 , Offer = 57000
+Kelly neutral bankroll = 377625
+Player's chose ND
+
+Randy
+01/05/06
+Round = 6
+Mean(cases) = 75100 , Offer = 68000
+Kelly neutral bankroll = 292761
+Player's chose ND
+
+Randy
+01/05/06
+Round = 7
+Mean(cases) = 93875 , Offer = 100000
+Mean(cases) < Offer, Kelly neutral bankroll = infinite
+Player's chose D
+
+Rebecca
+03/05/06
+Round = 1
+Mean(cases) = 120833 , Offer = 13000
+Kelly neutral bankroll = 1215
+Player's chose ND
+
+Rebecca
+03/05/06
+Round = 2
+Mean(cases) = 70444 , Offer = 8000
+Kelly neutral bankroll = 1400
+Player's chose ND
+
+Rebecca
+03/05/06
+Round = 3
+Mean(cases) = 96046 , Offer = 52000
+Kelly neutral bankroll = 59523
+Player's chose ND
+
+Rebecca
+03/05/06
+Round = 4
+Mean(cases) = 62688 , Offer = 37000
+Kelly neutral bankroll = 51993
+Player's chose ND
+
+Rebecca
+03/05/06
+Round = 5
+Mean(cases) = 16918 , Offer = 15000
+Kelly neutral bankroll = 156055
+Player's chose ND
+
+Rebecca
+03/05/06
+Round = 6
+Mean(cases) = 20101 , Offer = 20000
+Kelly neutral bankroll = 4145687
+Player's chose ND
+
+Rebecca
+03/05/06
+Round = 7
+Mean(cases) = 6376 , Offer = 6000
+Kelly neutral bankroll = 139266
+Player's chose ND
+
+Rebecca
+03/05/06
+Round = 8
+Mean(cases) = 8368 , Offer = 9000
+Mean(cases) < Offer, Kelly neutral bankroll = infinite
+Player's chose D
+
+Anca
+05/05/06
+Round = 1
+Mean(cases) = 165623 , Offer = 23000
+Kelly neutral bankroll = 4186
+Player's chose ND
+
+Anca
+05/05/06
+Round = 2
+Mean(cases) = 152430 , Offer = 31000
+Kelly neutral bankroll = 13832
+Player's chose ND
+
+Anca
+05/05/06
+Round = 3
+Mean(cases) = 207768 , Offer = 74000
+Kelly neutral bankroll = 33821
+Player's chose ND
+
+Anca
+05/05/06
+Round = 4
+Mean(cases) = 235663 , Offer = 92000
+Kelly neutral bankroll = 40572
+Player's chose ND
+
+Anca
+05/05/06
+Round = 5
+Mean(cases) = 310000 , Offer = 186000
+Kelly neutral bankroll = 128854
+Player's chose ND
+
+Anca
+05/05/06
+Round = 6
+Mean(cases) = 370000 , Offer = 299000
+Kelly neutral bankroll = 473956
+Player's chose ND
+
+Anca
+05/05/06
+Round = 7
+Mean(cases) = 212500 , Offer = 144000
+Kelly neutral bankroll = 96615
+Player's chose ND
+
+Anca
+05/05/06
+Round = 8
+Mean(cases) = 116667 , Offer = 70000
+Kelly neutral bankroll = 48435
+Player's chose ND
+
+Anca
+05/05/06
+Round = 9
+Mean(cases) = 25001 , Offer = 25000
+Kelly neutral bankroll = 624949669
+Player's chose D
+
+Gary
+08/05/06
+Round = 1
+Mean(cases) = 153410 , Offer = 14000
+Kelly neutral bankroll = 2926
+Player's chose ND
+
+Gary
+08/05/06
+Round = 2
+Mean(cases) = 197512 , Offer = 83000
+Kelly neutral bankroll = 86870
+Player's chose ND
+
+Gary
+08/05/06
+Round = 3
+Mean(cases) = 187489 , Offer = 76000
+Kelly neutral bankroll = 109168
+Player's chose ND
+
+Gary
+08/05/06
+Round = 4
+Mean(cases) = 164047 , Offer = 61000
+Kelly neutral bankroll = 93134
+Player's chose ND
+
+Gary
+08/05/06
+Round = 5
+Mean(cases) = 218692 , Offer = 122000
+Kelly neutral bankroll = 226500
+Player's chose ND
+
+Gary
+08/05/06
+Round = 6
+Mean(cases) = 262280 , Offer = 237000
+Kelly neutral bankroll = 2402127
+Player's chose ND
+
+Gary
+08/05/06
+Round = 7
+Mean(cases) = 325350 , Offer = 340000
+Mean(cases) < Offer, Kelly neutral bankroll = infinite
+Player's chose D
+
+Shirley
+10/05/06
+Round = 1
+Mean(cases) = 97920 , Offer = 7000
+Kelly neutral bankroll = 1373
+Player's chose ND
+
+Shirley
+10/05/06
+Round = 2
+Mean(cases) = 128822 , Offer = 23000
+Kelly neutral bankroll = 8360
+Player's chose ND
+
+Shirley
+10/05/06
+Round = 3
+Mean(cases) = 148293 , Offer = 46000
+Kelly neutral bankroll = 31678
+Player's chose ND
+
+Shirley
+10/05/06
+Round = 4
+Mean(cases) = 72616 , Offer = 29000
+Kelly neutral bankroll = 26888
+Player's chose ND
+
+Shirley
+10/05/06
+Round = 5
+Mean(cases) = 96817 , Offer = 41000
+Kelly neutral bankroll = 20484
+Player's chose ND
+
+Shirley
+10/05/06
+Round = 6
+Mean(cases) = 116100 , Offer = 74000
+Kelly neutral bankroll = 71418
+Player's chose ND
+
+Shirley
+10/05/06
+Round = 7
+Mean(cases) = 145000 , Offer = 98000
+Kelly neutral bankroll = 54444
+Player's chose D
+
+Chad
+10/05/06
+Round = 1
+Mean(cases) = 165641 , Offer = 18000
+Kelly neutral bankroll = 2274
+Player's chose ND
+
+Chad
+10/05/06
+Round = 2
+Mean(cases) = 130187 , Offer = 26000
+Kelly neutral bankroll = 14534
+Player's chose ND
+
+Chad
+10/05/06
+Round = 3
+Mean(cases) = 175155 , Offer = 65000
+Kelly neutral bankroll = 52903
+Player's chose ND
+
+Chad
+10/05/06
+Round = 4
+Mean(cases) = 53331 , Offer = 29000
+Kelly neutral bankroll = 54120
+Player's chose ND
+
+Chad
+10/05/06
+Round = 5
+Mean(cases) = 70971 , Offer = 57000
+Kelly neutral bankroll = 244081
+Player's chose ND
+
+Chad
+10/05/06
+Round = 6
+Mean(cases) = 70165 , Offer = 48000
+Kelly neutral bankroll = 148155
+Player's chose ND
+
+Chad
+10/05/06
+Round = 7
+Mean(cases) = 12706 , Offer = 14000
+Mean(cases) < Offer, Kelly neutral bankroll = infinite
+Player's chose D
+
+Lauren
+12/05/06
+Round = 1
+Mean(cases) = 129558 , Offer = 16000
+Kelly neutral bankroll = 3349
+Player's chose ND
+
+Lauren
+12/05/06
+Round = 2
+Mean(cases) = 165056 , Offer = 42000
+Kelly neutral bankroll = 17626
+Player's chose ND
+
+Lauren
+12/05/06
+Round = 3
+Mean(cases) = 127304 , Offer = 37000
+Kelly neutral bankroll = 20182
+Player's chose ND
+
+Lauren
+12/05/06
+Round = 4
+Mean(cases) = 137533 , Offer = 71000
+Kelly neutral bankroll = 83295
+Player's chose ND
+
+Lauren
+12/05/06
+Round = 5
+Mean(cases) = 183344 , Offer = 131000
+Kelly neutral bankroll = 191538
+Player's chose ND
+
+Lauren
+12/05/06
+Round = 6
+Mean(cases) = 140013 , Offer = 97000
+Kelly neutral bankroll = 216301
+Player's chose ND
+
+Lauren
+12/05/06
+Round = 7
+Mean(cases) = 50016 , Offer = 44000
+Kelly neutral bankroll = 510486
+Player's chose D
+
+Renee
+15/05/06
+Round = 1
+Mean(cases) = 137083 , Offer = 12000
+Kelly neutral bankroll = 3550
+Player's chose ND
+
+Renee
+15/05/06
+Round = 2
+Mean(cases) = 95441 , Offer = 18000
+Kelly neutral bankroll = 15505
+Player's chose ND
+
+Renee
+15/05/06
+Round = 3
+Mean(cases) = 130083 , Offer = 50000
+Kelly neutral bankroll = 58299
+Player's chose ND
+
+Renee
+15/05/06
+Round = 4
+Mean(cases) = 178176 , Offer = 117000
+Kelly neutral bankroll = 244406
+Player's chose ND
+
+Renee
+15/05/06
+Round = 5
+Mean(cases) = 112556 , Offer = 84000
+Kelly neutral bankroll = 286222
+Player's chose ND
+
+Renee
+15/05/06
+Round = 6
+Mean(cases) = 135007 , Offer = 112000
+Kelly neutral bankroll = 481276
+Player's chose ND
+
+Renee
+15/05/06
+Round = 7
+Mean(cases) = 143759 , Offer = 121000
+Kelly neutral bankroll = 673555
+Player's chose ND
+
+Renee
+15/05/06
+Round = 8
+Mean(cases) = 25012 , Offer = 28000
+Mean(cases) < Offer, Kelly neutral bankroll = infinite
+Player's chose D
+
+Jim
+15/05/06
+Round = 1
+Mean(cases) = 155660 , Offer = 22000
+Kelly neutral bankroll = 4284
+Player's chose ND
+
+Jim
+15/05/06
+Round = 2
+Mean(cases) = 197499 , Offer = 64000
+Kelly neutral bankroll = 34462
+Player's chose ND
+
+Jim
+15/05/06
+Round = 3
+Mean(cases) = 96582 , Offer = 29000
+Kelly neutral bankroll = 28873
+Player's chose ND
+
+Jim
+15/05/06
+Round = 4
+Mean(cases) = 107706 , Offer = 35000
+Kelly neutral bankroll = 47502
+Player's chose ND
+
+Jim
+15/05/06
+Round = 5
+Mean(cases) = 129442 , Offer = 57000
+Kelly neutral bankroll = 144730
+Player's chose ND
+
+Jim
+15/05/06
+Round = 6
+Mean(cases) = 150330 , Offer = 81000
+Kelly neutral bankroll = 255734
+Player's chose D
+
+Dana
+17/05/06
+Round = 1
+Mean(cases) = 125861 , Offer = 14000
+Kelly neutral bankroll = 2784
+Player's chose ND
+
+Dana
+17/05/06
+Round = 2
+Mean(cases) = 111121 , Offer = 22000
+Kelly neutral bankroll = 12228
+Player's chose ND
+
+Dana
+17/05/06
+Round = 3
+Mean(cases) = 124187 , Offer = 43000
+Kelly neutral bankroll = 74936
+Player's chose ND
+
+Dana
+17/05/06
+Round = 4
+Mean(cases) = 170069 , Offer = 79000
+Kelly neutral bankroll = 134454
+Player's chose ND
+
+Dana
+17/05/06
+Round = 5
+Mean(cases) = 60059 , Offer = 37000
+Kelly neutral bankroll = 99607
+Player's chose ND
+
+Dana
+17/05/06
+Round = 6
+Mean(cases) = 70071 , Offer = 49000
+Kelly neutral bankroll = 163293
+Player's chose ND
+
+Dana
+17/05/06
+Round = 7
+Mean(cases) = 75089 , Offer = 71000
+Kelly neutral bankroll = 1889590
+Player's chose ND
+
+Dana
+17/05/06
+Round = 8
+Mean(cases) = 118 , Offer = 100
+Kelly neutral bankroll = 297
+Player's chose ND
+
+Dana
+17/05/06
+Round = 9
+Mean(cases) = 175 , Offer = 175
+Mean(cases) < Offer, Kelly neutral bankroll = infinite
+Player's chose ND
+
+Jeff
+22/05/06
+Round = 1
+Mean(cases) = 163419 , Offer = 26000
+Kelly neutral bankroll = 6976
+Player's chose ND
+
+Jeff
+22/05/06
+Round = 2
+Mean(cases) = 199195 , Offer = 61000
+Kelly neutral bankroll = 37310
+Player's chose ND
+
+Jeff
+22/05/06
+Round = 3
+Mean(cases) = 167007 , Offer = 49000
+Kelly neutral bankroll = 40555
+Player's chose ND
+
+Jeff
+22/05/06
+Round = 4
+Mean(cases) = 104609 , Offer = 42000
+Kelly neutral bankroll = 46850
+Player's chose ND
+
+Jeff
+22/05/06
+Round = 5
+Mean(cases) = 89396 , Offer = 55000
+Kelly neutral bankroll = 216899
+Player's chose ND
+
+Jeff
+22/05/06
+Round = 6
+Mean(cases) = 102275 , Offer = 70000
+Kelly neutral bankroll = 337873
+Player's chose D
+
+Cindy
+22/05/06
+Round = 1
+Mean(cases) = 144658 , Offer = 16000
+Kelly neutral bankroll = 2512
+Player's chose ND
+
+Cindy
+22/05/06
+Round = 2
+Mean(cases) = 175444 , Offer = 43000
+Kelly neutral bankroll = 20717
+Player's chose ND
+
+Cindy
+22/05/06
+Round = 3
+Mean(cases) = 141512 , Offer = 37000
+Kelly neutral bankroll = 19733
+Player's chose ND
+
+Cindy
+22/05/06
+Round = 4
+Mean(cases) = 193894 , Offer = 106000
+Kelly neutral bankroll = 95233
+Player's chose ND
+
+Cindy
+22/05/06
+Round = 5
+Mean(cases) = 133509 , Offer = 88000
+Kelly neutral bankroll = 113591
+Player's chose ND
+
+Cindy
+22/05/06
+Round = 6
+Mean(cases) = 80211 , Offer = 61000
+Kelly neutral bankroll = 203561
+Player's chose ND
+
+Cindy
+22/05/06
+Round = 7
+Mean(cases) = 75264 , Offer = 49000
+Kelly neutral bankroll = 163550
+Player's chose ND
+
+Cindy
+22/05/06
+Round = 8
+Mean(cases) = 100102 , Offer = 94000
+Kelly neutral bankroll = 1473915
+Player's chose D
+
+Oscar
+29/05/06
+Round = 1
+Mean(cases) = 95405 , Offer = 11000
+Kelly neutral bankroll = 2152
+Player's chose ND
+
+Oscar
+29/05/06
+Round = 2
+Mean(cases) = 112097 , Offer = 24000
+Kelly neutral bankroll = 10006
+Player's chose ND
+
+Oscar
+29/05/06
+Round = 3
+Mean(cases) = 139196 , Offer = 50000
+Kelly neutral bankroll = 43282
+Player's chose ND
+
+Oscar
+29/05/06
+Round = 4
+Mean(cases) = 153266 , Offer = 62000
+Kelly neutral bankroll = 68366
+Player's chose ND
+
+Oscar
+29/05/06
+Round = 5
+Mean(cases) = 66855 , Offer = 33000
+Kelly neutral bankroll = 115982
+Player's chose ND
+
+Oscar
+29/05/06
+Round = 6
+Mean(cases) = 80226 , Offer = 68000
+Kelly neutral bankroll = 814827
+Player's chose ND
+
+Oscar
+29/05/06
+Round = 7
+Mean(cases) = 100033 , Offer = 90000
+Kelly neutral bankroll = 1268087
+Player's chose ND
+
+Oscar
+29/05/06
+Round = 8
+Mean(cases) = 133360 , Offer = 137000
+Mean(cases) < Offer, Kelly neutral bankroll = infinite
+Player's chose D
