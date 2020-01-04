@@ -5,7 +5,7 @@ def idot(x, y):
     # Needs error checking
     if m != n:
         return 0
-    return max([x[i]*y[i] for i in xrange(0,m)])
+    return max([x[i]*y[i] for i in range(0,m)])
 
 class Exchange:
     def __init__(self, x):
@@ -28,22 +28,21 @@ class Exchange:
 
 m = [[1,95/100,8/10],[8/10,1,12/10],[95/100,8/10,1]]
 c = Exchange(m)
-print "Arbitrage exists:"
-print ""
-print "c^2 = ",c^2
-print "c^3 = ",c^3
-print "c^4 = ",c^4
-print "c^5 = ",c^5
-print "c^6 = ",c^6
+print("Arbitrage exists:")
+print()
+print("c^2 = ",c^2)
+print("c^3 = ",c^3)
+print("c^4 = ",c^4)
+print("c^5 = ",c^5)
+print("c^6 = ",c^6)
 
-print ""
+print()
 m = [[1,9/10,7/10],[9/10,1,9/10],[11/10,7/10,1]]
 c = Exchange(m)
-print "No arbitrage exists:"
-print ""
-print "c = ",c
-print "c^2 = ",c^2
-print "c^3 = ",c^3
-print "c^4 = ",c^4
-print "c^5 = ",c^5
-print "c^6 = ",c^6
+print("No arbitrage exists:")
+print()
+print("c^2 = ",c^2)
+print("c^3 = ",c^3)
+print("c^4 = ",c^4)
+print("c^5 = ",c^5)
+print("c^6 = ",c^6)
