@@ -4,16 +4,16 @@ import csv
 def kelly_analyze(count, offer):
     k = sum(count.values())
     m = sum([key*i for key,i in count.items()])/k
-    print "Mean(cases) =", round(m),", Offer =", offer
+    print("Mean(cases) =", round(m),", Offer =", offer)
     if m > offer:
         p(B) = k*log(B+offer) - sum([i*log(B+key) for key,i in count.items()])
         try:
             r = find_root(p(B), 1, 10000000000, maxiter=10000)
-            print "Kelly neutral bankroll =", int(round(r))
+            print("Kelly neutral bankroll =", int(round(r)))
         except:
-            print "Kelly neutral bankroll < 1"
+            print("Kelly neutral bankroll < 1")
     else:
-        print "Mean(cases) < Offer, Kelly neutral bankroll = infinite"
+        print("Mean(cases) < Offer, Kelly neutral bankroll = infinite")
 
 id = None
 with open("data/US.csv") as f:
@@ -24,11 +24,11 @@ with open("data/US.csv") as f:
             id = row["ID Number"]==id
             name = row["Name"]
             date = row["Broadcast Date"]
-            print
-            print name
-            print date
+            print()
+            print(name)
+            print(date)
             
-        print "Round =", row["ROUND"]
+        print("Round =", row["ROUND"])
         count = collections.Counter()
         count[0.01] = int(row["0.01"])
         count[1] = int(row["1"])
@@ -56,10 +56,10 @@ with open("data/US.csv") as f:
         count[500000] = int(row["500000"])
         count[750000] = int(row["750000"])
         count[1000000] = int(row["1000000"])
-        for i in count.keys():
-            if count[i] == 0:
-                del count[i]
+        #for i in count.keys():
+        #    if count[i] == 0:
+        #        del count[i]
 
         offer = int(row["Bank Offer"])
         kelly_analyze(count,offer)
-        print "Player chose", row["Deal / No Deal"]
+        print("Player chose", row["Deal / No Deal"])
