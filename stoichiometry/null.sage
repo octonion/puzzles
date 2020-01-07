@@ -4,8 +4,10 @@
 
 A = matrix([[4, 0, 1, 0], [10, 0, 0, 2], [0, 2, 2, 1]])
 
-# [  2  13  -8 -10]
 print(kernel(A.transpose()))
+# Free module of degree 4 and rank 1 over Integer Ring
+# Echelon basis matrix:
+# [  2  13  -8 -10]
 
 # Balanced equation:
 # 2C4H10 + 13O2 -> 8CO2 + 10H2O
@@ -15,8 +17,10 @@ print(kernel(A.transpose()))
 
 A = matrix([[1, 0, 1, 0, 0, 2], [1, 2, 0, 0, 1, 0], [3, 0, 0, 0, 0, 1], [0, 1, 0, 1, 0, 0], [0, 0, 1, 3, 1, 0]])
 
-# [  5   4  25  -4 -13 -15]
 print(kernel(A.transpose()))
+# Free module of degree 4 and rank 1 over Integer Ring
+# Echelon basis matrix:
+# [  5   4  25  -4 -13 -15]
 
 # Balanced equation:
 # 5HIO3 + 4FeI2 + 25HCl → 4FeCl3 + 13ICl + 15H2O
