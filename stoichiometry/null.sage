@@ -24,3 +24,29 @@ print(kernel(A.transpose()))
 
 # Balanced equation:
 # 5HIO3 + 4FeI2 + 25HCl → 4FeCl3 + 13ICl + 15H2O
+
+# To balance:
+# S + HNO3 → H2SO4 + NO2 + H2O
+
+A = matrix([[1, 0, 1, 0, 0], [0, 1, 2, 0, 2], [0, 1, 0, 1, 0], [0, 3, 4, 2, 1]])
+
+print(kernel(A.transpose()))
+# Free module of degree 5 and rank 1 over Integer Ring
+# Echelon basis matrix:
+# [ 1  6 -1 -6 -2]
+
+# Balanced equation:
+# S + 6HNO3 → H2SO4 + 6NO2 + 2H2O
+
+# To balance:
+# Cu + HNO3 → Cu(NO3)2 + NO + H2O
+
+A = matrix([[1, 0, 1, 0, 0], [0, 1, 0, 0, 2], [0, 1, 2, 1, 0], [0, 3, 6, 1, 1]])
+
+print(kernel(A.transpose()))
+# Free module of degree 5 and rank 1 over Integer Ring
+# Echelon basis matrix:
+# [ 3  8 -3 -2 -4]
+
+# Balanced equation:
+# 3Cu + 8NO3 → 3Cu(NO3)2 + 2NO + 4H2O
