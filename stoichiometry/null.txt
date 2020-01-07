@@ -1,3 +1,6 @@
 Free module of degree 4 and rank 1 over Integer Ring
 Echelon basis matrix:
 [  2  13  -8 -10]
+Free module of degree 6 and rank 1 over Integer Ring
+Echelon basis matrix:
+[  5   4  25  -4 -13 -15]
