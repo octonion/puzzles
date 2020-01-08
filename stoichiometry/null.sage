@@ -18,7 +18,7 @@ print(kernel(A.transpose()))
 A = matrix([[1, 0, 1, 0, 0, 2], [1, 2, 0, 0, 1, 0], [3, 0, 0, 0, 0, 1], [0, 1, 0, 1, 0, 0], [0, 0, 1, 3, 1, 0]])
 
 print(kernel(A.transpose()))
-# Free module of degree 4 and rank 1 over Integer Ring
+# Free module of degree 6 and rank 1 over Integer Ring
 # Echelon basis matrix:
 # [  5   4  25  -4 -13 -15]
 
