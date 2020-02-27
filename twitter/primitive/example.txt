@@ -1,0 +1,1 @@
+18! is a primitive root mod 1000003
