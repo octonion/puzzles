@@ -1,0 +1,18 @@
+For base 5 all LNZD found at power 3
+For base 5 count 0 found at power 4
+
+For base 13 all LNZD found at power 2
+For base 13 count 0 found at power 3
+
+For base 17 all LNZD found at power 2
+For base 17 count 0 found at power 3
+
+For base 23 all LNZD found at power 2
+For base 23 count 0 found at power 3
+
+For base 43 all LNZD found at power 2
+For base 43 count 0 found at power 3
+
+For base 101 all LNZD found at power 2
+For base 101 count 0 found at power 3
+
