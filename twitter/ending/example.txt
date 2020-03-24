@@ -1,1 +1,2 @@
 18! is a primitive root mod 1000003
+14! is a primitive root mod 982451653
