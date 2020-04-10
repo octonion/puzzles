@@ -113,7 +113,7 @@ print("[h, m] = [#{h}, #{m}]\n")
 
 while not([1,2,4].include?(h))
 
-  print("[x, y, h, m] = [#{x}, #{y}, #{h}, #{m}]\n")
+  #print("[x, y, h, m] = [#{x}, #{y}, #{h}, #{m}]\n")
 
   x = (m_init*x_init+y_init)/h_init
   y = (d*x_init+m_init*y_init)/h_init
