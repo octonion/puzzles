@@ -53,7 +53,7 @@ def gcdext(x, y)
   a0 = b1 = 1
   a1 = b0 = 0
   until r1.zero?
-    q = r0 / r1
+    q = r0 // r1
     r0, r1 = r1, r0 - q*r1
     a0, a1 = a1, a0 - q*a1
     b0, b1 = b1, b0 - q*b1
@@ -93,7 +93,7 @@ class Pell
         if (m%2)==1
           p = p*f
         end
-        m = (m/2).floor
+        m = (m//2)
         f = f*f
     end
     return p
@@ -124,7 +124,7 @@ arg = BigInt.new(ARGV[0])
 d = squarefree_part(arg)
 
 # Square part
-s = arg/d
+s = arg//d
 
 #sd = Integer.sqrt(d)
 sd = BigInt.new(Math.sqrt(d).floor)
@@ -134,7 +134,7 @@ y_init = BigInt.new(sd)
 h_init = BigInt.new(d*x_init**2 - y_init**2)
 
 i = (-y_init % h_init)*(invert(x_init,h_init) % h_init) % h_init
-m_init = h_init*(sd/h_init).floor+i
+m_init = h_init*(sd//h_init)+i
 
 if (m_init>sd)
   m_init += -h_init
@@ -154,15 +154,15 @@ while !([1,2,4].includes?(h))
 
   #print("[x, y, h, m] = [#{x}, #{y}, #{h}, #{m}]\n")
 
-  x = (m_init*x_init+y_init)/h_init
-  y = (d*x_init+m_init*y_init)/h_init
+  x = (m_init*x_init+y_init)//h_init
+  y = (d*x_init+m_init*y_init)//h_init
 
-  h = (d-m_init**2)/h_init
+  h = (d-m_init**2)//h_init
 
   #print("[x, y, h, m] = [#{x}, #{y}, #{h}, #{m}]\n")
 
   i = ((-y % h)*(invert(x,h) % h) % h)
-  m = h*(sd/h).floor+i
+  m = h*(sd//h)+i
 
   #print("[x, y, h, m] = [#{x}, #{y}, #{h}, #{m}]\n")
 
@@ -191,7 +191,7 @@ if h==1 && (steps % 2)==0
 elsif h==2
   
   x, y = 2*x*y, d*x**2+y**2
-  x, y = x/2, y/2
+  x, y = x//2, y//2
   
 elsif h==4
   
@@ -260,7 +260,7 @@ if (s>1)
 
   e = powers.reduce(1) { |acc, i| acc.lcm(i) }
   b = a**e
-  x, y = b.x/rs, b.y
+  x, y = b.x//rs, b.y
 end
 
 v = y**2-arg*x**2
