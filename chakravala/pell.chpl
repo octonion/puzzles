@@ -10,36 +10,36 @@ proc *(a: Pell, b: Pell) {
 
 proc **(a: Pell, n: int) {
 
-	var x = new bigint(0);
-	var y = new bigint(1);
-	var D = a.D;
-	var p = new Pell(x,y,D);
+  var x = new bigint(0);
+  var y = new bigint(1);
+  var D = a.D;
+  var p = new Pell(x,y,D);
 	
-	var f = a;
-	var m = n;
+  var f = a;
+  var m = n;
 
-	while (m >= 1) {
-		if (m%2)==1 {
-			p = p*f;
-		}
-		m = m/2;
-		f = f*f;
-	}
-	return p;
+  while (m >= 1) {
+    if (m%2)==1 {
+      p = p*f;
+    }
+    m = m/2;
+    f = f*f;
+  }
+  return p;
 }
 
 proc lcm(d: domain(int)): int {
-	var l = 1;
-	for i in d {
-		l = (l*i)/gcd(l,i);
-	}
-	return l;
+  var l = 1;
+  for i in d {
+    l = (l*i)/gcd(l,i);
+  }
+  return l;
 }
 
 proc gcdext(x, y): (bigint,bigint,bigint) {
   if x<0 {
     var (g,a,b) = gcdext(-x, y);
-		return (g,-a,b);
+    return (g,-a,b);
   }
   if y < 0 {
     var (g,a,b) = gcdext(x,-y);
@@ -47,10 +47,10 @@ proc gcdext(x, y): (bigint,bigint,bigint) {
   }
   var (r0,r1) = (x,y);
   var a0 = new bigint(1);
-	var b1 = new bigint(1);
+  var b1 = new bigint(1);
   var a1 = new bigint(0);
-	var b0 = new bigint(0);
-	var q: bigint;
+  var b0 = new bigint(0);
+  var q: bigint;
 	
   while !(r1==0) {
     q = r0/r1;
@@ -72,27 +72,27 @@ proc invert(num, mod) {
 proc squarefree_part(x) {
   var sf = 1;
   var factors = factor(x);
-	//writeln(factors);
+  //writeln(factors);
   for prime in factors.domain do
     if (factors[prime] % 2==1) {
       sf = sf*prime;
-		}
+    }
   return sf;
 }
 
 proc divmod(n: int, d: int): (int, int) {
-	var q,r: int;
+  var q,r: int;
 	
-	q = n/d;
-	r = n % d;
-	return (q,r);
+  q = n/d;
+  r = n % d;
+  return (q,r);
 }
 
 proc check(q,p): (int,int) {
-	var d,e,r,t: int;
+  var d,e,r,t: int;
 
-	t = q;
-	d = q;
+  t = q;
+  d = q;
   (d,r) = divmod(t,p);
   while (r==0) {
     t = d;
@@ -104,43 +104,55 @@ proc check(q,p): (int,int) {
   
 proc factor(q) {
 
-	var prime_e: domain(int);
-	var factors: [prime_e] int;
+  var prime_e: domain(int);
+  var factors: [prime_e] int;
 
-	var d,e,p,t: int;
+  var d,e,p,t: int;
 
-	t = q;
-	p = 2;
+  writeln(q);
+  writeln(factors);
+  t = q;
+  p = 2;
   (d, e) = check(t,p);
-	if !(e==0) {
-		t = d;
-		factors[p] = e;
-	}
-	p = 3;
-	(d, e) = check(t,p);
-	if !(e==0) {
-		t = d;
-		factors[p] = e;
-	}
-	p = 5;
-  while (p*p <= t)	{
+  if !(e==0) {
+    t = d;
+    // Add the prime p as a key
+    prime_e.add(p);
+    factors[p] = e;
+  }
+  p = 3;
+  (d, e) = check(t,p);
+  if !(e==0) {
+    t = d;
+    // Add the prime p as a key
+    prime_e.add(p);
+    factors[p] = e;
+  }
+  p = 5;
+  while (p*p <= t) {
     (d, e) = check(t,p);
-		if !(e==0) {
-			t = d;
-			factors[p] = e;
-		}
+    if !(e==0) {
+      t = d;
+      // Add the prime p as a key
+      prime_e.add(p);
+      factors[p] = e;
+    }
     p += 2;
-		(d, e) = check(t,p);
-		if !(e==0) {
-			t = d;
-			factors[p] = e;
-		}
+    (d, e) = check(t,p);
+    if !(e==0) {
+      t = d;
+      // Add the prime p as a key
+      prime_e.add(p);
+      factors[p] = e;
+    }
     p += 4;
-	}
-	if (t > 1) {
-		factors[t] = 1;
-	}
-	return factors;
+  }
+  if (t > 1) {
+    // Add the prime t as a key
+    prime_e.add(t);
+    factors[t] = 1;
+  }
+  return factors;
 }
 
 //var D=609*7766*2*2*4657*4657;
@@ -251,22 +263,22 @@ if (h==1 && (steps % 2)==0) {
 	
 } else if h==4 {
 
-	//a, b = BigRational(x,2), BigRational.new(y,2)
-	var (a,b) = (x,y);
+  //a, b = BigRational(x,2), BigRational.new(y,2)
+  var (a,b) = (x,y);
   
   if (a%2==0 && b%2==0) {
 		
     (x,y) = (a/2,b/2);
 		
-	}	else {
+  } else {
 
     var (a_1, b_1) = (2*a*b, d*a*a+b*b);
     
     if (a_1%4==0 && b_1%4==0) {
 			
       (x,y) = (a_1/4, b_1/4);
-			
-		}	else {
+      
+    } else {
       
       (x,y) = (a*b_1+a_1*b, b*b_1+d*a*a_1);
 			
@@ -275,9 +287,9 @@ if (h==1 && (steps % 2)==0) {
       }
       (x,y) = (x/8,y/8);
       
-		}
+    }
     
-	}
+  }
 }
 
 var v = y**2-d*x**2;
@@ -300,9 +312,9 @@ if (s>1) {
 
   var a = new Pell(x, y,new bigint(d));
 
-	for prime in rs_f.domain {
+  for prime in rs_f.domain {
 
-		var j = 1;
+    var j = 1;
     m = prime**rs_f[prime];
         
     var b = new Pell(a.x % m, a.y % m, a.D);
@@ -332,4 +344,4 @@ writeln("full solution = [",x,",",y,",",v,"]");
 writeln();
 writeln("power = ",e);
 
-writeln((x:string).length,", ",(y:string).length);
+writeln((x:string).size,", ",(y:string).size);
