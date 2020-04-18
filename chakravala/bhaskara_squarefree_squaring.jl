@@ -1,4 +1,4 @@
-# Julia version 1.0
+# Julia version 1.4
 
 # You will need to install Primes:
 # pkg> add Primes
@@ -155,14 +155,14 @@ elseif (h==4)
     (a, b) = (x//2, y//2)
     
     if (isinteger(a) && isinteger(b))
-        (x, y) = (num(a), num(b))
+        (x, y) = (numerator(a), numerator(b))
     else
         (a_1, b_1) = (2*a*b, D*a^2+b^2)
 
         if (isinteger(a_1) && isinteger(b_1))
-            (x, y) = (num(a_1), num(b_1))
+            (x, y) = (numerator(a_1), numerator(b_1))
         else
-            (x, y) = (num(a*b_1+a_1*b), num(b*b_1+D*a*a_1))
+            (x, y) = (numerator(a*b_1+a_1*b), numerator(b*b_1+D*a*a_1))
             if (steps % 2)==0
                 (x,y) = (2*x*y, D*x^2+y^2)
             end
