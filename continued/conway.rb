@@ -4,6 +4,8 @@ require 'matrix'
 
 D = eval(ARGV[0])
 
+print("D = #{D}\n")
+
 s = Integer.sqrt(D)
 
 a = 1
@@ -28,7 +30,6 @@ end
 p = -Matrix[[0,1],[-1,-d]]
 
 i = 0
-#print("#{i}: #{a},#{b},#{c},#{d}\n")
 
 while c!=1
 
@@ -50,18 +51,11 @@ while c!=1
 
   p = p*Matrix[[0,-1],[1,d]]
 
-  #p = p*Matrix[[0,-1],[1,d]]
-
-  #print("#{i}: #{a},#{b},#{c},#{d}\n")
-
 end
 
-#print(p,"\n")
+print("Steps = #{i}\n")
 
-#print(M,"\n")
 pa = ML*p*MR
 
-print(pa[1,0]," ",pa[1,1],"\n")
-
-#print(fraction,"\n")
-#print(fraction.size,"\n")
+print("x = #{pa[1,1].abs}\n")
+print("y = #{pa[1,0].abs}\n")
