@@ -56,7 +56,6 @@ end
 print("Steps = #{i}\n")
 
 pa = ML*p*MR
-#print(pa)
 
 print("x = #{pa[0,0].abs}\n")
 print("y = #{pa[1,0].abs}\n")
