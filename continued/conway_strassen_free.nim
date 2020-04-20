@@ -11,7 +11,6 @@ let arguments = commandLineParams()
 var D = parseInt(string(arguments[0]))
 echo "D = ",D
 
-var s = initBigInt(int64(floor(sqrt(float64(D)))))
 var a0 = int64(1)
 
 # Reduced form
