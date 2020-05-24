@@ -251,7 +251,7 @@ int main (int argc, char* argv[])
 
   }
 
-  cout << "c = " << c << endl;
+  //cout << "c = " << c << endl;
 
   mpz_class x,y;
 
@@ -262,33 +262,33 @@ int main (int argc, char* argv[])
   //x = abs(p21);
 
   if (c==-1) {
-      cout << "c = -1" << endl;
-      //P = P*P;
-      x = 2*x*y;
-      y = y*y+sfD*p21*p21;
+    //cout << "c = -1" << endl;
+    //P = P*P;
+    x = 2*x*y;
+    y = y*y+sfD*p21*p21;
   } else if (c==2) {
-      cout << "c = 2" << endl;
-      //P = Pell(x*y,(y*y+sfD*x*x)/2,sfD);
-      x = x*y;
-      y = (y*y+sfD*p21*p21)/2;
+    //cout << "c = 2" << endl;
+    //P = Pell(x*y,(y*y+sfD*x*x)/2,sfD);
+    x = x*y;
+    y = (y*y+sfD*p21*p21)/2;
   } else if (c==-2) {
-    cout << "c = -2" << endl;
+    //cout << "c = -2" << endl;
     //P = Pell(x*y,(y*y+sfD*x*x)/2,sfD);
     x = x*y;
     y = (y*y+sfD*p21*p21)/2;
   } else if (c==4) {
-    cout << "c = 4" << endl;
+    //cout << "c = 4" << endl;
     if (y%2==0) {
-      cout << "y even" << endl;
+      //cout << "y even" << endl;
       x = (x*y)/2;
       y = (y*y-2)/2;
     } else {
-      cout << "y odd" << endl;
+      //cout << "y odd" << endl;
       x = (x*(y*y-1))/2;
       y = (y*(y*y-3))/2;
     }
   } else if (c==-4) {
-    cout << "c = -4" << endl;
+    //cout << "c = -4" << endl;
     x = (x*y*(y*y+1)*(y*y+3))/2;
     y = (y*y+2)*((y*y+1)*(y*y+3)/2-1);
   }
