@@ -14,3 +14,11 @@ chpl --fast conway_powered.chpl
 ./conway_powered -sarg=61
 ./a.out
 ```
+
+The full version also include Bhaskara-type shortcuts.
+
+```bash
+g++ -std=c++17 -O3 conway_full.cpp -lgmp -lgmpxx -o conway_full
+
+./conway_full 61
+```
