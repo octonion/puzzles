@@ -1,4 +1,4 @@
-#!/usr/bin/sage -python
+#!/usr/local/bin/sage -python
 
 from sys import argv
 from sage.all import *
