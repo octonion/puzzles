@@ -1,0 +1,20 @@
+Man City 3.259
+Liverpool 2.461
+Man United 2.264
+Tottenham 2.216
+Arsenal 1.821
+Chelsea 1.735
+Crystal Palace 1.398
+Leicester 1.359
+Newcastle 1.336
+Burnley 1.314
+Everton 1.215
+Bournemouth 1.172
+West Ham 1.154
+Southampton 1.105
+Watford 1.103
+Brighton 1.087
+West Brom 1.043
+Stoke 0.971
+Swansea 0.959
+Huddersfield 0.935
