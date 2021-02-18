@@ -1,6 +1,6 @@
-Fast Pell solvers using Conway's algorithm, a modifed version of the Strassen algorith and unrolling to simplify and remove matrix multiplication.
+Fast Pell solvers using Conway's algorithm, a modifed version of the Strassen algorithm plus unrolling to simplify and remove matrix multiplication.
 
-Powered versions first solve for the fundational solution to the squarefree argument, then resolve the square part using modular calculations.
+Powered versions first solve for the foundational solution to the squarefree argument, then resolve the square part using modular calculations.
 
 ```bash
 g++ -std=c++17 -O3 conway_powered.cpp -lgmp -lgmpxx -o conway_powered
@@ -12,7 +12,6 @@ g++ -std=c++17 -O3 conway_powered.cpp -lgmp -lgmpxx -o conway_powered
 chpl --fast conway_powered.chpl
 
 ./conway_powered -sarg=61
-./a.out
 ```
 
 The full version also include Bhaskara-type shortcuts.
