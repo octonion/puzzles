@@ -11,17 +11,17 @@ from operator import mul, add
 try:   
     n = eval(argv[1])
 except IndexError:  
-   print
+   print()
    print("Usage: product-sum.sage %1")
    print("%1 can be a number (10) or an expression (10**6+1) to evaluate")
-   print
+   print()
    sys.exit()
 
 s = 0
 
-print
+print()
 print('Running n=%s' % n)
-print
+print()
 
 #term = n-1
 #d = floor((divisor_count(term)+1)/2)
@@ -33,10 +33,10 @@ factors = divisors(term)
 nf = floor((len(factors)+1)/2)
 #print(factors)
 
-for div in xrange(0, nf):
+for div in range(0, nf):
     if ((factors[div]+1) % product)==0:
         a = (factors[div]+1)/product
-        #print
+        #print()
         b = (term/factors[div]+1)/product
         solution = [b, a]
         print(solution)
@@ -45,7 +45,7 @@ for div in xrange(0, nf):
 
 top = round(log(n, 2))
 
-for lv in xrange(1, top):
+for lv in range(1, top):
 
     #print(lv)
 
@@ -57,6 +57,8 @@ for lv in xrange(1, top):
     i = 0
     while (i < lv):
 
+        #print(values)
+
         large = values[0]
 
         sum = reduce(add, values)+(n-lv-2)
@@ -67,7 +69,7 @@ for lv in xrange(1, top):
             if (i < lv):
                 values[i] += 1
                 small = values[i]
-                for j in xrange(0,i):
+                for j in range(0,i):
                     values[j] = small
         else:
             term = sum*product + 1
@@ -92,7 +94,7 @@ for lv in xrange(1, top):
             nf = floor((len(factors)+1)/2)
 
             pl = product*large-1
-            rf = filter(lambda x: ((x >= pl) and ((x+1)%product)==0), factors[0:nf])
+            rf = list(filter(lambda x: ((x >= pl) and ((x+1)%product)==0), factors[0:nf]))
             counts = len(rf)
 
             if (counts>0):
@@ -108,5 +110,5 @@ for lv in xrange(1, top):
                         
             i = 0
             values[i] += 1
-print
+print()
 print('Finished n=%s, solutions=%s' % (n, s))

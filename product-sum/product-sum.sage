@@ -34,7 +34,7 @@ factors = divisors(term)
 nf = floor((len(factors)+1)/2)
 #print(factors)
 
-for div in xrange(0, nf):
+for div in range(0, nf):
     if ((factors[div]+1) % product)==0:
         a = (factors[div]+1)/product
         #print
@@ -46,7 +46,7 @@ for div in xrange(0, nf):
 
 top = round(log(n, 2))
 
-for lv in xrange(1, top):
+for lv in range(1, top):
     #print(lv)
 
     values = [2]*lv
@@ -71,7 +71,7 @@ for lv in xrange(1, top):
             if (i < lv):
                 values[i] += 1
                 small = values[i]
-                for j in xrange(0,i):
+                for j in range(0,i):
                     values[j] = small
         else:
             term = sum*product + 1

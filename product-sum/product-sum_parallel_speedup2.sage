@@ -14,10 +14,10 @@ import multiprocessing
 try:   
     n = eval(argv[1])
 except IndexError:  
-   print
+   print()
    print("Usage: product-sum.sage %1")
    print("%1 can be a number (10) or an expression (10**6+1) to evaluate")
-   print
+   print()
    sys.exit()
 
 def solve(lv):
@@ -33,7 +33,7 @@ def solve(lv):
         nf = (len(factors)+1)//2
         #nf = floor((len(factors)+1)/2)
 
-        for div in xrange(0, nf):
+        for div in range(0, nf):
             a = (factors[div]+1)//product
             b = (term//factors[div]+1)//product
             solution = [b, a]
@@ -62,7 +62,7 @@ def solve(lv):
             if (i < lv):
                 values[i] += 1
                 small = values[i]
-                for j in xrange(0,i):
+                for j in range(0,i):
                     values[j] = small
         else:
             #x = floor(sum/product)+1 # a*b
@@ -106,8 +106,8 @@ def solve(lv):
             nf = (len(factors)+1)//2
 
             pl = product*large-1
-            rf = filter(lambda x: ((x >= pl) and ((x+1)%product)==0), factors[0:nf])
-            counts = len(rf)
+            rf = list(filter(lambda x: ((x >= pl) and ((x+1)%product)==0), factors[0:nf]))
+            counts = len(list(rf))
 
             if (counts>0):
 
@@ -128,17 +128,17 @@ top = round(log(n, 2))
 
 num_cores = multiprocessing.cpu_count()
 use_cores = num_cores//2 #floor(num_cores/2)
-print
+print()
 print("Using %s CPU cores" % use_cores)
-print
+print()
 
 P = parallel(p_iter=use_cores)
 
-v = list(P(solve)(range(0, top)))
+v = list(P(solve)(list(range(0, top))))
 
 s = 0
 for i in v:
     s += i[1]
     
-print
+print()
 print('Finished n=%s, solutions=%s' % (n, s))
