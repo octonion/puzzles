@@ -127,7 +127,7 @@ def solve(lv):
 top = round(log(n, 2))
 
 num_cores = multiprocessing.cpu_count()
-use_cores = num_cores//2 #floor(num_cores/2)
+use_cores = min(64,num_cores//2) #floor(num_cores/2)
 print()
 print("Using %s CPU cores" % use_cores)
 print()
