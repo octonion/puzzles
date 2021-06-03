@@ -57,7 +57,23 @@ end
 
 c[1] = 2/((s-3)*rho^2*gamma)*sum((sum(rho^2*2^(k/2)*bin(alpha-l/2,k/2,k)*G[2][s-l-k](gamma)+rho*A[k]*sum(bin(alpha-l/2,j/2,j)*G[1][s-l-k-j](gamma) for j in (0..(s-l-k))) for k in (0..(s-l-1)))+(rho^2*2^((s-l)/2)*bin(alpha-l/2,1/2*(s-l),s-l)+rho*A[s-l]+B[s-l]))*c[l] for l in (0..(s-4)))
 
-print(c[1])
+print("From (2.18) we get {}".format(c[1]))
+
+x = 0
+for l in range(0,s-4+1):
+    y = rho^2*2^((s-l)/2)*bin(alpha-l/2,1/2*(s-l),s-l)+rho*A[s-l]+B[s-l]
+    for k in range(0,s-l):
+        y += rho^2*2^(k/2)*bin(alpha-l/2,k/2,k)*G[2][s-l-k](gamma)
+        z = 0
+        for j in range(0,s-l-k+1):
+            z += bin(alpha-l/2,j/2,j)*G[1][s-l-k-j](gamma)
+        y += z*rho*A[k]
+    x += c[l]*y
+
+c[1] = 2/((s-3)*rho^2*gamma)*x
+
+print("From (2.18) we get {}".format(c[1]))
 
 x = 1/(24*b[0]^2*gamma)*(a[0]^2*a[1]^2-24*a[0]*a[1]*b[0]+8*a[0]*a[1]*b[1]-24*a[0]*a[2]*b[0]-9*b[0]^2-32*b[1]^2+24*b[0]*b[1]+48*b[0]*b[2])
-print(x)
+
+print("From (2.19) we get {}".format(x))
