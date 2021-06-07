@@ -1,0 +1,12 @@
+
+epsilon = 0.1
+Last n for which |s(n)-1/2| > epsilon is 23.
+Proof uses n = 53, for which s[n] = 30.
+
+epsilon = 0.05
+Last n for which |s(n)-1/2| > epsilon is 1489.
+Proof uses n = 3251, for which s[n] = 1762.
+
+epsilon = 0.03333333333333333
+Last n for which |s(n)-1/2| > epsilon is 758765.
+Proof uses n = 1615956, for which s[n] = 857191.
