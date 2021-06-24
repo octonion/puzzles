@@ -14,4 +14,17 @@ generalization of the Conway’s formula to this case.
 
 ```
 sage penney.sage THH,HTH,HHT
+
+Pr(THH) = 5/12
+Pr(HTH) = 1/3
+Pr(HHT) = 1/4
+```
+
+```
+sage penney.sage THHTHHTT,THHTHHH,TTTHHH,HTHTHTHTHTHTH
+
+Pr(THHTHHTT) = 87345/608048
+Pr(THHTHHH) = 87345/304024
+Pr(TTTHHH) = 86011/152012
+Pr(HTHTHTHTHTHTH) = 1969/608048
 ```
