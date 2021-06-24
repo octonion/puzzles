@@ -11,3 +11,7 @@ Abstract
 We recall a combinatorial derivation of the functions generating probability
 of winnings for each of many participants of the Penney’s game and show a
 generalization of the Conway’s formula to this case.
+
+```
+sage penney.sage THH,HTH,HHT
+```
