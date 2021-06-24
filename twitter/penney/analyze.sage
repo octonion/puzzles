@@ -57,7 +57,7 @@ for i in range(0,len(seq)):
                 max_p = P
                 best = k
             #print(seq[i],seq[j],P)
-        print(seq[i],seq[j],seq[best],max_p.n())
+        print(seq[i],seq[j],seq[best],max_p)
 
 #print(P)
 
