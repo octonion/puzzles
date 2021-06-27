@@ -19,12 +19,12 @@ while (queue.size() > 0)
     m = queue.pop()
     n = m.fact()
     i = 0
-    while (n.floor()>3)
-        if (n<bound) and not(found.include?(n.floor()))
-            found.add(n.floor())
-            queue << n.floor()
-            paths[n.floor()] = m
-            sqrts[n.floor()] = i
+    while (n>3)
+        if (n<bound) and not(found.include?(n))
+            found.add(n)
+            queue << n
+            paths[n] = m
+            sqrts[n] = i
         end
         n = Integer.sqrt(n)
         i += 1
