@@ -1,4 +1,5 @@
-require 'set'
+#require 'set'
+require 'sorted_set'
 
 class Integer
   def fact
@@ -32,7 +33,7 @@ while (queue.size() > 0)
 end
 print(found,"\n")
 
-v = 9
+v = 72
 while not(v==3)
     w = paths[v]
     print("#{v} <- #{w}! + #{sqrts[v]} sqrt\n")
