@@ -48,8 +48,10 @@ fn main() {
 	}
     }
    
-    for f in found {
-	print!("{} ",f);
+    for i in 3..1000 {
+	if !(found.contains(&i)) {
+	    print!("{} ",i);
+	}
     }
     println!();
     println!();
@@ -61,5 +63,4 @@ fn main() {
 	println!("{} <- {}! + {} sqrt",v,w,sqrts[&v]);
 	v = w;
     }
-
 }
