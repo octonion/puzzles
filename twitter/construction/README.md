@@ -26,3 +26,7 @@ julia factorial_sqrt.jl
 chpl --fast factorial_sqrt.chpl
 ./factorial_sqrt
 ```
+
+```
+ldc2 -O3 factorial_sqrt.d
+```
