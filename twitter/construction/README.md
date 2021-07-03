@@ -6,6 +6,10 @@ sage factorial_sqrt.sage
 ```
 
 ```
+python factorial_sqrt.py
+```
+
+```
 ruby factorial_sqrt.rb
 ```
 
