@@ -13,3 +13,7 @@ ruby factorial_sqrt.rb
 gnatmake -Ofast -gnatp -gnat2022 factorial_sqrt.adb
 ./factorial_sqrt
 ```
+
+```
+julia factorial_sqrt.jl
+```
