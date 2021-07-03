@@ -21,3 +21,8 @@ gnatmake -Ofast -gnatp -gnat2022 factorial_sqrt.adb
 ```
 julia factorial_sqrt.jl
 ```
+
+```bash
+chpl --fast factorial_sqrt.chpl
+./factorial_sqrt
+```
