@@ -29,4 +29,10 @@ chpl --fast factorial_sqrt.chpl
 
 ```
 ldc2 -O3 factorial_sqrt.d
+./factorial_sqrt
+```
+
+```
+g++ -march=native -m64 -O3 factorial_sqrt.cpp -lgmpxx -lgmp
+./a.out
 ```
