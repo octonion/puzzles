@@ -21,7 +21,12 @@ while (len(queue)> 0):
             sqrts[floor(n)] = i
         n = sqrt(n)
         i += 1
-print(sorted(found))
+
+for i in range(3,1000):
+    if not(i in found):
+        print("{} ".format(i),end="")
+print()
+print()
 
 v = 9
 while not(v==3):
