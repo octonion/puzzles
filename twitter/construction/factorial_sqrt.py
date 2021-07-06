@@ -23,7 +23,10 @@ while (len(queue)> 0):
         n = isqrt(n)
         i += 1
         
-print(sorted(found))
+for i in range(3,1000):
+    if not(i in found):
+        print("{} ".format(i),end="")
+print()
 print()
 
 v = 9
