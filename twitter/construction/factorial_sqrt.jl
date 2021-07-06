@@ -25,8 +25,13 @@ while (length(queue)> 0)
         i += 1
     end
 end
-        
-println(found)
+
+for i = 3:999
+    if !(i in found)
+        print("$i ")
+    end
+end
+println()
 println()
 
 v = 9
