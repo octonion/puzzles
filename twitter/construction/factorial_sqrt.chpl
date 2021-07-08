@@ -4,18 +4,6 @@ use BigInteger;
 
 const bound = 20000;
 
-var values: [0..bound] bigint;
-for j in 1..bound {
-  values[j] = new bigint(j);
-}
-
-proc fac(n) {
-  var r = new bigint(1);
-  //d = [
-  r =* reduce values[1..n];
-  return r;
-}
-
 var found = new orderedSet(int);
 found.add(3);
 
@@ -39,7 +27,7 @@ var i: int;
 while (queue.getSize()>0) {
 
   m = queue.popFront()[1];
-  n = fac(m);
+  n.fac(m);
   i = 0;
   while n>=bound {
     n.sqrt(n);
@@ -70,8 +58,10 @@ writeln();
     
 var v = 9;
 var w: int;
-while !(v==3) {
-  w = paths[v];
-  writeln(v," <- ",w,"! + ",sqrts[v]," sqrt");
-  v = w;
+if (found.contains(v)) {
+  while !(v==3) {
+    w = paths[v];
+    writeln(v," <- ",w,"! + ",sqrts[v]," sqrt");
+    v = w;
+  }
 }
