@@ -39,5 +39,5 @@ g++ -march=native -m64 -O3 factorial_sqrt.cpp -lgmpxx -lgmp
 
 ```
 fpc -O3 factorial_sqrt.pas
-./a.out
+./factorial_sqrt
 ```
