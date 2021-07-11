@@ -36,3 +36,8 @@ ldc2 -O3 factorial_sqrt.d
 g++ -march=native -m64 -O3 factorial_sqrt.cpp -lgmpxx -lgmp
 ./a.out
 ```
+
+```
+fpc -O3 factorial_sqrt.pas
+./a.out
+```
