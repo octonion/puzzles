@@ -38,6 +38,11 @@ g++ -march=native -m64 -O3 factorial_sqrt.cpp -lgmpxx -lgmp
 ```
 
 ```
-fpc -O3 factorial_sqrt.pas
-./factorial_sqrt
+fpc -O3 factorial_sqrt_delphi.pas
+./factorial_sqrt_delphi
+```
+
+```
+fpc -O3 factorial_sqrt_objfpc.pas
+./factorial_sqrt_objfpc
 ```
