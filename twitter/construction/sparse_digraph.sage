@@ -52,7 +52,7 @@ m = coo_matrix((np.array(weights), (np.array(row), np.array(col))), shape=(rn, c
 dsp = shortest_path(m,directed=True,unweighted=False,indices=[3])
 
 for i in range(2,101):
-    if (i in d.vertices()):
+    if (i in found):
         w = int(dsp[0][i])
     else:
         w = dsp[0][i]
