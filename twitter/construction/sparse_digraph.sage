@@ -18,7 +18,6 @@ queue.append(3)
 found = {3}
 paths = {3 : 3}
 sqrts = {3 : 0}
-edges = []
 
 counts=[0]*10000
 
@@ -32,7 +31,6 @@ while (len(queue)> 0):
         if (n<10000):
             counts[floor(n)] += 1
         if (n<bound):
-            edges += [(m,floor(n),i)]
             row += [m]
             col += [floor(n)]
             weights += [i]
