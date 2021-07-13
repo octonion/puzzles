@@ -1,9 +1,6 @@
 from collections import deque
 
-import numpy as np
 from scipy.sparse import coo_matrix
-
-from scipy.sparse.csgraph import floyd_warshall
 from scipy.sparse.csgraph import shortest_path
 
 row  = []
@@ -42,10 +39,10 @@ while (len(queue)> 0):
         n = sqrt(n)
         i += 1
 
-rn = np.max(row)+1
-cn = np.max(col)+1
+rn = max(row)+1
+cn = max(col)+1
 
-m = coo_matrix((np.array(weights), (np.array(row), np.array(col))), shape=(rn, cn))
+m = coo_matrix((weights, (row, col)), shape=(rn, cn))
 
 dsp = shortest_path(m,directed=True,unweighted=False,indices=[3])
 
