@@ -46,3 +46,8 @@ fpc -O3 factorial_sqrt_delphi.pas
 fpc -O3 factorial_sqrt_objfpc.pas
 ./factorial_sqrt_objfpc
 ```
+
+```
+fbc -O 3 factorial_sqrt.bas
+./factorial_sqrt
+```
