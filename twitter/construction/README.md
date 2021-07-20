@@ -51,3 +51,7 @@ fpc -O3 factorial_sqrt_objfpc.pas
 fbc -O 3 factorial_sqrt.bas
 ./factorial_sqrt
 ```
+
+```
+racket factorial_sqrt.rkt
+```
