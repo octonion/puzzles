@@ -1,5 +1,8 @@
 from collections import deque
 
+R = RealField(400)
+one = R(1)
+
 bound = 1000000
 
 lb = ln(bound)
@@ -13,7 +16,7 @@ sqrts = {3 : 0}
 
 while (len(queue)> 0):
     m = queue.pop()
-    x = log_gamma(m+1.0)
+    x = log_gamma(m+one)
 
     i = 0
     p = ceil(log(x/lb,2))
