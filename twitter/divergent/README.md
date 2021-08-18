@@ -6,7 +6,7 @@ https://www.datcreativity.com/task?
 GitHub repo:
 https://github.com/jayolson/divergent-association-task
 
-The commputation takes about 255 CPU core-hours. The best possible answer appears to be:
+The computation takes about 255 CPU core-hours. The best possible answer appears to be:
 
 109.5832645424675
 ["includes", "propagandise", "downgraded", "feat", "replies", "briquette", "gamines"]
