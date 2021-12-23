@@ -1,7 +1,4 @@
-from scipy.stats import poisson
-from scipy.stats import skellam
 from scipy.optimize import minimize
-from math import floor, ceil
 import numpy as np
 from math import log
 
