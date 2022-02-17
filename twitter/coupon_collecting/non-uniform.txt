@@ -1,0 +1,48 @@
+
+Blood type probabilities example.
+
+Schelling exact EV = 122.45389039370293
+Schelling EV expected missing = 0.4005240000696834
+Schelling exact VAR = 8453.083044492872
+
+Remainder 1/e EV = 128.83498703745101
+Remainder 1/2 EV = 106.33212593281648
+Remainder 1/e^γ EV = 98.2239305008367
+
+Power 2 method = 130.11293991538847
+
+Digamma 1 EV =  128.3770113928063
+
+Digamma 2 EV =  127.79318369868457
+
+Uniform U(0,1) n=20 example.
+
+Schelling exact EV = 199.63797464555913
+Schelling EV expected missing = 0.47216835947054026
+Schelling exact VAR = 11749.007942477088
+
+Remainder 1/e EV = 221.87656938349411
+Remainder 1/2 EV = 194.59676619632256
+Remainder 1/e^γ EV = 184.47173314229568
+
+Power 2 method = 231.53164509191467
+
+Digamma 1 EV =  224.93338808322122
+
+Digamma 2 EV =  224.13226464018874
+
+Exponential E(1) n=20 example.
+
+Schelling exact EV = 935.2247195631473
+Schelling EV expected missing = 0.35730117704878134
+Schelling exact VAR = 671513.6132833735
+
+Remainder 1/e EV = 913.7703847343678
+Remainder 1/2 EV = 705.7653881429158
+Remainder 1/e^γ EV = 636.7225933255426
+
+Power 2 method = 956.2143550480336
+
+Digamma 1 EV =  903.7098535253726
+
+Digamma 2 EV =  903.3160197782313
