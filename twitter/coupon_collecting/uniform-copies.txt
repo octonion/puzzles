@@ -1,0 +1,6 @@
+
+2 copies, 800 coupons.
+
+Myers & Wilf, exact EV = 7693.29148459392
+
+Lambert W approximation, EV = 7693.75658621231

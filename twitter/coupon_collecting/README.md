@@ -14,3 +14,15 @@ Exponential E(1) n=20 example.
 ```bash
 sage non-uniform.sage
 ```
+
+Coupon collector's problem with uniform probabilities, two copies.
+
+Myers & Wilf, exact EV
+
+Lambert W approximation EV
+
+Example with 2 copies, 800 coupons.
+
+```bash
+sage uniform-copes.sage
+```
