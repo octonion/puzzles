@@ -3,6 +3,7 @@ Coupon collector's problem with non-uniform probabilities.
 Remainder EV approximation\
 Power EV approximation\
 Digamma 1 EV approximation\
+Digamma 2 EV approximation\
 Schelling's exact EV\
 Schelling's exact VAR
 
