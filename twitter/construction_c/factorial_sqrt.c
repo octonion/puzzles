@@ -19,8 +19,8 @@ typedef struct pair {
 
 spair *paths = NULL;
 spair *sqrts = NULL;
-int bound = 20000;
-int m;
+int bound = 100000;
+int m, v, w;
 
 void add_pair(spair **dict, int id, int n) {
   
@@ -135,15 +135,64 @@ int main() {
   printf("First missing value = %d\n",i);
   */
 
-  /*
-  int v = 9;
-  int w;
-  while (v!=3) {
-      w = paths[v];
-      cout << v << " <- " << w << "! + " << sqrts[v] << " sqrt" << endl;
+  // Solvable with 20000 bound
+  v = 9;
+  HASH_FIND_INT(paths, &v, s);
+  if (s!=NULL) {
+    printf("\n");
+    while (v!=3) {
+      HASH_FIND_INT(paths, &v, s);
+      w = s->value;
+      HASH_FIND_INT(sqrts, &v, s);
+      printf("%d <- %d! + %d sqrt\n", v, w, s->value);
       v = w;
     }
-  */
+  }
+
+  // Solvable with 100000 bound
+  v = 135;
+  HASH_FIND_INT(paths, &v, s);
+  if (s!=NULL) {
+    printf("\n");
+    while (v!=3) {
+      HASH_FIND_INT(paths, &v, s);
+      w = s->value;
+      HASH_FIND_INT(sqrts, &v, s);
+      printf("%d <- %d! + %d sqrt\n", v, w, s->value);
+      //      cout << v << " <- " << w << "! + " << sqrts[v] << " sqrt" << endl;
+      v = w;
+    }
+  }
+
+  // Solvable with 1000000 bound
+  v = 197;
+  HASH_FIND_INT(paths, &v, s);
+  if (s!=NULL) {
+    printf("\n");
+    while (v!=3) {
+      HASH_FIND_INT(paths, &v, s);
+      w = s->value;
+      HASH_FIND_INT(sqrts, &v, s);
+      printf("%d <- %d! + %d sqrt\n", v, w, s->value);
+      //      cout << v << " <- " << w << "! + " << sqrts[v] << " sqrt" << endl;
+      v = w;
+    }
+  }
+
+  // Solvable with 10000000 bound
+  v = 522;
+  HASH_FIND_INT(paths, &v, s);
+  if (s!=NULL) {
+    printf("\n");
+    while (v!=3) {
+      HASH_FIND_INT(paths, &v, s);
+      w = s->value;
+      HASH_FIND_INT(sqrts, &v, s);
+      printf("%d <- %d! + %d sqrt\n", v, w, s->value);
+      //      cout << v << " <- " << w << "! + " << sqrts[v] << " sqrt" << endl;
+      v = w;
+    }
+  }
   
   return 0;
 }
