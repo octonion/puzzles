@@ -4,3 +4,7 @@ Using only the operations of ! (factorial), sqrt() and floor(), can you construc
 ```
 gcc factorial_sqrt.c -lm -lgmp
 ```
+
+```
+gcc -Ofast factorial_sqrt.c -lm -lgmp
+```
