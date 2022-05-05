@@ -43,7 +43,12 @@ void print_dict(spair *dict) {
     }
 }
 
+int i;
+mpz_t n;
+
 int main() {
+
+  mpz_init(n);
 
   spair *s;
   s = (spair*)malloc(sizeof *s);
@@ -68,8 +73,6 @@ int main() {
   //  printf("%d\n", e->value);
   //}
 
-  int i;
-
   while (!TAILQ_EMPTY(&head)) {
 
     e = TAILQ_FIRST(&head);
@@ -79,7 +82,6 @@ int main() {
     free(e);
     e = NULL;
     
-    mpz_t n;
     mpz_fac_ui(n, m);
     //mpz_out_str(stdout,10,n);
     //printf("\n");
