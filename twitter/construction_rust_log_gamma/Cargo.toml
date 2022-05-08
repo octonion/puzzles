@@ -1,0 +1,10 @@
+[package]
+name = "construction_rust_log_gamma"
+version = "0.1.0"
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+num-integer = "0.1.45"
+rug = "1.16.0"
