@@ -29,7 +29,7 @@ fn main() {
     let lb = (Float::with_val(400,bound)).ln();
     //println!("lb = {} ",lb);
         
-    let mut x = Float::new(400);
+    //let mut x = Float::new(400);
         
     //    let mut m: u32;
     let mut i: u32;
@@ -44,7 +44,7 @@ fn main() {
 
 	    m = queue.pop_front().unwrap();
         //println!("m = {}",m);
-        x = (Float::with_val(400, m+1)).ln_gamma();
+        let x = (Float::with_val(400, m+1)).ln_gamma();
         //println!("x = {}",x);
         
         //p = ceil(log(x/lb,2));
@@ -126,7 +126,7 @@ fn main() {
         v = w;
     }
 
-    println!();
+//    println!();
 
 //    v = 22701;
 //    while !(v==3) {
