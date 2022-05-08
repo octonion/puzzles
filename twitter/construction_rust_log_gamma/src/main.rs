@@ -24,7 +24,7 @@ fn main() {
     let mut queue = VecDeque::new();
     queue.push_back(3);
     
-    let bound = Integer::from_str_radix("1000000000",10).unwrap();
+    let bound = Integer::from_str_radix("10000000000",10).unwrap();
     //println!("bound = {} ",bound);
     let lb = (Float::with_val(400,bound)).ln();
     //println!("lb = {} ",lb);
@@ -120,6 +120,15 @@ fn main() {
     println!();
 
     v = 1337;
+    while !(v==3) {
+        w = paths[&v];
+        println!("{} <- {}! + {} sqrt",v,w,sqrts[&v]);
+        v = w;
+    }
+    
+    println!();
+
+    v = 10509;
     while !(v==3) {
         w = paths[&v];
         println!("{} <- {}! + {} sqrt",v,w,sqrts[&v]);
