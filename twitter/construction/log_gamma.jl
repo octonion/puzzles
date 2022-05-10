@@ -3,7 +3,7 @@ using SpecialFunctions
 
 setprecision(400)
 
-bound = 1000000
+bound = 1000000000
 
 lb = log(bound)
 
@@ -18,7 +18,7 @@ while (length(queue)> 0)
     m = popfirst!(queue)
     x = loggamma(BigFloat(m)+BigFloat(1))
         #one)
-    
+
     i = 0
     p = ceil(log(2,x/lb))
     q = max(p,0)
@@ -26,7 +26,7 @@ while (length(queue)> 0)
     i += q
 
     n = round(exp(x/2^q))
-    
+
     while (floor(n)>3)
 #        if (n<bound) && !(n in found)
         if !(floor(n) in found)
@@ -59,27 +59,27 @@ end
 
 println()
 
-#v = 522
-#while (v>3)
-#    w = paths[v]
-#    println("$v <- $(w)! + $(sqrts[v]) sqrt")
-#    global v = w
-#end
+v = 522
+while (v>3)
+   w = paths[v]
+   println("$v <- $(w)! + $(sqrts[v]) sqrt")
+   global v = w
+end
 
-#println()
+println()
 
-#v = 1074
-#while (v>3)
-#    w = paths[v]
-#    println("$v <- $(w)! + $(sqrts[v]) sqrt")
-#    global v = w
-#end
+v = 1074
+while (v>3)
+   w = paths[v]
+   println("$v <- $(w)! + $(sqrts[v]) sqrt")
+   global v = w
+end
 
-#println()
+println()
 
-#v = 1337
-#while (v>3)
-#    w = paths[v]
-#    println("$v <- $(w)! + $(sqrts[v]) sqrt")
-#    global v = w
-#end
+v = 1337
+while (v>3)
+   w = paths[v]
+   println("$v <- $(w)! + $(sqrts[v]) sqrt")
+   global v = w
+end
