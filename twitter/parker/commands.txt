@@ -1,0 +1,9 @@
+solve;
+option omit_zero_rows 1;
+option omit_zero_columns 1;
+
+display Word_Used;
+display Total_Words;
+
+display _ampl_time;
+display _total_solve_time;
