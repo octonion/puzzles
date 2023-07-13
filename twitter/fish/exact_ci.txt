@@ -1,0 +1,4 @@
+Lincoln-Petersen estimator =  152.0
+Chapman estimator =  124.0
+0.95 -level confidence interval is ( 67 381 )
+Squeezed estimator bounds = ( 128 128 )
