@@ -1,0 +1,166 @@
+clong@seymour:~/tarksi$ ./LADR-2009-11A/bin/mace4 -f test2.in
+============================== Mace4 =================================
+Mace4 (64) version 2009-11A, November 2009.
+Process 392982 was started by clong on seymour,
+Wed Aug 16 12:44:25 2023
+The command was "./LADR-2009-11A/bin/mace4 -f test2.in".
+============================== end of head ===========================
+
+============================== INPUT =================================
+
+% Reading from file test2.in
+
+assign(domain_size,11).
+    % assign(domain_size, 11) -> assign(start_size, 11).
+    % assign(domain_size, 11) -> assign(end_size, 11).
+clear(negprop).
+
+formulas(assumptions).
+s(x,y) = s(y,x).
+s(x,s(y,z)) = s(s(x,y),z).
+p(x,1) = x.
+p(x,y) = p(y,x).
+p(x,p(y,z)) = p(p(x,y),z).
+p(x,s(y,z)) = s(p(x,y),p(x,z)).
+e(1,x) = 1.
+e(x,1) = x.
+e(x,s(y,z)) = p(e(x,y),e(x,z)).
+e(p(x,y),z) = p(e(x,z),e(y,z)).
+e(e(x,y),z) = e(x,p(y,z)).
+c = p(0,0).
+P = s(1,0).
+Q = s(P,c).
+R = s(1,p(0,c)).
+S = s(s(1,c),p(c,c)).
+p(e(s(e(P,0),e(Q,0)),b),e(s(e(R,b),e(S,b)),0)) != p(e(s(e(P,b),e(Q,b)),0),e(s(e(R,0),e(S,0)),b)).
+2 = s(1,1).
+b != 0.
+b != 1.
+b != 2.
+b != p(0,x).
+P != p(Q,x).
+Q != p(P,x).
+R != p(S,x).
+S != p(R,x).
+s(1,0) != 1.
+s(2,0) != 1.
+s(0,0) != 1.
+c != 1.
+s(1,c) != 1.
+p(c,0) != 1.
+s(1,0) != 0.
+s(2,0) != 0.
+s(0,0) != 0.
+c != 0.
+s(1,c) != 0.
+s(2,0) != s(1,0).
+c != s(1,0).
+p(c,0) != s(1,0).
+c != s(2,0).
+c != s(0,0).
+s(1,c) != c.
+3 = s(2,1).
+3 != 2.
+3 != 1.
+b != 3.
+0 != 1.
+0 != 2.
+0 != 3.
+0 != b.
+s(3,1) = 3.
+end_of_list.
+
+============================== end of input ==========================
+
+============================== PROCESS NON-CLAUSAL FORMULAS ==========
+
+% Formulas that are not ordinary clauses:
+
+============================== end of process non-clausal formulas ===
+
+============================== CLAUSES FOR SEARCH ====================
+
+formulas(mace4_clauses).
+s(x,y) = s(y,x).
+s(x,s(y,z)) = s(s(x,y),z).
+p(x,1) = x.
+p(x,y) = p(y,x).
+p(x,p(y,z)) = p(p(x,y),z).
+p(x,s(y,z)) = s(p(x,y),p(x,z)).
+e(1,x) = 1.
+e(x,1) = x.
+e(x,s(y,z)) = p(e(x,y),e(x,z)).
+e(p(x,y),z) = p(e(x,z),e(y,z)).
+e(e(x,y),z) = e(x,p(y,z)).
+c = p(0,0).
+P = s(1,0).
+Q = s(P,c).
+R = s(1,p(0,c)).
+S = s(s(1,c),p(c,c)).
+p(e(s(e(P,0),e(Q,0)),b),e(s(e(R,b),e(S,b)),0)) != p(e(s(e(P,b),e(Q,b)),0),e(s(e(R,0),e(S,0)),b)).
+2 = s(1,1).
+b != 0.
+b != 1.
+b != 2.
+b != p(0,x).
+P != p(Q,x).
+Q != p(P,x).
+R != p(S,x).
+S != p(R,x).
+s(1,0) != 1.
+s(2,0) != 1.
+s(0,0) != 1.
+c != 1.
+s(1,c) != 1.
+p(c,0) != 1.
+s(1,0) != 0.
+s(2,0) != 0.
+s(0,0) != 0.
+c != 0.
+s(1,c) != 0.
+s(2,0) != s(1,0).
+c != s(1,0).
+p(c,0) != s(1,0).
+c != s(2,0).
+c != s(0,0).
+s(1,c) != c.
+3 = s(2,1).
+3 != 2.
+3 != 1.
+b != 3.
+0 != 1.
+0 != 2.
+0 != 3.
+0 != b.
+s(3,1) = 3.
+end_of_list.
+
+============================== end of clauses for search =============
+
+% The largest natural number in the input is 3.
+
+============================== DOMAIN SIZE 11 ========================
+
+=== Mace4 starting on domain size 11. ===
+
+============================== STATISTICS ============================
+
+For domain size 11.
+
+Current CPU time: 0.00 seconds (total CPU time: 2189985.33 seconds).
+Ground clauses: seen=8352, kept=8240.
+Selections=2149585072, assignments=2170514975, propagations=3352935624, current_models=0.
+Rewrite_terms=1955753649, rewrite_bools=1218439506, indexes=1081557786.
+Rules_from_neg_clauses=100, cross_offs=39447.
+
+============================== end of statistics =====================
+
+User_CPU=2189985.33, System_CPU=72699.22, Wall_clock=2262836.
+
+Exiting with failure.
+
+------ process 392982 exit (exhausted) ------
+
+Process 392982 exit (exhausted) Mon Sep 11 17:18:21 2023
+The process finished Mon Sep 11 17:18:21 2023
+clong@seymour:~/tarksi$ 

@@ -1,0 +1,33 @@
+assign(domain_size, 8).
+
+formulas(assumptions).
+
+% At one time the equation below was a candidate single
+% axiom for Boolean algebra in terms of the Sheffer stroke.
+% This file shows that it is not, by giving a noncommutative
+% model.  It's interesting that order 8 succeeds immediately,
+% but order 6 takes a long time to fail.  In other words,
+% iterate_up_to would be a bad choice for this problem.
+%
+% See www.cs.unm.edu/~mccune/papers/basax for more information.
+
+f(f(f(y,f(z,x)),y),f(x,f(z,y))) = x.  % 8-model
+
+% Here are 6 other non-single-axioms (size of counterexample is shown).
+
+% f(f(y,f(f(x,z),y)),f(x,f(z,y))) = x.   % 15  5-model
+% f(f(f(y,f(x,z)),y),f(x,f(z,y))) = x.   % 16  5-model
+% f(f(f(y,f(x,y)),y),f(x,f(y,z))) = x.   % 5   6-model (b)
+% f(f(y,f(y,f(x,y))),f(x,f(y,z))) = x.   % 9   6-model (a)
+% f(f(f(y,f(x,x)),y),f(x,f(y,z))) = x.   % 23  6-model (b)
+% f(f(y,f(y,f(x,x))),f(x,f(y,z))) = x.   % 25  6-model (a)
+
+% Here is a candidate that turns out to be a single axiom.
+
+% f(f(y,f(f(x,y),y)),f(x,f(z,y))) = x.   % 1   single axiom
+
+end_of_list.
+
+formulas(goals).
+f(x,y) = f(y,x) # label(commutativity).
+end_of_list.

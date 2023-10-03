@@ -1,0 +1,54 @@
+assign(domain_size, 8).
+clear(negprop).
+%set(lnh).
+%clear(neg_assign).
+%clear(neg_assign_near).
+%clear(neg_elim).
+%clear(neg_elim_near).
+
+formulas(assumptions).
+
+s(x,y) = s(y,x).
+s(x,s(y,z)) = s(s(x,y),z).
+p(x,1) = x.
+p(x,y) = p(y,x).
+p(x,p(y,z)) = p(p(x,y),z).
+p(x,s(y,z)) = s(p(x,y),p(x,z)).
+e(1,x) = 1.
+e(x,1) = x.
+e(x,s(y,z)) = p(e(x,y),e(x,z)).
+e(p(x,y),z) = p(e(x,z),e(y,z)).
+e(e(x,y),z) = e(x,p(y,z)).
+c = p(0,0).
+P = s(1,0).
+Q = s(P,c).
+R = s(1,p(0,c)).
+S = s(s(1,c),p(c,c)).
+p(e(s(e(P,0),e(Q,0)),b),e(s(e(R,b),e(S,b)),0)) !=
+p(e(s(e(P,b),e(Q,b)),0),e(s(e(R,0),e(S,0)),b)).
+2 = s(1,1).
+b != 0.
+b != 1.
+b != 2.
+b != p(0,x).
+P != p(Q,x).
+Q != p(P,x).
+R != p(S,x).
+S != p(R,x).
+s(1,0) != 1.
+s(2,0) != 1.
+s(0,0) != 1.
+c != 1.
+s(1,c) != 1.
+p(c,0) != 1.
+s(1,0) != 0.
+s(2,0) != 0.
+s(0,0) != 0.
+c != 0.
+s(1,c) != 0.
+s(2,0) != s(1,0).
+c != s(1,0).
+p(c,0) != s(1,0).
+c != s(2,0).
+c != s(0,0).
+s(1,c) != c.

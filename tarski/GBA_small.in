@@ -1,0 +1,22 @@
+assign(domain_size, 5).
+%clear(negprop).
+
+formulas(assumptions).
+
+s(x,y) = s(y,x).
+s(x,s(y,z)) = s(s(x,y),z).
+p(x,1) = x.
+p(x,y) = p(y,x).
+p(x,p(y,z)) = p(p(x,y),z).
+p(x,s(y,z)) = s(p(x,y),p(x,z)).
+e(1,x) = 1.
+e(x,1) = x.
+e(x,s(y,z)) = p(e(x,y),e(x,z)).
+e(p(x,y),z) = p(e(x,z),e(y,z)).
+e(e(x,y),z) = e(x,p(y,z)).
+c = p(a,a).
+P = s(1,a).
+Q = s(P,c).
+R = s(1,p(a,c)).
+S = s(s(1,c),p(c,c)).
+p(e(s(e(P,a),e(Q,a)),b),e(s(e(R,b),e(S,b)),a)) != p(e(s(e(P,b),e(Q,b)),a),e(s(e(R,a),e(S,a)),b)).
