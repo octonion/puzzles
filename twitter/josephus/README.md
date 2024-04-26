@@ -1,5 +1,5 @@
 
-Random Josephus problem.
+# Random Josephus problem.
 
 Initially n people are arranged in a circle and labelled 1..n
 in order. When person j goes, they uniformly at random kill
