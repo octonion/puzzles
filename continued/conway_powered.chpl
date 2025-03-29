@@ -1,14 +1,18 @@
+use Math;
+
+use GMP;
+
 use BigInteger;
 
 record Pell {
 	var x, y, D: bigint;
 }
 
-proc *(a: Pell, b: Pell) {
+operator *(a: Pell, b: Pell) {
 	return new Pell(a.x*b.y+a.y*b.x,a.D*a.x*b.x+a.y*b.y,a.D);
 }
 
-proc **(a: Pell, n: int) {
+operator **(a: Pell, n: int) {
 
   var x = new bigint(0);
   var y = new bigint(1);
@@ -172,12 +176,12 @@ var a: bigint = 1;
 var big_sfD = new bigint(sfD);
 var m: bigint;
 
-m.sqrt(2+big_sfD);
+sqrt(m,(2+big_sfD));
 var b = 2*m;
 var c = m**2-big_sfD;
 
 var sDel: bigint;
-sDel.sqrt(b**2-4*a*c);
+sqrt(sDel,(b**2-4*a*c));
 
 var d = (b+sDel)/(2*(c.sgn()*c));
 
