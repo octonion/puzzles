@@ -1,0 +1,14 @@
+
+  message: Optimization terminated successfully
+ success: True
+  status: 0
+     fun: -0.1458936703013689
+       x: [ 4.603e-02  1.558e-01  5.546e-02  0.000e+00]
+     nit: 5
+     jac: [ 1.996e-04  1.656e-06  9.764e-05  2.761e-01]
+    nfev: 26
+    njev: 5
+optimal value p* -0.1458936703013689
+optimal var: auburn =  0.046027111112978594  duke =  0.15582374906509402  houston =  0.05545514190972257
+optimal var: florida =  0.0
+exec time (ms):  1.832763671875
