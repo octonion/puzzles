@@ -30,21 +30,21 @@ This document explains a rating system for soccer teams based on modeling goal s
 * This implementation uses a specific **non-linear** update rule involving a weight $w$ (set to $1/20.0$ in the code).
 * **For Home Team Goals ($S_H$)**:
     1. Calculate $\mu_H = \exp(O_H - D_A)$.
-    2. Calculate the adjustment term $d_H$:
-       $d_H = \frac{1}{2} \left( -\log(\mu_H) + \log(w S_H + (1-w)\mu_H) \right)$
-       Which is equivalent to: $d_H = \frac{1}{2} \log\left( w \frac{S_H}{\mu_H} + (1-w) \right)$
+    2. Calculate an adjustment term $d_H$:
+       $$d_H = \frac{1}{2} \left( -\log(\mu_H) + \log(w S_H + (1-w)\mu_H) \right)$$
+       This formula first calculates a total "update signal" $\Delta_{total} = -\log(\mu_H) + \log(w S_H + (1-w)\mu_H)$ based on comparing the actual score $S_H$ to the expected score $\mu_H$ in a logarithmic, weighted manner.
+       The factor of $1/2$ then splits this total update signal equally between the participating offensive and defensive ratings.
     3. Update the ratings:
-       $O_H' = O_H + d_H$
-       $D_A' = D_A - d_H$
+       $$O_H' = O_H + d_H$$
+       $$D_A' = D_A - d_H$$
 * **For Away Team Goals ($S_A$)**:
     1. Calculate $\mu_A = \exp(O_A - D_H)$.
-    2. Calculate the adjustment term $d_A$:
-       $d_A = \frac{1}{2} \left( -\log(\mu_A) + \log(w S_A + (1-w)\mu_A) \right)$
-       Which is equivalent to: $d_A = \frac{1}{2} \log\left( w \frac{S_A}{\mu_A} + (1-w) \right)$
+    2. Calculate the adjustment term $d_A$, again splitting the effect:
+       $$d_A = \frac{1}{2} \left( -\log(\mu_A) + \log(w S_A + (1-w)\mu_A) \right)$$
     3. Update the ratings:
-       $O_A' = O_A + d_A$
-       $D_H' = D_H - d_A$
-* The update adjusts the offensive rating of the scoring team and the defensive rating of the conceding team based on how the actual score compares to the expectation, modulated non-linearly by the weight $w$.
+       $$O_A' = O_A + d_A$$
+       $$D_H' = D_H - d_A$$
+* The update adjusts the offensive rating of the scoring team and the defensive rating of the conceding team based on how the actual score compares to the expectation, modulated non-linearly by the weight $w$, with the effect split between the two ratings.
 
 ## 5. Derivation of Alternative (Linear) Update Rules
 
@@ -96,7 +96,7 @@ This provides a more formal justification based on the Poisson assumption ($S \s
 ## 6. Final Ranking (As Implemented in `poisson_elo.py`)
 
 * After processing all games, the script calculates a final strength score ($S_{team}$) for each team:
-    $S_{team} = \exp(O_{team} + D_{team})$
+    $$S_{team} = \exp(O_{team} + D_{team})$$
 * Teams are then ranked based on this score in descending order.
 * **Interpretation**: This metric represents $\exp(\text{Offensive Strength} + \text{Defensive Strength})$. As a higher $D$ seems to imply weaker defense, the meaning of this sum as an overall quality metric is specific to this model.
 
@@ -110,7 +110,7 @@ This provides a more formal justification based on the Poisson assumption ($S \s
 3.  **Prepare Data File**:
     * The script expects a CSV file named `E0.csv` (or whatever you set `input_csv_file` to inside the script) to be present in the *same directory* as `poisson_elo.py`.
     * This CSV file must contain historical match data with at least the following columns: `HomeTeam`, `AwayTeam`, `FTHG` (Full Time Home Goals), `FTAG` (Full Time Away Goals).
-    * You can often find suitable data files from sports statistics websites (the original data was sourced from https://football-data.co.uk).
+    * You can often find suitable data files from sports statistics websites (the sample data was sourced from https://football-data.co.uk).
 4.  **Run from Terminal**: Open a terminal or command prompt, navigate to the directory where you saved `poisson_elo.py` and `E0.csv`, and run the script using:
     ```bash
     python poisson_elo.py
