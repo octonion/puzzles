@@ -110,7 +110,7 @@ This provides a more formal justification based on the Poisson assumption ($S \s
 3.  **Prepare Data File**:
     * The script expects a CSV file named `E0.csv` (or whatever you set `input_csv_file` to inside the script) to be present in the *same directory* as `poisson_elo.py`.
     * This CSV file must contain historical match data with at least the following columns: `HomeTeam`, `AwayTeam`, `FTHG` (Full Time Home Goals), `FTAG` (Full Time Away Goals).
-    * You can often find suitable data files from sports statistics websites (like football-data.co.uk, which was referenced in the original code comments).
+    * You can often find suitable data files from sports statistics websites (the original data was sourced from https://football-data.co.uk).
 4.  **Run from Terminal**: Open a terminal or command prompt, navigate to the directory where you saved `poisson_elo.py` and `E0.csv`, and run the script using:
     ```bash
     python poisson_elo.py
