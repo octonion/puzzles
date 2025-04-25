@@ -116,3 +116,40 @@ This provides a more formal justification based on the Poisson assumption ($S \s
     python poisson_elo.py
     ```
 5.  **Output**: The script will print the initialization parameters, indicate when processing starts and finishes, and finally output the ranked list of teams with their final score, offensive strength (O), and defensive strength (D).
+
+## 8. Sample Output
+
+```
+Initializing team strengths...
+Initial O = 0.336, Initial D = 0.000
+Processing 380 games...
+Finished processing games.
+
+--- Final Team Rankings ---
+Team                 Final Score     Off Strength (O)     Def Strength (D)    
+---------------------------------------------------------------------------
+Man City             3.259           0.811                0.371               
+Liverpool            2.461           0.645                0.256               
+Man United           2.264           0.467                0.349               
+Tottenham            2.216           0.564                0.231               
+Arsenal              1.821           0.577                0.023               
+Chelsea              1.735           0.408                0.143               
+Crystal Palace       1.398           0.310                0.025               
+Leicester            1.359           0.398                -0.092              
+Newcastle            1.336           0.184                0.105               
+Burnley              1.314           0.109                0.164               
+Everton              1.215           0.221                -0.026              
+Bournemouth          1.172           0.273                -0.114              
+West Ham             1.154           0.295                -0.152              
+Southampton          1.105           0.132                -0.033              
+Watford              1.103           0.192                -0.095              
+Brighton             1.087           0.097                -0.013              
+West Brom            1.043           0.078                -0.036              
+Stoke                0.971           0.088                -0.118              
+Swansea              0.959           -0.020               -0.022              
+Huddersfield         0.935           -0.037               -0.031              
+
+Note: Higher 'Final Score' indicates higher rank.
+      O = Offensive Strength, D = Defensive Strength (Higher D implies weaker defense in this model).
+      Final Score = exp(O + D)
+```
