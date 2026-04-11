@@ -29,7 +29,7 @@ We describe the search strategy implemented in \texttt{fruits\_solver\_complete.
 \[
 \frac{a}{b+c}+\frac{b}{a+c}+\frac{c}{a+b}=N.
 \]
-The implementation follows Bremner and Macleod's elliptic-curve model, positivity criterion, odd-$N$ obstruction, and size-height lower bound. The Mordell--Weil lattice search strategy was suggested by Noam Elkies (personal communication). The key structural point is that one must search only the affine parity coset that can land on the bounded real component (the ``egg''). The default initial shell is chosen heuristically from the Haar-measure fraction of the egg occupied by positive solutions, with default target probability $p=1/2$. Certification itself remains rigorous and independent of this heuristic.
+The implementation follows Bremner and Macleod's elliptic-curve model, positivity criterion, odd-$N$ obstruction, and size-height lower bound \cite{BremnerMacleod2014}. The Mordell--Weil lattice search strategy was suggested by Noam Elkies (personal communication) \cite{ElkiesPersonalCommunication}. The key structural point is that one must search only the affine parity coset that can land on the bounded real component (the ``egg''). The default initial shell is chosen heuristically from the Haar-measure fraction of the egg occupied by positive solutions, with default target probability $p=1/2$. Certification itself remains rigorous and independent of this heuristic.
 \end{abstract}
 
 \section{The Diophantine problem}
@@ -44,7 +44,7 @@ C_N:\quad a(a+b)(a+c)+b(a+b)(b+c)+c(a+c)(b+c)-N(a+b)(a+c)(b+c)=0.
 Since \eqref{eq:fruits} is homogeneous, the natural object is the projective point $[a:b:c]\in C_N(\Q)$. Positive solutions are normalized in the solver to a \emph{primitive sorted triple} $(a,b,c)$ with $a\le b\le c$ and $\gcd(a,b,c)=1$.
 
 \section{Elliptic curve model and exact back-map}
-Bremner and Macleod show that the cubic is birational to
+Bremner and Macleod show that the cubic is birational to \cite{BremnerMacleod2014}
 \begin{equation}\label{eq:EN}
 E_N:\quad y^2=x^3+(4N^2+12N-3)x^2+32(N+3)x.
 \end{equation}
@@ -59,7 +59,7 @@ The coordinates in \eqref{eq:back} are projective. Consequently, if the cleared 
 \end{remark}
 
 \section{The positive real component}
-Bremner and Macleod prove that for $N>0$ the curve \eqref{eq:EN} has two real components except for a small list of singular exceptions, and that positive solutions arise only from the bounded component, the ``egg.'' More precisely, their Theorem~4.1 gives two explicit intervals in the $x$-coordinate of \eqref{eq:EN}; a rational point corresponds to $a,b,c>0$ if and only if its $x$-coordinate lies in one of those two intervals.
+Bremner and Macleod prove that for $N>0$ the curve \eqref{eq:EN} has two real components except for a small list of singular exceptions, and that positive solutions arise only from the bounded component, the ``egg'' \cite{BremnerMacleod2014}. More precisely, their Theorem~4.1 gives two explicit intervals in the $x$-coordinate of \eqref{eq:EN}; a rational point corresponds to $a,b,c>0$ if and only if its $x$-coordinate lies in one of those two intervals.
 
 They also prove in Theorem~5.1 that if $N$ is odd then there are no rational points on the egg, hence no positive solutions of \eqref{eq:fruits}. This gives the solver an immediate theorem-based obstruction for odd $N$.
 
@@ -107,7 +107,7 @@ Every rational point has a unique decomposition $t+\sum n_iP_i$ with $t\in T$ an
 \end{proof}
 
 \section{Rigorous certification}
-Theorem~7.1 of Bremner and Macleod gives the lower bound
+Theorem~7.1 of Bremner and Macleod \cite{BremnerMacleod2014} gives the lower bound
 \begin{equation}\label{eq:BM-bound}
 \max(\log a,\log b)>\frac32\,\hhat(P)-6\log N-10
 \end{equation}
@@ -167,7 +167,7 @@ The initial shell is then chosen from
 By default, $p=1/2$, so the code selects the smallest $B$ for which the model predicts roughly a fifty-percent first-hit chance.
 
 \begin{remark}
-This heuristic matches the spirit of Bremner and Macleod's discussion in rank one, where a crude estimate gives probability $O(1/N)$ for a random point on the egg to lie in the positive region. The implementation simply refines that idea by using Haar measure on the egg and the Mordell--Weil lattice volume.
+This heuristic matches the spirit of Bremner and Macleod's discussion in rank one \cite{BremnerMacleod2014}, where a crude estimate gives probability $O(1/N)$ for a random point on the egg to lie in the positive region. The implementation simply refines that idea by using Haar measure on the egg and the Mordell--Weil lattice volume.
 \end{remark}
 
 \section{Implementation summary}
@@ -180,5 +180,18 @@ The current solver therefore has four distinct layers.
 \end{enumerate}
 
 This reproduces the speed philosophy of the older rank-specific scripts while retaining a basis-invariant, torsion-complete, and certifying higher-rank search.
+
+\section*{Acknowledgements}
+The Mordell--Weil lattice search viewpoint used here was suggested by Noam Elkies in personal communication.
+
+\begin{thebibliography}{9}
+\bibitem{BremnerMacleod2014}
+A. Bremner and A. Macleod,
+\emph{An unusual cubic representation problem},
+Annales Mathematicae et Informaticae \textbf{43} (2014), 29--41.
+
+\bibitem{ElkiesPersonalCommunication}
+N. Elkies, personal communication on the Mordell--Weil lattice search strategy for the fruits equation.
+\end{thebibliography}
 
 \end{document}
