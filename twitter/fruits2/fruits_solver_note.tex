@@ -1,0 +1,184 @@
+\documentclass[11pt]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amssymb,amsthm,mathtools}
+\usepackage{enumitem}
+\usepackage{hyperref}
+\usepackage[nameinlink,noabbrev]{cleveref}
+
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{remark}[theorem]{Remark}
+\newtheorem{definition}[theorem]{Definition}
+
+\newcommand{\Q}{\mathbf Q}
+\newcommand{\R}{\mathbf R}
+\newcommand{\Z}{\mathbf Z}
+\newcommand{\hhat}{\hat h}
+\newcommand{\PP}{\mathbf P}
+
+\title{A Component-Aware Certified Mordell--Weil Search\\for the Fruits Equation}
+\author{}
+\date{}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+We describe the search strategy implemented in \texttt{fruits\_solver\_complete.sage} for positive integer solutions of
+\[
+\frac{a}{b+c}+\frac{b}{a+c}+\frac{c}{a+b}=N.
+\]
+The implementation follows Bremner and Macleod's elliptic-curve model, positivity criterion, odd-$N$ obstruction, and size-height lower bound. The Mordell--Weil lattice search strategy was suggested by Noam Elkies (personal communication). The key structural point is that one must search only the affine parity coset that can land on the bounded real component (the ``egg''). The default initial shell is chosen heuristically from the Haar-measure fraction of the egg occupied by positive solutions, with default target probability $p=1/2$. Certification itself remains rigorous and independent of this heuristic.
+\end{abstract}
+
+\section{The Diophantine problem}
+For fixed $N\in\Z_{>0}$, consider
+\begin{equation}\label{eq:fruits}
+\frac{a}{b+c}+\frac{b}{a+c}+\frac{c}{a+b}=N.
+\end{equation}
+Clearing denominators gives the homogeneous cubic
+\begin{equation}\label{eq:cubic}
+C_N:\quad a(a+b)(a+c)+b(a+b)(b+c)+c(a+c)(b+c)-N(a+b)(a+c)(b+c)=0.
+\end{equation}
+Since \eqref{eq:fruits} is homogeneous, the natural object is the projective point $[a:b:c]\in C_N(\Q)$. Positive solutions are normalized in the solver to a \emph{primitive sorted triple} $(a,b,c)$ with $a\le b\le c$ and $\gcd(a,b,c)=1$.
+
+\section{Elliptic curve model and exact back-map}
+Bremner and Macleod show that the cubic is birational to
+\begin{equation}\label{eq:EN}
+E_N:\quad y^2=x^3+(4N^2+12N-3)x^2+32(N+3)x.
+\end{equation}
+The explicit map back to the cubic is
+\begin{equation}\label{eq:back}
+a:b:c=-x+y+8(N+3): -x-y+8(N+3): -2(N+2)x-8(N+3).
+\end{equation}
+The solver uses \eqref{eq:back} exactly, rather than a generic cubic morphism.
+
+\begin{remark}
+The coordinates in \eqref{eq:back} are projective. Consequently, if the cleared integer triple has all three coordinates negative, then multiplication by $-1$ gives the same projective point and hence the same positive solution. The exact admissibility test therefore allows a global sign change before checking positivity.
+\end{remark}
+
+\section{The positive real component}
+Bremner and Macleod prove that for $N>0$ the curve \eqref{eq:EN} has two real components except for a small list of singular exceptions, and that positive solutions arise only from the bounded component, the ``egg.'' More precisely, their Theorem~4.1 gives two explicit intervals in the $x$-coordinate of \eqref{eq:EN}; a rational point corresponds to $a,b,c>0$ if and only if its $x$-coordinate lies in one of those two intervals.
+
+They also prove in Theorem~5.1 that if $N$ is odd then there are no rational points on the egg, hence no positive solutions of \eqref{eq:fruits}. This gives the solver an immediate theorem-based obstruction for odd $N$.
+
+\begin{definition}
+Assume $E_N(\R)$ has two connected components. Let
+\[
+\chi:E_N(\R)\to\Z/2\Z
+\]
+be the component homomorphism, with $\chi=0$ on the identity component and $\chi=1$ on the egg.
+\end{definition}
+
+If
+\[
+E_N(\Q)=T\oplus \langle P_1,\dots,P_r\rangle,
+\]
+then for
+\[
+P=t+n_1P_1+\cdots+n_rP_r
+\]
+we have
+\begin{equation}\label{eq:component}
+\chi(P)\equiv \chi(t)+\sum_{i=1}^r n_i\chi(P_i)\pmod 2.
+\end{equation}
+Hence the free-part coefficient vectors that can land on the egg form a single affine parity coset of $\Z^r$.
+
+\section{Mordell--Weil lattice search}
+Fix a free basis $P_1,\dots,P_r$ and let $T=E_N(\Q)_{\mathrm{tors}}$. The canonical height gives a positive-definite quadratic form
+\[
+\hhat\!\left(\sum_{i=1}^r n_iP_i\right)=n^{\mathsf T}Hn,
+\]
+where $H$ is the N\'eron--Tate height pairing matrix.
+
+The exhaustive search space up to height bound $B$ is therefore
+\[
+\Lambda(B)=\{n\in\Z^r:n^{\mathsf T}Hn\le B\}.
+\]
+The implementation enumerates $\Lambda(B)$ in nondecreasing canonical height, after an optional LLL reduction of $H$. For each $n\in\Lambda(B)$ it uses \eqref{eq:component} to retain only the torsion translates that lie on the egg. After this parity filter, the code applies the explicit $x$-interval test from Theorem~4.1 as a cheap prefilter and maps the surviving points back to the cubic exactly using \eqref{eq:back}.
+
+\begin{proposition}[Completeness up to height bound]
+Suppose every vector $n\in\Lambda(B)$ is enumerated and every torsion translate satisfying the egg-component condition is tested. Then every positive rational point of $E_N(\Q)$ of canonical height at most $B$ is examined by the solver.
+\end{proposition}
+
+\begin{proof}
+Every rational point has a unique decomposition $t+\sum n_iP_i$ with $t\in T$ and $n\in\Z^r$. The canonical height depends only on the free part, so $\hhat(P)=n^{\mathsf T}Hn$. If this is at most $B$, then $n\in\Lambda(B)$. The component condition is necessary for positivity because positive solutions occur only on the egg. Therefore the solver examines exactly all points that could possibly contribute positive solutions up to height $B$.
+\end{proof}
+
+\section{Rigorous certification}
+Theorem~7.1 of Bremner and Macleod gives the lower bound
+\begin{equation}\label{eq:BM-bound}
+\max(\log a,\log b)>\frac32\,\hhat(P)-6\log N-10
+\end{equation}
+for every positive solution corresponding to a point $P\in E_N(\Q)$.
+
+This yields the solver's certification rules.
+
+\begin{enumerate}[label=\arabic*.]
+\item For the criterion \texttt{canonical}, once the search has exhausted every free-part vector of canonical height less than the current best value, the current best point is certified minimal.
+\item For the criterion \texttt{max}, \eqref{eq:BM-bound} gives a lower bound on $\max\{a,b,c\}$ for every unsearched point. Once this lower bound exceeds the current best value of $\max\{a,b,c\}$, minimality is certified.
+\item For the criterion \texttt{sum}, since $a+b+c\ge \max\{a,b,c\}$ for positive triples, the same lower bound certifies minimality of $a+b+c$ as well.
+\end{enumerate}
+
+The heuristic initial shell discussed below plays no role in these proofs; it only chooses the first search radius.
+
+\section{Heuristic first shell}
+The solver's default when no explicit initial height bound is given is to choose a first shell targeting probability
+\[
+p=\frac12.
+\]
+This is only a scouting heuristic. It is not a theorem and it does not affect the correctness of the later certificate.
+
+The guiding model has two separate parts.
+
+\subsection*{Egg versus non-egg is deterministic}
+The component law \eqref{eq:component} determines exactly which free-part vectors can land on the egg. If the egg is reachable, then asymptotically these vectors occupy one affine parity coset, hence density $1/2$ in the full free lattice.
+
+The solver also quotients heuristically by the sign symmetry $P\sim -P$, since the sorted primitive triple does not distinguish these two points. This contributes another factor $1/2$.
+
+\subsection*{Positivity inside the egg is heuristic}
+Let $\mu$ denote the natural Haar measure on the real elliptic component, equivalently the measure induced by the invariant differential $|dx/(2y)|$. Define
+\[
+\delta_N := \frac{\mu(\text{positive region on egg})}{\mu(\text{full egg})}.
+\]
+The solver computes $\delta_N$ numerically from the two intervals of Theorem~4.1.
+
+If the bounded component of \eqref{eq:EN} is written as $y^2=(x-r_1)(r_2-x)(r_3-x)$ with $r_1<r_2<r_3$, then the substitution
+\[
+x=\frac{r_1+r_2}{2}+\frac{r_2-r_1}{2}\sin t
+\]
+transforms the egg measure to
+\[
+\frac{dt}{\sqrt{r_3-x(t)}}.
+\]
+Thus the solver evaluates $\delta_N$ by numerical quadrature in the parameter $t$, not by crude Euclidean $x$-length.
+
+Under the equidistribution heuristic on the egg, the expected number of positive primitive sorted triples with canonical height at most $B$ is modeled by
+\begin{equation}\label{eq:lambda}
+\lambda(B) \approx \delta_N\cdot \frac14\cdot \frac{v_r B^{r/2}}{\sqrt{\det H}},
+\end{equation}
+where $v_r$ is the Euclidean volume of the unit ball in rank $r$. The factor $1/4$ is the product of the parity-coset density $1/2$ and the sign-symmetry factor $1/2$.
+
+The initial shell is then chosen from
+\[
+1-e^{-\lambda(B)} \approx p.
+\]
+By default, $p=1/2$, so the code selects the smallest $B$ for which the model predicts roughly a fifty-percent first-hit chance.
+
+\begin{remark}
+This heuristic matches the spirit of Bremner and Macleod's discussion in rank one, where a crude estimate gives probability $O(1/N)$ for a random point on the egg to lie in the positive region. The implementation simply refines that idea by using Haar measure on the egg and the Mordell--Weil lattice volume.
+\end{remark}
+
+\section{Implementation summary}
+The current solver therefore has four distinct layers.
+\begin{enumerate}[label=\arabic*.]
+\item A paper-based exact model for the cubic and its elliptic parametrization.
+\item A deterministic component filter using the real-component parity law.
+\item A heuristic initial-shell selector based on the Haar-measure fraction of the egg occupied by positive solutions, with default target probability $p=1/2$.
+\item A rigorous certification step based on complete height search and Theorem~7.1.
+\end{enumerate}
+
+This reproduces the speed philosophy of the older rank-specific scripts while retaining a basis-invariant, torsion-complete, and certifying higher-rank search.
+
+\end{document}
