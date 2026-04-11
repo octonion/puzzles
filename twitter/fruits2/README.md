@@ -14,6 +14,17 @@ The implementation follows Bremner and Macleod, *An unusual cubic representation
 fruits_solver_complete.sage
 ```
 
+## SageMath support
+
+The current solver is intended to support both **SageMath 10.7** and **SageMath 10.8**.
+
+Two small implementation details are version-sensitive in practice.
+
+- The PARI interface may expose `gp(...)` results through different wrapper types, so the code first tries `raw.sage()` and then falls back to `gen_to_sage`.
+- The Haar-measure quadrature used only for the heuristic initial shell is kept in pure `mpmath` types. This avoids mixed Sage/mpmath coercion issues observed under SageMath 10.7 while remaining fully compatible with SageMath 10.8.
+
+These compatibility adjustments affect only auxiliary implementation details. They do **not** change the mathematical search or certification logic.
+
 The solver supports three certification targets on **primitive sorted triples** `(a,b,c)`:
 
 - `max`: minimize `max(a,b,c)`.
@@ -58,7 +69,7 @@ The solver is **component-aware**.
 3. It uses Theorem 4.1 as a cheap `x`-coordinate prefilter.
 4. Only then does it map the surviving points back to the cubic exactly.
 
-This is the same structural idea as the old rank-specific scripts. In rank `1`, the solver uses a direct cyclic search in the spirit of the original code. In higher rank, it uses the full Mordell-Weil lattice with LLL reduction and `qfminim`.
+This is the same structural idea as the old rank-specific scripts. In rank `1`, the solver uses a direct cyclic search in the spirit of the original code. In higher rank, it uses the full Mordell-Weil lattice with LLL reduction and `qfminim`. Since `qfminim(...,2)` already returns one representative from each sign pair `±n`, the solver no longer duplicates those vectors in the higher-rank search. This reduces work without changing the primitive sorted solution that is ultimately certified.
 
 ## Heuristic initial shell
 
@@ -86,7 +97,7 @@ delta_N = mu(positive region on egg) / mu(full egg),
 
 where `mu` is the natural real elliptic-group measure `|dx/(2y)|`. This matches the paper's discussion that, in rank `1`, a crude estimate gives probability `O(1/N)` for a random point on the egg to land in the positive region.
 
-The solver then models the expected number of positive primitive sorted triples up to height `B` by
+The solver then models the expected number of egg-coset representatives up to height `B` by
 
 ```text
 lambda(B) ~ delta_N * sample_density * v_r * B^(r/2) / sqrt(det H),
@@ -95,7 +106,9 @@ lambda(B) ~ delta_N * sample_density * v_r * B^(r/2) / sqrt(det H),
 where
 - `H` is the canonical-height Gram matrix,
 - `v_r` is the volume of the Euclidean unit ball in rank `r`,
-- `sample_density = 1/2` for the egg parity coset and another `1/2` for the projective sign symmetry `P ~ -P`.
+- `sample_density = 1/2` for the egg parity coset when the egg is reachable.
+
+No extra sign-density factor is inserted here, because the higher-rank enumerator already keeps one representative from each sign pair `±n`.
 
 The initial shell is then chosen from the heuristic equation
 
@@ -149,3 +162,8 @@ The current solver combines the strengths of the old scripts and the new certifi
 - the initial shell is chosen by a Haar-measure heuristic on the egg,
 - exact projective positivity is handled correctly,
 - and certification is available for `max`, `sum`, and `canonical`.
+
+
+## Version note
+
+The code path described above has been exercised successfully under SageMath 10.8 and under SageMath 10.7 after the compatibility fixes described above. In particular, the 10.7 support update keeps the heuristic quadrature purely in `mpmath`, while the 10.8-compatible PARI conversion fallback remains in place for the lattice enumeration backend.

@@ -1,0 +1,59 @@
+N = 4
+Elliptic curve F = Elliptic Curve defined by y^2 = x^3 + 109*x^2 + 224*x over Rational Field
+rank = 1
+torsion order = 6
+torsion points = 6
+generator certification proved = True
+enumeration pair cap = None
+generator component bits (0=identity,1=egg) = [1]
+torsion component bits   (0=identity,1=egg) = [0, 0, 0, 0, 0, 0]
+heuristic Haar fraction delta_egg = 0.136189689230
+heuristic effective sample density = 0.500000000000
+height-pairing matrix =
+[1.51870218672685160137268364297736044451196528542481614111485289]
+LLL transform U =
+[1]
+reduced Gram matrix U^T H U =
+[1.51870218672685160137268364297736044451196528542481614111485289]
+
+Heuristic initial canonical-height bound from p=0.500000: 39.340065858317
+  heuristic uses delta_egg=0.136189689230 and effective sample density 0.500000000000
+Searching all free-part vectors with canonical height <= 39.340065858317
+  new lattice vectors: 6
+  total torsion translates tested = 18
+  exact admissibility tests      = 0
+  admissible hits found          = 0
+
+Searching all free-part vectors with canonical height <= 78.680131716634
+  new lattice vectors: 2
+  total torsion translates tested = 24
+  exact admissibility tests      = 0
+  admissible hits found          = 0
+
+Searching all free-part vectors with canonical height <= 157.360263433268
+New best candidate:
+  triple       = (4373612677928697257861252602371390152816537558161613618621437993378423467772036, 36875131794129999827197811565225474825492979968971970996283137471637224634055579, 154476802108746166441951315019919837485664325669565431700026634898253202035277999)
+  max(a,b,c)   = 154476802108746166441951315019919837485664325669565431700026634898253202035277999
+  a+b+c        = 195725546580804863527010379187516702463973843196699016314931210363268850137105614
+  canonical h  = 123.014877124874971059398376382887
+
+  new lattice vectors: 3
+  total torsion translates tested = 30
+  exact admissibility tests      = 3
+  admissible hits found          = 1
+
+searched canonical height <= 157.360263433268
+free-part lattice vectors processed = 11
+torsion translates tested = 30
+exact admissibility tests = 3
+admissible hits found = 1
+
+Best solution for criterion 'max':
+  triple       = (4373612677928697257861252602371390152816537558161613618621437993378423467772036, 36875131794129999827197811565225474825492979968971970996283137471637224634055579, 154476802108746166441951315019919837485664325669565431700026634898253202035277999)
+  max(a,b,c)   = 154476802108746166441951315019919837485664325669565431700026634898253202035277999
+  a+b+c        = 195725546580804863527010379187516702463973843196699016314931210363268850137105614
+  canonical h  = 123.014877124874971059398376382887
+
+size-height certification threshold (via Theorem 7.1) = 135.306298238104
+current best size = 154476802108746166441951315019919837485664325669565431700026634898253202035277999
+Certified minimal for criterion 'max': True

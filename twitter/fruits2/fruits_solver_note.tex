@@ -32,6 +32,14 @@ We describe the search strategy implemented in \texttt{fruits\_solver\_complete.
 The implementation follows Bremner and Macleod's elliptic-curve model, positivity criterion, odd-$N$ obstruction, and size-height lower bound \cite{BremnerMacleod2014}. The Mordell--Weil lattice search strategy was suggested by Noam Elkies (personal communication) \cite{ElkiesPersonalCommunication}. The key structural point is that one must search only the affine parity coset that can land on the bounded real component (the ``egg''). The default initial shell is chosen heuristically from the Haar-measure fraction of the egg occupied by positive solutions, with default target probability $p=1/2$. Certification itself remains rigorous and independent of this heuristic.
 \end{abstract}
 
+\section{Implementation compatibility}
+The current code is intended to support both SageMath 10.7 and SageMath 10.8. Two small implementation details are version-sensitive in practice.
+\begin{enumerate}[label=\arabic*.]
+\item The PARI interface can expose the output of \texttt{gp(...)} through slightly different wrapper types. The implementation therefore first tries a native \texttt{.sage()} conversion and then falls back to \texttt{gen\_to\_sage}.
+\item The Haar-measure quadrature used only for the heuristic first shell is kept entirely in pure \texttt{mpmath} types. This avoids mixed Sage/\texttt{mpmath} coercion failures observed under SageMath 10.7, while remaining fully compatible with SageMath 10.8.
+\end{enumerate}
+These adjustments affect only auxiliary implementation details. They do not alter the mathematical search or the certification argument.
+
 \section{The Diophantine problem}
 For fixed $N\in\Z_{>0}$, consider
 \begin{equation}\label{eq:fruits}
@@ -133,9 +141,7 @@ This is only a scouting heuristic. It is not a theorem and it does not affect th
 The guiding model has two separate parts.
 
 \subsection*{Egg versus non-egg is deterministic}
-The component law \eqref{eq:component} determines exactly which free-part vectors can land on the egg. If the egg is reachable, then asymptotically these vectors occupy one affine parity coset, hence density $1/2$ in the full free lattice.
-
-The solver also quotients heuristically by the sign symmetry $P\sim -P$, since the sorted primitive triple does not distinguish these two points. This contributes another factor $1/2$.
+The component law \eqref{eq:component} determines exactly which free-part vectors can land on the egg. If the egg is reachable, then asymptotically these vectors occupy one affine parity coset, hence density $1/2$ in the full free lattice. In the higher-rank implementation, PARI's \texttt{qfminim(...,2)} already returns one representative from each sign pair $\{\pm n\}$, and the solver keeps that single representative. Thus no additional sign-density factor is inserted into the first-shell model.
 
 \subsection*{Positivity inside the egg is heuristic}
 Let $\mu$ denote the natural Haar measure on the real elliptic component, equivalently the measure induced by the invariant differential $|dx/(2y)|$. Define
@@ -154,11 +160,11 @@ transforms the egg measure to
 \]
 Thus the solver evaluates $\delta_N$ by numerical quadrature in the parameter $t$, not by crude Euclidean $x$-length.
 
-Under the equidistribution heuristic on the egg, the expected number of positive primitive sorted triples with canonical height at most $B$ is modeled by
+Under the equidistribution heuristic on the egg, the expected number of egg-coset representatives with canonical height at most $B$ is modeled by
 \begin{equation}\label{eq:lambda}
-\lambda(B) \approx \delta_N\cdot \frac14\cdot \frac{v_r B^{r/2}}{\sqrt{\det H}},
+\lambda(B) \approx \delta_N\cdot \frac12\cdot \frac{v_r B^{r/2}}{\sqrt{\det H}},
 \end{equation}
-where $v_r$ is the Euclidean volume of the unit ball in rank $r$. The factor $1/4$ is the product of the parity-coset density $1/2$ and the sign-symmetry factor $1/2$.
+where $v_r$ is the Euclidean volume of the unit ball in rank $r$. The factor $1/2$ is the parity-coset density of the egg inside the full Mordell--Weil lattice when the egg is reachable. No further sign factor is inserted, because the higher-rank enumerator already keeps one representative from each sign pair $\{\pm n\}$.
 
 The initial shell is then chosen from
 \[
@@ -179,7 +185,7 @@ The current solver therefore has four distinct layers.
 \item A rigorous certification step based on complete height search and Theorem~7.1.
 \end{enumerate}
 
-This reproduces the speed philosophy of the older rank-specific scripts while retaining a basis-invariant, torsion-complete, and certifying higher-rank search.
+This reproduces the speed philosophy of the older rank-specific scripts while retaining a basis-invariant, torsion-complete, and certifying higher-rank search. Rank one is handled by a direct cyclic search; higher rank is handled by a component-aware lattice search in which one sign representative from each $\{\pm n\}$ pair is enumerated.
 
 \section*{Acknowledgements}
 The Mordell--Weil lattice search viewpoint used here was suggested by Noam Elkies in personal communication.

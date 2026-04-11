@@ -11,6 +11,16 @@ problem* (Ann. Math. Inform. 43 (2014), 29--41), together with the older
 rank-specific search scripts in the repository.  The Mordell--Weil lattice search
 strategy was suggested by Noam Elkies (personal communication).
 
+Compatibility note
+------------------
+The solver is intended to run under both SageMath 10.7 and 10.8.  Two small
+implementation details are version-sensitive in practice:
+* PARI output from ``gp(...)`` may arrive as different Python wrapper types, so
+  the code first tries ``raw.sage()`` and then falls back to ``gen_to_sage``.
+* The Haar-measure quadrature used only for the heuristic first shell is kept in
+  pure ``mpmath`` types to avoid mixed Sage/mpmath coercion failures that can
+  occur in SageMath 10.7.
+
 Design goals
 ------------
 * exact elliptic-curve model and exact back-map to the cubic;
@@ -282,27 +292,36 @@ class FruitsCurve(object):
         old_dps = mp.mp.dps
         mp.mp.dps = work_dps
         try:
+            # Keep the quadrature entirely in mpmath types.  This avoids mixed
+            # Sage/mpmath coercion issues observed in SageMath 10.7, while also
+            # remaining perfectly fine under SageMath 10.8.
+            one = mp.mpf('1')
+            half = mp.mpf('0.5')
+            neg_one = mp.mpf('-1')
+            pos_one = mp.mpf('1')
+
             r1 = mp.mpf(str(self.egg_x_interval[0]))
             r2 = mp.mpf(str(self.egg_x_interval[1]))
             r3 = mp.mpf(str(self.identity_component_x_threshold_F))
-            mid = (r1 + r2) / 2
-            span = (r2 - r1) / 2
+            mid = half * (r1 + r2)
+            span = half * (r2 - r1)
 
             def x_of_t(t):
                 return mid + span * mp.sin(t)
 
             def density_t(t):
-                return 1 / mp.sqrt(r3 - x_of_t(t))
+                return one / mp.sqrt(r3 - x_of_t(t))
 
             def t_of_x(x):
                 z = (mp.mpf(str(x)) - mid) / span
-                if z < -1:
-                    z = mp.mpf('-1')
-                elif z > 1:
-                    z = mp.mpf('1')
+                if z < neg_one:
+                    z = neg_one
+                elif z > pos_one:
+                    z = pos_one
                 return mp.asin(z)
 
-            denom = mp.quad(density_t, [-mp.pi / 2, mp.pi / 2])
+            half_pi = half * mp.pi
+            denom = mp.quad(density_t, [-half_pi, half_pi])
             num = mp.mpf('0')
             for lo, hi in self.prefilter_intervals:
                 a = max(mp.mpf(str(lo)), r1)
@@ -312,7 +331,7 @@ class FruitsCurve(object):
                 ta = t_of_x(a)
                 tb = t_of_x(b)
                 num += mp.quad(density_t, [ta, tb])
-            frac = num / denom if denom != 0 else mp.mpf('0')
+            frac = num / denom if denom != mp.mpf('0') else mp.mpf('0')
             if frac < 0:
                 frac = mp.mpf('0')
             if frac > 1:
@@ -420,8 +439,9 @@ class LatticeEnumerator(object):
     Enumerate free-part lattice vectors with n^T H n <= B.
 
     We work in the LLL-reduced basis when available.  PARI's qfminim returns one
-    representative for each pair ±m, so we explicitly add both signs before
-    transforming back to the original coordinates.
+    representative for each pair ±m.  Since P and -P correspond to the same
+    primitive sorted triple up to swapping a and b, we keep only that single
+    representative and transform it back to the original coordinates.
     """
 
     def __init__(self, mw_data, shell_slack=None, max_pairs=None):
@@ -434,6 +454,9 @@ class LatticeEnumerator(object):
         self._seen = set()
 
     def _convert_gp(self, raw):
+        # SageMath 10.7 and 10.8 can expose PARI results through slightly
+        # different wrapper types here.  Prefer the native .sage() conversion and
+        # fall back to gen_to_sage for older/newer interface variants.
         try:
             return raw.sage()
         except Exception:
@@ -479,16 +502,14 @@ class LatticeEnumerator(object):
 
         for j in range(V.ncols()):
             m = vector(ZZ, [ZZ(V[i, j]) for i in range(V.nrows())])
-            for sgn in (+1, -1):
-                ms = sgn * m
-                n = self.U * ms
-                key = tuple(ZZ(x) for x in n)
-                if key in self._seen:
-                    continue
-                qval = self.mw.lattice_quadratic_value(n)
-                if qval <= RR(bound) + self.shell_slack:
-                    self._seen.add(key)
-                    candidates.append(vector(ZZ, key))
+            n = self.U * m
+            key = tuple(ZZ(x) for x in n)
+            if key in self._seen:
+                continue
+            qval = self.mw.lattice_quadratic_value(n)
+            if qval <= RR(bound) + self.shell_slack:
+                self._seen.add(key)
+                candidates.append(vector(ZZ, key))
 
         candidates.sort(key=lambda v: (self.mw.lattice_quadratic_value(v), tuple(v)))
         return candidates
@@ -548,15 +569,14 @@ class FruitsSolver(object):
         # Heuristic first-shell constants.  The egg/non-egg split is exact via the
         # component character; if some generator lies on the egg then the relevant
         # free-part vectors form one affine parity coset, hence asymptotic density
-        # 1/2 in the full free lattice.  We also quotient heuristically by the
-        # sign symmetry P ~ -P because the projective triple and its sorted form do
-        # not distinguish these two points.
+        # 1/2 in the full free lattice.  The higher-rank enumerator keeps one
+        # representative from each sign pair ±n, so no further sign-density factor
+        # is inserted here.
         if self.mw.rank > 0 and any(bit == self.egg_label for bit in self.generator_component_bits):
             self.egg_coset_density = RR(1) / RR(2)
         else:
             self.egg_coset_density = RR(1)
-        self.projective_sign_density = RR(1) / RR(2) if self.mw.rank > 0 else RR(1)
-        self.heuristic_sample_density = self.egg_coset_density * self.projective_sign_density
+        self.heuristic_sample_density = self.egg_coset_density
         self.last_heuristic_info = None
 
         self.theorem_impossible_reason = None
@@ -736,13 +756,16 @@ class FruitsSolver(object):
         unit_ball = pi ** (RR(r) / 2) / gamma(RR(r) / 2 + 1)
         lam = -log(RR(1) - p)
 
-        # Expected number of positive primitive sorted triples up to height B:
+        # Expected number of egg-coset representatives up to height B:
         #     lambda(B) ~ delta_N * sample_density * vol(B) / sqrt(det H),
         # where delta_N is the Haar-measure fraction of the egg occupied by the
-        # positive region, sample_density = 1/2 for the egg parity coset and 1/2
-        # for the sign symmetry P ~ -P, and
+        # positive region, sample_density = 1/2 for the egg parity coset when the
+        # egg is reachable, and
         #     vol(B) = v_r B^{r/2}
         # for the ellipsoid n^T H n <= B.
+        #
+        # Since the higher-rank enumerator already keeps one representative from
+        # each sign pair ±n, no extra projective sign factor is inserted here.
         coeff = delta * self.heuristic_sample_density * unit_ball / sqrt(detH)
         B = (lam / coeff) ** (RR(2) / RR(r))
         B = max(B, RR(20))
