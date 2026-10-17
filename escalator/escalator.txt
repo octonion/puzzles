@@ -2,7 +2,6 @@ Standing only expected waiting time = 0.292842
 Standing only expected total time = 14.578556
 Standing only people per second = 0.500000
 Standing only capacity = 3.500000
-
 Split queue expected waiting time = 0.356902
 Split queue expected total time = 12.737855
 Split queue people per second = 0.500000

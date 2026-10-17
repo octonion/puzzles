@@ -19,7 +19,8 @@ y = 1/2
 # Average arrivals between steps
 b = y*D
 
-from sage.all import exp, lambert_w, find_root
+from math import exp
+from scipy.special import lambertw
 
 # Standing only: two people can board each step
 def standing_wait(rate):
@@ -29,7 +30,7 @@ def standing_wait(rate):
     if rate == 0:
         return D/2
     p = load/2
-    z = -float(lambert_w(p*exp(-p)))/p
+    z = -lambertw(p*exp(-p)).real/p
     return D/2 + (1/(1-z) + 1/(2-load) - 1 - load/2)/rate
 
 t = standing_wait(y)
@@ -37,6 +38,8 @@ print(f"Standing only expected waiting time = {t:.6f}")
 print(f"Standing only expected total time = {t + L/s:.6f}")
 print(f"Standing only people per second = {y:.6f}")
 print(f"Standing only capacity = {2/D:.6f}")
+
+from scipy.optimize import brentq
 
 # Walk/stand splits
 f_w = 0.20
@@ -72,5 +75,5 @@ def time_difference(rate):
     return standing - split
 
 if 0 < f_w < 1 and time_difference(0) * time_difference(0.999999*cap_s) < 0:
-    crossover = find_root(time_difference, 0, 0.999999*cap_s)
+    crossover = brentq(time_difference, 0, 0.999999*cap_s)
     print(f"Total time crossover = {crossover:.6f} people per second")
