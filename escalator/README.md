@@ -6,6 +6,8 @@ The first is people always stand, which is what railway officials in Tokyo want 
 
 We'll look at the average amount of time people wait to board the escalator, the number of people processed per second, and the average amount of time people spend waiting for and actually on the escalator. We assume Poisson arrivals, fixed step intervals, one boarding place per lane per step, and walking at a fixed speed relative to the escalator.
 
+**Queueing models.** The standing-only policy is a *periodic bulk-service queue* with capacity two at each step [1]. The split arrangement consists of two periodic single-place queues, one for walking and one for standing. Ordinary M/D/2 and M/D/1 queues are related analytically, but their servers do not enforce the same fixed boarding epochs [2].
+
 ## Files
 
 - [`escalator.ipynb`](escalator.ipynb) — Jupyter notebook containing the analysis and calculations.
@@ -43,7 +45,7 @@ b = y*D
 
 ## Standing Only
 
-If people stand on both sides, each arriving step has room for two people. This is a periodic queue with a batch capacity of two, rather than two independent servers. Let $D=d/s$ denote the time between steps and let $\lambda$ be the arrival rate.
+If people stand on both sides, each arriving step has room for two people. This is a **periodic bulk-service queue with capacity two** [1], rather than an ordinary M/D/2 queue with independently available servers [2]. Let $D=d/s$ denote the time between steps and let $\lambda$ be the arrival rate.
 
 If $X_n$ is the number of people waiting immediately before step $n$ arrives, then
 
@@ -57,7 +59,7 @@ $$
 z^2=e^{b(z-1)},\qquad z=-\frac{2}{b}W_0\left(\frac b2e^{-b/2}\right),
 $$
 
-where $W_0$ is the principal branch of the Lambert W function. The expected time spent waiting to board is
+where $W_0$ is the principal branch of the Lambert W function. Indeed, the negative root satisfies $z=-e^{b(z-1)/2}$, hence $(-bz/2)e^{-bz/2}=(b/2)e^{-b/2}$. The characteristic equation is the capacity-two case of the generating-function root method for discrete-time bulk-service queues [1]. Differentiating the stationary generating function and adding the mean residual interval $D/2$ until the next step gives the expected time spent waiting to board:
 
 $$
 t_Q=\frac D2+\frac1\lambda\left(\frac1{1-z}+\frac1{2-b}-1-\frac b2\right).
@@ -98,9 +100,9 @@ Standing only capacity = 3.500000
 
 ## One Side Walks, One Side Stands
 
-Assuming the fraction of people who choose to walk or stand is fixed and their choices are independent, the Poisson arrival process splits into two independent Poisson processes. Each lane has room for one person on every step.
+Assuming the fraction of people who choose to walk or stand is fixed and their choices are independent, the Poisson arrival process splits into two independent Poisson processes. Each lane has room for one person on every step. Thus each is a **periodic capacity-one queue** rather than an ordinary M/D/1 queue with continuously available service opportunities.
 
-For a lane with arrival rate $\lambda_i$, the expected waiting time to board is
+For a lane with arrival rate $\lambda_i$, the stationary mean waiting time to board (including the residual interval until a step arrives) is
 
 $$
 t_{Q,i}=\frac{D}{2(1-\lambda_i D)},\qquad \lambda_i D<1.
@@ -168,4 +170,12 @@ Total time crossover = 1.965752 people per second
 
 Standing on both sides minimizes the average time spent waiting to board, since passengers share the two available places on every step. In a stable system, both arrangements process the same number of people per second, although standing on both sides can accommodate a higher arrival rate when the walking and standing fractions are unequal.
 
-With these parameters, allowing some people to walk reduces the average total time spent waiting and riding. At sufficiently high arrival rates, however, congestion in the standing lane can reverse that advantage. For the 20% walking split above, the total times are equal at approximately 1.965752 people per second. Safety, available space and actual boarding behavior may also affect the choice of policy.
+With these parameters, allowing some people to walk reduces the average total time spent waiting and riding. At sufficiently high arrival rates, however, congestion in the standing lane can reverse that advantage. For the 20% walking split above, the total times are equal at approximately 1.965752 people per second. Safety, available space and actual boarding behavior may also affect the choice of policy. For a more detailed behavioral model of escalator boarding and congestion, see [3].
+
+## References
+
+1. A. J. E. M. Janssen and J. S. H. van Leeuwaarden, "Analytic Computation Schemes for the Discrete-Time Bulk Service Queue," *Queueing Systems* **50** (2005), 141–163. [doi:10.1007/s11134-005-0402-z](https://doi.org/10.1007/s11134-005-0402-z). The periodic bulk-service recurrence and its generating-function roots.
+
+2. A. J. E. M. Janssen and J. S. H. van Leeuwaarden, "Back to the Roots of the M/D/s Queue and the Works of Erlang, Crommelin and Pollaczek," *Statistica Neerlandica* **62** (2008), 299–313. [doi:10.1111/j.1467-9574.2008.00395.x](https://doi.org/10.1111/j.1467-9574.2008.00395.x). Classical multiserver root methods for comparison.
+
+3. F. Chen, X. Wang, C. Guo, and M. Zukerman, "From Queueing Performance Evaluation to Policy Guidance: A New Modeling Framework for Escalator Systems," *Transportation Research Interdisciplinary Perspectives* **38** (2026), article 102073. [doi:10.1016/j.trip.2026.102073](https://doi.org/10.1016/j.trip.2026.102073). A related escalator policy model.
