@@ -1,73 +1,76 @@
-# horizontal length of escalator in meters
-L = 10
+# Horizontal length of escalator in meters
+L = 10.0
 
-# depth of step in meters
+# Depth of step in meters
 d = 0.40
 
-# walking speed in meters per second
+# Walking speed relative to the escalator in meters per second
 w = 84/60
 
-# horizontal escalator speed in meters per second
+# Horizontal escalator speed in meters per second
 s = 42/60
 
-# deterministic service time in seconds
-D = s/d
+# Time between steps in seconds
+D = d/s
 
 # Average people per second
 y = 1/2
 
-# arrival in units of fixed service time
+# Average arrivals between steps
 b = y*D
 
-# M/D/2
+from sage.all import exp, lambert_w, find_root
 
-# servers
-c = 2
-p = b/c
+# Standing only: two people can board each step
+def standing_wait(rate):
+    load = rate*D
+    if not 0 <= load < 2:
+        raise ValueError("The standing queue is unstable")
+    if rate == 0:
+        return D/2
+    p = load/2
+    z = -float(lambert_w(p*exp(-p)))/p
+    return D/2 + (1/(1-z) + 1/(2-load) - 1 - load/2)/rate
 
-u = -1/p*lambert_w(-p/exp(p))
-v = -1/p*lambert_w(p/exp(p))
-#print(u.n(),v.n())
+t = standing_wait(y)
+print(f"Standing only expected waiting time = {t:.6f}")
+print(f"Standing only expected total time = {t + L/s:.6f}")
+print(f"Standing only people per second = {y:.6f}")
+print(f"Standing only capacity = {2/D:.6f}")
 
-m = min(u.n(),v.n())
+# Walk/stand splits
+f_w = 0.20
+f_s = 1-f_w
 
-# expected queue waiting time
-W = 1/(1-m) + 1/2*(c*p+1/(1-p)-c)
-t = W/y-D
-print("M/D/2 expected waiting time = %s" %(t))
-print("M/D/2 expected system time = %s" %(t+L/s))
-
-# People per second
-ps_2 = 1/(1/y+t)
-
-print("M/D/2 people per second = %s" %(ps_2))
-print
-
-# fast/slow splits
-
-f_f = 0.20
-f_s = 1-f_f
-
-y_f = f_f*y
+y_w = f_w*y
 y_s = f_s*y
 
-p_f = y_f*D
-p_s = y_s*D
+def lane_wait(rate):
+    load = rate*D
+    if not 0 <= load < 1:
+        raise ValueError("The lane is unstable")
+    return D/(2*(1-load))
 
-t_f = p_f/2*D/(1-p_f)
-t_s = p_s/2*D/(1-p_s)
+t_w = lane_wait(y_w)
+t_s = lane_wait(y_s)
 
-q_t = f_f*t_f+f_s*t_s
-print("Split queue expected waiting time = %s" %(q_t))
+q_t = f_w*t_w + f_s*t_s
+print(f"Split queue expected waiting time = {q_t:.6f}")
 
-s_t = f_f*(t_f+L/(s+w)) + f_s*(t_s+L/s)
+s_t = f_w*(t_w + L/(s+w)) + f_s*(t_s + L/s)
+print(f"Split queue expected total time = {s_t:.6f}")
 
-print("Split queue expected system time = %s" %(s_t))
+cap_s = 1/(D*max(f_w, f_s))
+print(f"Split queue people per second = {y:.6f}")
+print(f"Split queue capacity = {cap_s:.6f}")
+print(f"Standing only minus split total time = {t + L/s - s_t:.6f}")
 
-# People per second
-ps_s = 1/(1/y_f+t_f) + 1/(1/y_s+t_s)
+def time_difference(rate):
+    standing = standing_wait(rate) + L/s
+    split = (f_w*(lane_wait(f_w*rate) + L/(s+w))
+             + f_s*(lane_wait(f_s*rate) + L/s))
+    return standing - split
 
-print("Split queue people per second = %s" %(ps_s))
-
-print
-print("Ratio of M/D/2 pps to split queue pps = %s" %(ps_2/ps_s))
+if 0 < f_w < 1 and time_difference(0) * time_difference(0.999999*cap_s) < 0:
+    crossover = find_root(time_difference, 0, 0.999999*cap_s)
+    print(f"Total time crossover = {crossover:.6f} people per second")
